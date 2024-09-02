@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* reset */
+*, :before, :after {box-sizing: border-box;}
+body {background-color: #fff;-webkit-text-size-adjust: none;}/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin: 0;padding: 0;}
+fieldset,img {border: 0 none;}
+dl,ul,ol,menu,li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
+input,select,textarea,button {font-size: 100%;vertical-align: middle;}
+button {border: 0 none;background-color: transparent;cursor: pointer;}
+table {width: 100%;table-layout: fixed;border-collapse: collapse;border-spacing: 0;}
+table caption {position: absolute;top: 0;left: 0;width: 1px;height: 1px;z-index: -10;overflow: hidden;}
+input[type='text'],input[type='password'],input[type='submit'],input[type='search'] {-webkit-appearance: none; /* border-radius:0; */}
+input:checked[type='checkbox'] {background-color: #666; -webkit-appearance: checkbox;}
+button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file'] {-webkit-appearance: button; /* border-radius:0; */}
+input[type='search']::-webkit-search-cancel-button {-webkit-appearance:none;}
+/* input:-webkit-autofill {-webkit-box-shadow: 0 0 0 1000px #fff inset; } */
+body,th,td,input,select,textarea,button {color: #102F50;font-size: 15px;font-family:'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;letter-spacing: -0.05em;} /* color값은 디자인가이드에 맞게사용 */
+a {color: inherit;text-decoration: none;vertical-align: middle;}
+a:active, a:hover {text-decoration: none;}
+address,caption,cite,code,dfn,em,var {font-style: normal;font-weight: normal;}
+img {max-width: 100%;vertical-align: middle;}
+
+.screen_out {overflow:hidden;position:absolute;width:0;height:0;line-height:0;text-indent:-9999px;} /* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
+.longdesc_hidden { overflow:hidden;position:absolute;height:1px;left:-10000px;}
+
+input:-webkit-autofill, input:-webkit-autofill:hover,
+input:-webkit-autofill:focus, input:-webkit-autofill:active {-webkit-text-fill-color: #fff;-webkit-box-shadow: 0 0 0px 1000px transparent inset !important;box-shadow: 0 0 0px 1000px transparent inset !important;transition: background-color 5000s ease-in-out 0s;}

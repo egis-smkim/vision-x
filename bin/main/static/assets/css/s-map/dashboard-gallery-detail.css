@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------------------
+ * 갤러리 상세보기
+ *----------------------------------------------------------------------------*/
+.eg-gallery-detail {
+	width: 1200px;
+	height: 850px;
+	background: #fff url(/assets/images/s-map/contents/regist-cont-bg.png) no-repeat right top;
+}
+
+.eg-gallery-detail .eg-popup-body {
+	padding-top: 75px;
+	height: 100%;
+}
+
+.eg-gallery-detail .header-items {
+	margin-bottom: 10px;
+}
+
+.eg-gallery-detail .header-items .tit {
+	font-size: 50px;
+	font-weight: 700;
+}
+
+.eg-gallery-detail .header-items .date {
+	color: #454545;
+}
+
+.eg-gallery-detail .mCustomScrollbar-y {
+	height: calc(100% - 103px);
+}
+
+.eg-gallery-detail .eg-card-group .txt-items .eg-btn-wrap {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-top: 0;
+	min-height: 35px;
+}

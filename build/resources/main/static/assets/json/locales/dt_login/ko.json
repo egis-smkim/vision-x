@@ -1,0 +1,507 @@
+{
+   "Login":{
+	  "page_title":"디지털트윈 클라우드",
+   	  "menu":{
+   	  	"Language":"<i class=\"fas fa-globe mr-1\"></i>언어",
+	      "Korean":"한글",
+	      "English":"English"
+   	  },
+   	  "title":{
+		"upper":"3차원 공간정보 디지털트윈 전문기업, (주)이지스"
+   	  },
+   	  "popper":{
+		"login":{
+			"title":"로그인",
+			"alert_message":{
+				"login_validation":{
+					"no_id":{
+						"param1":"ID를 입력하세요."
+					},
+					"no_password":{
+						"param1":"비밀번호를 입력하세요."
+					},
+					"id_umatched":{
+						"param1":"아이디 또는 비밀번호가 \n일치하지 않습니다."
+					},
+					"fivetimes":{
+						"header":"비밀번호 입력 오류 안내",
+						"body":"<p>회원님의 계정으로 <strong style=\"text-decoration:underline;\">5회 이상의 연속적인 비밀번호 입력 오류</strong>가 발생하여,</p><p><strong style=\"text-decoration:underline;\">내부 정보보호 규정</strong>에 따라 <strong style=\"text-decoration:underline;\">해당 계정 사용이 중지</strong>되었습니다.</p></br></br><p><strong style=\"text-decoration:underline;\">비밀번호 찾기</strong>를 통해 임시 비밀번호를 발급하고</p><p>로그인 후,<strong style=\"text-decoration:underline;\">비밀번호 변경</strong>을 요청드립니다.</p></br></br><div style=\"text-align: center;\"><button type=\"button\" id=\"closeMistypedBtn\" class=\"btn\" style=\"background-color:blue;\" onclick=\"javascirpt:D_MEMBER.LOGIN.closeMistypePannel();\">닫기</button></div>"	
+					},
+					"pwd_unmatched":{
+						"param1":"아이디  또는 비밀번호가 \n일치하지 않습니다.",
+						"param2":"(오류 횟수:",
+						"param3":"/5)"
+					},
+					"unauthorized":{
+						"param1":"허가되지 않은 사용자입니다.",
+						"param2":"관리자에게 문의 하세요. \ndtwincloud@egiskorea.com"
+					},
+					"unauthenticated":{
+						"param1":"이메일 인증을 \n하지않은 사용자입니다.",
+						"param2":"가입 시 작성한 메일을 확인해주세요."
+					},
+					"unauthorized_admin":{
+						"param1":"허가받은 관리자 계정이 아닙니다."
+					}
+				}
+			}
+		},
+		"logout":{
+			"title":"로그아웃"
+		},
+		"join":{
+			"title":"회원가입",
+			"id":"아이디",
+			"id_holder":"아이디를 입력해주세요.",
+			"name":"이름",
+			"name_holder":"이름을 입력해주세요.",
+			"email":"이메일",
+			"email_holder":"이메일을 입력해주세요.",
+			"password":"비밀번호",
+			"password_holder":"비밀번호를 입력해주세요.",
+			"password_rec":"* 비밀번호는 <strong style=\"text-decoration:underline\">숫자, 영문, 특수문자를 각각 사용하여 9자리 이상</strong>을 권고합니다.",
+			"passwordConf":"비밀번호 확인",
+			"passwordConf_holder":"비밀번호를 재입력해주세요",
+			"content1":"<a href=\"javascript:D_MEMBER.SIGNUP.openModal('modals-cloudAgr');\">이지스 클라우드 수준협약(SLA)</a>에 동의 합니다.",
+			"content2":"<a href=\"javascript:D_MEMBER.SIGNUP.openModal('modals-perInfoAgr');\">개인정보 수집 및 이용</a>에 동의 합니다.",
+			"registBtn":"회원가입",
+			"alert_message":{
+				"join_validation":{
+					"no_id":"아이디를 입력해주세요.",
+					"no_id_length":"아이디는 6자리 이상이어야합니다.",
+					"no_id_rule":"아이디는 영소문자로 시작해야하며\n 영소문자,숫자,특수문자(-)와(_)만\n사용가능 합니다.",
+					"no_id_blacklist":"사용할 수 없는 아이디입니다.",
+					"no_name":"이름을 입력해주세요.",
+					"no_email":"이메일을 입력해주세요.",
+					"no_email_reg":"올바른 이메일 형식이 아닙니다.",
+					"no_password":"비밀번호를 입력하세요.",
+					"no_password_reg":"올바른 비밀번호 형식이 아닙니다.",
+					"no_password_reg_consecutive":"올바른 비밀번호 형식이 아닙니다.",
+					"no_password_reg_consecutive2":"연속된 문자(abcd,1234) 혹은\n키보드 상 연속된 배열(asdf,qwer)로\n구성된 비밀번호는 사용할 수 없습니다.",
+					"no_password_reg_dup":"올바른 비밀번호 형식이 아닙니다.",
+					"no_password_reg_dup2":"아이디, 이메일과 동일한 비밀번호는 사용할 수 없습니다.",
+					"no_password_reg_dup3":"올바른 비밀번호 형식이 아닙니다.",
+					"no_password_reg_dup4":"아이디가 일부 포함된 비밀번호는 사용할 수 없습니다.",
+					"no_passwordconf":"비밀번호 확인을 입력하세요.",
+					"no_passwordconf_reg":"비밀번호 확인이 올바르지 않습니다.",
+					"no_consent1":"이지스 클라우드 수준협약(SLA)에 동의해주세요.",
+					"no_consent2":"개인정보 수집 및 이용에 \n동의해주세요.",
+					"alreadyExist":"아이디가 존재합니다.",
+					"success":"회원가입이 완료되었습니다.",
+					"success2":"인증 메일이 발송되었습니다.\n인증 절차를 진행해주세요."
+				}
+			}
+		},
+		"findpwd":{
+			"title":"비밀번호 찾기",
+			"title2":"비밀번호 찾기",
+			"id":"아이디",
+			"id_holder":"아이디를 입력해주세요.",
+			"name":"이름",
+			"name_holder":"이름을 입력해주세요.",
+			"email":"이메일",
+			"email_holder":"이메일을 입력해주세요.",
+			"ps":"* 비밀번호 찾기에 어려움이 있으신 분은 <strong style=\"text-decoration:underline\">khaia@egiskorea.com</strong>로 문의하시기 바랍니다.",
+			"resetBtn":"비밀번호 찾기",
+			"alert_message":{
+				"no_id": "아이디를 입력해주세요.",
+				"no_name":"이름을 입력해주세요.",
+				"no_email": "이메일을 입력해주세요.",
+				"no_email_reg": "이메일 형식을 지켜주세요.",
+				"success": "입력하신 메일주소로 \n임시 비밀번호가 전송되었습니다.",
+				"success2": "메일을 확인해주세요.",
+				"no_match_id": "입력한 정보와 일치하는 회원이 \n존재하지않습니다.",
+				"error":"관리자에게 문의하세요.",
+				"error2":"dtwincloud@egiskroea.com"
+			}
+		}   	  
+   	  }
+   },
+   "Main":{
+   		"popper":{
+   			 "home":{
+   			 	"content":{
+   			 		"num1":"국산 3D GIS Engine",
+	   			 	"num2":"다양한 공간정보 포맷지원",
+	   			 	"num3":"개발자도구",
+	   			 	"num4":"마켓플레이스",
+	   			 	"num5":"QGIS 플러그인 지원",
+	   			 	"num6":"공간 분석 및 시각화",
+	   			 	"num7":"IoT 활용 연계",
+	   			 	"num8":"디지털트윈 SaaS 서비스"
+   			 	}
+   			 },
+   			 "notice":{
+   			 	"title":"공지사항",
+   			 	"content":{
+   			 		"subject":"제목",
+   			 		"date":"등록일",
+   			 		"view":"조회",
+   			 		"edited":"(수정됨)"
+   			 	}
+   			 },
+   			 "customer_service":{
+   			 	"title":"고객센터",
+   			 	"category":{
+   			 			"all":"전체",
+   			 			"map":"지도",
+   			 			"data":"데이터",
+   			 			"function":"기능",
+   			 			"membership":"회원가입 및 탈퇴",
+   			 			"payment":"결제",
+   			 			"etc":"기타"
+   			 	},
+   			 	"faq":{
+   			 		"title":"자주 묻는 질문"
+   			 	},
+   			 	"qna":{
+   			 		"title":"1:1 문의",
+   			 		"intro":"DT클라우드의 전반적인 사항과 관련하여 1:1문의를 할 수 있는 메뉴 입니다.",
+   			 		"function":{
+   			 			"write":"문의 작성",
+   			 			"edit":"수정",
+   			 			"delete":"삭제",
+   			 			"list":"목록",
+   			 			"upload":"업로드",
+   			 			"go_back":"돌아가기",
+   			 			"post":"등록",
+   			 			"edited":" (수정됨)"
+   			 		},
+   			 		"content":{
+   			 			"category":"서비스 구분",
+   			 			"topic":"말머리",
+   			 			"date":"등록일",
+   			 			"subject":"제목",
+   			 			"details":"문의 내용",
+   			 			"upload_file":"파일 업로드",
+   			 			"download_file":"첨부파일",
+   			 			"answer_write":"답변입력",
+   			 			"answer_state":"답변상태",
+   			 			"answer":"답변내용",
+   			 			"no_subject":"제목을 작성해주세요",
+   			 			"drag_drop":"드래그 드랍 또는 클릭해주세요"
+   			 		},
+   			 		"alert":{
+   			 			"no_subject":"글 제목을 입력하세요",
+   			 			"no_detail":"글 내용을 입력하세요",
+   			 			"upload_board":"게시글이 등록되었습니다.",
+   			 			"delete_board_confirm":"게시글을 삭제하시겠습니까?",
+   			 			"delete_board":"삭제 되었습니다.",
+   			 			"update_board":"게시글이 변경되었습니다.",
+   			 			"upload_answer":"답변이 등록되었습니다.",
+   			 			"delete_answer_confirm":"답변을 삭제하시겠습니까?",
+   			 			"delete_answer":"답변이 삭제되었습니다."
+   			 		}
+   			 	}
+   			 },
+   			 "intro":{
+   			 	"title":"플랫폼 소개",
+   			 	"content":{
+   			 		"num1":{
+   			 			"title":"현실 객체의 디지털 표현",
+   			 			"info":"실제 세계의 물리 객체를 3D GIS 기반 공간에 디지털로 표현합니다. 이를 통해 객체의 속성, 상태 , 동작 등을 가상으로 표현하고, 모니터링 할 수 있습니다.\n실제 객체는 디지털트윈 공간에 동기화되어 업데이트 되며 객체의 상태 변화를 실시간으로 반영합니다."
+   			 		},
+   			 		"num2":{
+   			 			"title":"공간분석",
+   			 			"info":"디지털 트윈과 지리정보 시스템을 통합하여 공간을 활용하여 패턴, 관계, 상호 작용, 현상, 변동성 등을 반영한 시뮬레이션과 분석을 통하여 공간 정보 데이터의 의미를 해석하고 의사결정으로 활용될 수 있습니다."
+   			 		},
+   			 		"num3":{
+   			 			"title":"실시간 데이터 수집 및 분석",
+   			 			"info":"실시간으로 수집된 지디털트윈 객체의 센서, 장치, IoT 시스템을 통해 수집된 다양한 데이터를 활용하여 공간분석, 통계, 시각화 예측 모델을 생성 할 수 있습니다."
+   			 		},
+   			 		"num4":{
+   			 			"title":"클라우드 보안인증 취득(CSAP SaaS) 공간정보 기반 디지털 트윈 SaaS 플랫폼",
+   			 			"info":"민간/교육/공공에서 주제의 제약없이 범용적으로 사용할 수 있는 플랫폼 환경을 제공합니다.\n또한 국가ㆍ공공기관에서 요구되는 보안 안정성과 신뢰성이 검증된 클라우드 서비스를 제공합니다."
+   			 		}
+   			 	},
+   			 	"sub_content":{
+   			 		"num1":"디지털 트윈",
+   			 		"num2":"스마트시티,도시열섬\n미세먼지, 도시재생",
+   			 		"num3":"스마트 건설\nBIM",
+   			 		"num4":"스마트 빌딩\n실내측위",
+   			 		"num5":"도시경관\n가시권 분석",
+   			 		"num6":"IoT/AI융합",
+   			 		"num7":"재난/재해/안전",
+   			 		"num8":"3D, 지하공간",
+   			 		"num9":"정밀도로지도\n(MMS)",
+   			 		"num10":"드론 관측\n통합관리",
+   			 		"num11":"공간정보\n품질관리",
+   			 		"num12":"토지/부동산\n건물/문화재"
+   			 	}
+   			 },
+   			 "key_function":{
+   			 	"title":"주요기능",
+   			 	"content":{
+   			 		"num1":{
+   			 			"title":"국가3D GIS Engine 기반 플랫폼",
+   			 			"info":"20여년 간 축적된 기술과 노하우가 담긴 자사 3D GIS 엔진(XDWorld)기반 디지털트윈 플랫폼",
+   			 			"intro":"국내 최초 GIS Engine Software 분야와 GIS응용 솔루션 분야 (WEB환경, C/S환경)에 체계적이고 과학적인 정보 제공을 위하여 모바일 3D 엔진과 웹 표준 HTML5 기반의 엔진을 개발하여 다양한 고객 환경에 대한 맞춤형 컨설팅 업무를 지원",
+   			 			"func1":"실세계와 동일한 3차원 기반 지도 배경 서비스 지원",
+   			 			"func2":"클라우드 분산 처리를 활용한 대용량 공간정보 데이터",
+   			 			"func3":"사용자 생성 지도 개인화 서비스"
+   			 		},
+   			 		"num2":{
+   			 			"title":"다양한 공간정보 포맷 지원",
+   			 			"info":" ERDAS Image, glTF, GeoTiff, ECW, 3DS, CityGML, 3DTiles, CSV, LAS, BIM, OGC 표준",
+   			 			"intro":"전국 지형,  고해상도 영상, 3차원 건물 데이터 기반 공간정보로 활용하는 각종 ErdasIMG/GeoTIFF/LAS/3DS/OGC CityGML/BIM/GIS/드론3D/EXCEL/CSV 등의 다양한 공간정보 데이터 포맷 지원",
+   			 			"func1":"지형, 영상, 시설물 데이터 등 공간정보 가공 ",
+   			 			"func2":"정부 3.0 공개데이터 등 공간정보 데이터 지원",
+   			 			"func3":"통계 정보 시각화"
+   			 		},
+   			 		"num3":{
+   			 			"title":"개발자 도구(API, SandBOX)",
+   			 			"info":"XDWorld 엔진 API 를 활용하여 자신만의 디지털트윈 앱을 개발하고 마켓 플레이스에 공유",
+   			 			"intro":"누구나 개발하여 활용할 수 있는 개발자를 위한 WEBGL 기반 GIS 서비스 API 제공 및 1,150개의 라이브러리 제공(샌드박스) , 다양한 언어별 개발 도구(GITHUB) 지원",
+   			 			"func1":"다양한 개발 언어 지원",
+   			 			"func2":"개발 목적에 맞는 3차원 GIS를 쉽게 구축",
+   			 			"func3":"다양하고 구체적인 예제 제공"
+   			 		},
+   			 		"num4":{
+   			 			"title":"마켓플레이스 ",
+   			 			"info":"디지털트윈 플랫폼 개발자 도구를 활용하여 개발된 다양한 애플리케이션을 구독하거나 판매",
+   			 			"intro":"국내 최초 3차원 공간정보 기반 클라우드 서비스 스토어로써 사용자가 직접 구현한 애플리케이션을 직접 홍보하거나 유통하여 판매 및 다른 사용자가 만든 데이터를 혼합하여 새로운 지도 생성, 분석 등이 가능하도록 지원",
+   			 			"func1":"다양한 도시 계획 시뮬레이션 및 분석기능 제공",
+   			 			"func2":"폐쇄형이 아닌 개방형 서비스 플랫폼 공간",
+   			 			"func3":"개발된 다양한 어플리케이션 구독 및 판매"
+   			 		},
+   			 		"num5":{
+   			 			"title":"QGIS 플러그인",
+   			 			"info":"디지털트윈 플랫폼, QGIS 양방향 레이어 활용으로 지오프로세싱, 공간분석, 데이터 편집 활용",
+   			 			"intro":"공개된 공간정보와 사용자가 등록한 공간정보를 QGIS Desktop에서 플러그인을 통해 DTclould(Digital Twin Cloud)에서 발생한 WMS 레이어를 활용하도록 지원",
+   			 			"func1":"DIGITAL TWIN CLOUD에서 발행한 WMS레이어를 활용",
+   			 			"func2":"사용자가 언제든지 자유롭게 연구할 수 있는 개방형 실험실"
+   			 		},
+   			 		"num6":{
+   			 			"title":"공간 분석 및 시각화",
+   			 			"info":"분석 데이터의 이해력을 높이는 N차원 분석과 시각화 활용",
+   			 			"intro":"지상, 지하, 실·내외 등 각 산업별 3차원 GIS 공간정보를 활용 전문 데이터 분석 시뮬레이션 기능 및 다양한 형태의 공간분석 시각화와 마켓플레이스를 통한 애플리케이션 구독 및 WEBGL 기반 GIS 개발 서비스 제공",
+   			 			"func1":"다양한 분석과 통계 빅데이터의 시각화",
+   			 			"func2":"비 전문가도 소유하고있는 데이터를 지도 기반으로 시각화"
+   			 		},
+   			 		"num7":{
+   			 			"title":"IoT 등 실시간 데이터 연계",
+   			 			"info":"실시간으로 수집되는 대규모의 데이터를 처리하고 GIS와 연계하여 실시간 분석 및 모니터링",
+   			 			"intro":"지자체 및 기상청, 관측소 등 제공되는 외부 API를 통해 확보한 데이터를 실시간으로 연계하여 3차원 지도 위에 가시화하여 분석 및 모니터링을 통해 각종 재난·안전 등의 상황 대비시 의사결정에 도움",
+   			 			"func1":"실시간 외부 수집데이터 3차원 가시화",
+   			 			"func2":"지도공유와 SNS 연결"
+   			 		},
+   			 		"num8":{
+   			 			"title":"디지털트윈 SaaS 플랫폼(CSAP)",
+   			 			"info":"국내최초 공간정보 기반 3D 디지털트윈 클라우드 SaaS 플랫폼 (CSAP 클라우드 보안인증 포함)",
+   			 			"intro":"클라우드컴퓨팅 서비스 이용자가 서비스를 안심하고 도입하여 이용할 수 있도록 CSAP 공인 보안 인증\n정보보호 전문기관인 한국인터넷진흥원(KISA)가 정보보호에 관한을 준수하고 있는지 객관적으로 판단 인증해주어 추후 공공기관 추가 보호조치 사항 관련 부분의 보안성 검토가 생략",
+   			 			"func1":"클라우드 서비스 보안 인증(CSAP) [CSAP-2022-019호]",
+   			 			"func2":"‘DIGITAL TWIN CLOUD’ SaaS 서비스 등록 완료 (2022.11.22.)",
+   			 			"func3":"사용자 생성 지도 개인화 서비스"
+   			 		},
+   			 		"num9":{
+   			 			"title":"스토리맵 기능 ",
+   			 			"info":"전달하고자 하는 메시지를 텍스트, 이미지, 그 외 다양한 컨텐츠로 지도와 함께 구성하여 생성",
+   			 			"intro":"3차원 지도 내 장소나 관심 영역 등 위치 정보와 텍스트, 이미지, 화살표 등 다양한 시각적 요소를 사용하여 상황에 맞는 스토리를 원하는 방식으로 구현하는 기능",
+   			 			"func1":"시각적 요소를 통한 공간분석 및 정보 공유",
+   			 			"func2":"홍보, 프레젠테이션 등 활용도에따른 스토리 구현"
+   			 		},
+   			 		"num10":{
+   			 			"title":"스튜디오 기능",
+   			 			"info":"디지털트윈플랫폼을 통해 분석한 내용을 요약하여 한눈에 확인할 수 있도록 영상 컨텐츠 구축",
+   			 			"intro":"개발 및 분석을 통해 3차원 지도 내 가시화한 정보를 지구본을 움직이고 키 프레임을 이용하여 궤도를 만들거나 태양 위치, 카메라의 시야 등을 사용하여 영상 컨텐츠 구축",
+   			 			"func1":"연구, 교육자료 등 용도에 맞게 사용",
+   			 			"func2":"기업의 비즈니스 및 활동 성과 등의 포괄적 내용 표현"
+   			 		},
+   			 		"num11":{
+   			 			"title":"AI 활용 ",
+   			 			"info":"인공지능(AI)을 활용 방대한 양의 공간정보 수집·가공·분석과 고품질의 공간정보를 제공",
+   			 			"intro":"학습 된 생성형 인공지능 AI 기반 서버로 지형 영상 이미지를 분석하여 이미지 속에 있는 객체 및 사물 위치를 판별하고 지도기반 시각화 결과를 제공",
+   			 			"func1":"신기술 실증 및 행정활동 환경 제공",
+   			 			"func2":"정부, 지자체간 데이터 공유와 공간정보 빅데이터 구축"
+   			 		}
+   			 	 }
+   			 },
+   			 "market_place":{
+   			 	"title":"마켓플레이스",
+   			 	"category":{
+   			 		"all":"전체",
+   			 		"analysis_function":"분석기능",
+   			 		"data_linkage":"데이터 연계",
+   			 		"visible_effect":"가시효과"
+   			 	},
+   			 	"content":{
+   			 		"num1":{
+   			 			"title":"바람길 분석",
+   			 			"category":"분석기능 > 자연/환경",
+   			 			"intro":"바람길 분석은 바람의 변화원인과 흐름을 파악하여 해양상황을 분석하고 예측하는 서비스입니다."
+   			 		},
+   			 		"num2":{
+   			 			"title":"실시간 해양환경",
+   			 			"category":"데이터 연계 > 자연/환경",
+   			 			"intro":"실시간 해양환경 정보는 국립해양조사원 바다누리 해양정보 서비스에서 제공하는 조위 관측소 API를 통해서 확보한 데이터를 지도 위에 가시화하는 서비스입니다."
+   			 		},
+   			 		"num3":{
+   			 			"title":"태양광 패널",
+   			 			"category":"가시화 효과 > 도시계획",
+   			 			"intro":"태양광 패널을 설치하고자 하는 건물에 다양한 옵션을 적용하여 패널을 자동 배치하는 배치 시뮬레이션 서비스입니다."
+   			 		},
+   			 		"num4":{
+   			 			"title":"저지대 분석",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"집중 호우 시 저지대 침수 취약지역을 집중 호우에 대응할수 있도록 돕기 위한 서비스입니다."
+   			 		},
+   			 		"num5":{
+   			 			"title":"조석 분석",
+   			 			"category":"데이터 연계 > 자연/환경",
+   			 			"intro":"관측소를 설정하고, 시간에 따른 조위 예보 및 분석 서비스입니다."
+   			 		},
+   			 		"num6":{
+   			 			"title":"날씨 효과",
+   			 			"category":"가시화 효과 > 자연/환경",
+   			 			"intro":"여러 옵션이 적용 된 날씨 효과를 3D 지도 공간에서 시뮬레이션 하는 서비스입니다. 날씨 효과의 종류에는 비, 눈 , 안개, 미세먼지가 있습니다."
+   			 		},
+   			 		"num7":{
+   			 			"title":"태풍 경로",
+   			 			"category":"분석 기능 > 자연/환경",
+   			 			"intro":"기상청의 태풍 정보를 연계하여 실시간 태풍 정보 및 과거 태풍 정보를 확인할 수 있게 하고 이동 속도와 방향을 확인 시뮬레이션을 통해 경로를 예측하는 서비스 입니다."
+   			 		},
+   			 		"num8":{
+   			 			"title":"건물 편집",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"사용자가 가진 3DS 모델과 브이월드 건물을 3D 지도 위에 직접 배치해 3차원 시각화 및 시뮬레이션 기법을 이용한 경관 변화 분석을 할 수 있습니다."
+   			 		},
+   			 		"num9":{
+   			 			"title":"침수",
+   			 			"category":"가시화 효과 > 자연/환경",
+   			 			"intro":"해수면의 높이 변화를 통해 침수 위험 지역을 한 눈에 파악하고 재난/안전 상황 대비 시 의사 결정에 도움을 줄 수 있도록 설계 된 서비스 입니다."
+   			 		},
+   			 		"num10":{
+   			 			"title":"그림자 분석",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"지정한 시각 및 시간 범위에 이동하는 그림자 위치를 시뮬레이션 하는 서비스 입니다."
+   			 		},
+   			 		"num11":{
+   			 			"title":"월파 분석",
+   			 			"category":"분석 기능 > 자연/환경",
+   			 			"intro":"태풍 및 폭풍 등이 발생하였을 경우 발생하는 월파에 대해 분석하는 서비스입니다."
+   			 		},
+   			 		"num12":{
+   			 			"title":"이미지 오버레이",
+   			 			"category":"가시화 효과 > 도시계획",
+   			 			"intro":"도시 재생 및 건설 계획을 세울 수 있으며 아파트 조감도를 분석하여 도시 구성 및 계획을 작업 할 수 있는 이미지 오버레이 서비스 입니다."
+   			 		},
+   			 		"num13":{
+   			 			"title":"CCTV",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"사용자가 원하는 좌표에 CCTV를 설치하고 및 카메라 기능을 활용한 서비스입니다."
+   			 		},
+   			 		"num14":{
+   			 			"title":"가시권 분석(3D)",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"지도의 수치표고모델을 이용하여 선택한 영역의 경사도/경사향/경사향도 분석하는 서비스입니다."
+   			 		},
+   			 		"num15":{
+   			 			"title":"경사 분석",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"연안정보를 통해 침전물, 해안 정보를 제공하는 서비스입니다."
+   			 		},
+   			 		"num16":{
+   			 			"title":"연안침식",
+   			 			"category":"분석 기능 > 자연/환경",
+   			 			"intro":"연안정보를 통해 침전물, 해안 정보를 제공하는 서비스입니다."
+   			 		},
+   			 		"num17":{
+   			 			"title":"CSV 통계",
+   			 			"category":"분석 기능 > 도시계획",
+   			 			"intro":"위치 정보가 있는 CSV 파일을 업로드하고 통계 구역 정보를 설정하여 가시화된 통계 데이터를 생성 할 수 있는 서비스입니다."
+   			 		}
+   			 		
+   			 	}
+   			 },
+   			 "guide":{
+   			 	"title":"이용가이드",
+   			 	"content":{
+   			 		"outline":{
+   			 			"title":"개요",
+   			 			"start":{
+	   			 			"title":"시작하기"
+	   			 		},
+	   			 		"join":{
+	   			 			"title":"회원가입"
+	   			 		},
+	   			 		"login":{
+	   			 			"title":"로그인"
+	   			 		},
+	   			 		"find_pw":{
+	   			 			"title":"비밀번호 찾기"
+	   			 		}
+   			 		},
+   			 		"map":{
+   			 			"title":"지도",
+   			 			"intro":{
+	   			 			"title":"소개"
+	   			 		},
+	   			 		"layer":{
+	   			 			"title":"레이어",
+	   			 			"layer_list":"레이어 리스트",
+	   			 			"layer_file_upload":"레이어 파일 업로드"
+	   			 		},
+	   			 		"search":{
+	   			 			"title":"검색"
+	   			 		},
+	   			 		"tool":{
+	   			 			"title":"툴 기능",
+	   			 			"reset_position_selection":"위치 / 선택 초기화",
+	   			 			"north_direction":"정북방향",
+	   			 			"now_location":"현재위치로",
+	   			 			"exit_all_apps":"모든 앱 종료",
+	   			 			"distance_measurement":"거리측정",
+	   			 			"area_measurement":"면적측정",
+	   			 			"altitude_measurement":"고도측정",
+	   			 			"view_scenery":"경관보기",
+	   			 			"human_mode":"휴먼모드",
+	   			 			"screenshot":"스크린샷"
+	   			 		},
+	   			 		"save":{
+	   			 			"title":"지도저장",
+	   			 			"setting":"설정"
+	   			 		}
+	   			 	},
+	   			 	"setting":{
+   			 			"title":"설정",
+   			 			"user_info":"사용자정보",
+   			 			"dashboard":"대시보드",
+   			 			"my_maps":"내지도",
+   			 			"app_store":"앱 스토어",
+   			 			"app_list":"앱 리스트",
+   			 			"my_app":"내 앱 관리",
+   			 			"developers":"개발자",
+   			 			"dev_guide":"개발자 가이드",
+   			 			"dev_info":"개발자 정보",
+   			 			"gallery":"갤러리",
+   			 			"register_gallery":"갤러리 등록하기",
+   			 			"my_gallery":"내 갤러리",
+   			 			"data_info":"데이터정보",
+   			 			"datasets":"데이터셋",
+   			 			"qgis_plugin":"QGIS-plugin인증키",
+   			 			"board":"게시판",
+   			 			"qna":"문의게시판",
+   			 			"notice":"공지사항"
+	   			 			
+	   			 		
+   			 		}
+   			 	}
+   			 	
+   			 },
+   			 "gotodt":{
+   			 	"title":"디지털트윈 바로가기"
+   			 },
+   			 "footer":{
+	   			"company_registration_number":"사업자등록번호 : 503-81-49156 ",
+	   			"online_sales_registration":"통신판매업신고 : 제 2016-대구남구-0324 호",
+	   			"privacy_policy":"개인정보정책",
+	   			"terms_of_service":"이용약관",
+	   			"daegu_address":"대구 대구광역시 수성구 알파시티1로 31길 2, 4층",
+	   			"seoul_address":"서울 서울특별시 구로구 디지털로26길 111 (구로동, 제이앤케이디지털타워) 1501호"
+	   		
+	   		 }
+   			
+   		}
+   		
+   }
+}

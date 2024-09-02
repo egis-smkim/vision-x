@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+@import "font.css";
+
+.tutorial-wrap * {
+	color: #fff;
+	font-family:'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif;
+	letter-spacing: -0.01em;
+}
+
+.tutorial-wrap {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+}
+
+.tutorial-wrap.kor .eng {
+	display: none;
+}
+
+.tutorial-wrap.eng .kor {
+	display: none;
+}
+
+.tutorial-wrap .tutorial-util {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.tutorial-wrap .tutorial-util .group {
+	position: relative;
+	text-align: center;
+}
+
+.tutorial-wrap .tutorial-util .txt1 {
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+.tutorial-wrap .form-check {
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 15px;
+	font-size: 14px;
+}
+
+.tutorial-wrap .form-check-input {
+	margin-top: 0;
+}
+
+.tutorial-wrap .form-check-input[type='checkbox'] {
+	width: 14px;
+	height: 14px;
+	border: 1px solid #3CC4FF;
+	background-color: rgba(0, 0, 0, 1);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	border-radius: 2px;
+	-webkit-appearance: none;
+	vertical-align: bottom;
+}
+
+.tutorial-wrap .form-check-input[type='checkbox']:checked {
+	background-image: url(/assets/images/tutorial/form-check.png);
+}
+
+.tutorial-wrap .tutorial-img img {
+	position: absolute;
+}
+.tutorial-wrap .img01 {top: 0;left: 0;}
+.tutorial-wrap .img02 {left: 0;bottom: 0;}
+.tutorial-wrap .img03 {top: 12px;right: 0;}
+.tutorial-wrap .img04 {top: 50%;right: 12px;margin-top: -314.5px;}

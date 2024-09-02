@@ -1,0 +1,40 @@
+{
+	"cctv":{
+		"real_time_monitoring": "Real-time CCTV monitoring",
+		"setup": " CCTV setup",
+		"initialize": " Initialize",
+		"save_editing_content": " Save CCTV editing content",
+		"move": "Move"
+	},
+	"cctv_list": {
+		"title":" CCTV List",
+		"location_name": "Location name",
+		"load": "Load",
+		"locations": {
+			"seoul_customs_intersection": "Seoul Customs Intersection",
+			"dosan_park": "Dosan Park",
+			"samsung_station": "Samsung Station",
+			"gangnam_kyobo_building_r": "Gangnam Kyobo Building R",
+			"samneung_park": "Samneung Park",
+			"hoehyeon_intersection": "Hoehyeon Intersection"
+		}
+	},
+	"edit_cctv": {
+		"title":" Edit CCTV",
+		"visibility_range": "Visibility range",
+		"horizontal_angle": "Horizontal angle",
+		"vertical_angle": "Vertical angle",
+		"zoom_in_out": "Zoom in/out",
+		"opacity": "Opacity",
+		"building_mapping": "Building mapping",
+		"edit_location": " Edit CCTV location",
+		"edit_screen": "Edit CCTV screen"
+	},
+	"alert":{
+		"save_after_moving": "You can save after moving the location.",
+		"content_saved": "CCTV editing content has been saved."
+	},
+	"settings":{
+		"contact_app_developer":"Contact App Developer"
+	}
+}

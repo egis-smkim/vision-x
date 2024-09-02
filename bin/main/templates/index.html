@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
+    <th:block layout:fragment="content">
+        <head>
+            <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+            <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+            <style>
+                #map {
+                    position: absolute;
+                    width: calc(100%);
+                    height: calc(95%);
+                    right: 0px;
+                    bottom: 0px;
+                }
+                #interface {
+                    display: block;
+                    position: absolute;
+                    z-index: 9;
+                    background-color: #FFFFFF;
+                    padding: 10px 10px 10px 15px;
+                    border-radius: 5px;
+                    font-size: 13px;
+                    font-weight: bold;
+                    opacity: 0.9;
+                    margin: 8px;
+                }
+                .tooltip-inner {
+                    max-width: 300px;
+                }
+            </style>
+        </head>
+        <body>
+        <div id='map'>
+            <!-- ON/OFF button start -->
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 50px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="dashboard-on" onclick="openDashboard()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">Dashboard</span></a>
+                <a id="dashboard-off" onclick="closeDashboard()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">Dashboard</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 95px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="sidebar-on" onclick="openSidebar()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">Sidebar</span></a>
+                <a id="sidebar-off" onclick="closeSidebar()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">Sidebar</span></a>
+           </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 140px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="layer-on" onclick="createLayerWMS()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">road layer</span></a>
+                <a id="layer-off" onclick="removeLayerWMS()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">road layer</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 185px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="bike-on" onclick="createBikeLayer()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">bike layer</span></a>
+                <a id="bike-off" onclick="removeBikeLayer()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">bike layer</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 230px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="signal-on" onclick="createSignalLayer(); setSignalLocation();" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">signal layer</span></a>
+                <a id="signal-off" onclick="removeSignalLayer()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">signal layer</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 275px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="test1-on" onclick="createtest1Layer()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">test1 layer</span></a>
+                <a id="test1-off" onclick="removetest1Layer()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">test1 layer</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 320px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="test2-on" onclick="createtest2Layer()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">test2 layer</span></a>
+                <a id="test2-off" onclick="removetest2Layer()" class="btn icon-btn btn-outline-dark-menu" style="display:none; width: 150px;background-color: rgba(0,98,255,0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">test2 layer</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 365px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="moveToBerlin" onclick="moveToBerlin()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">Berlin</span></a>
+            </div>
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" style="position:absolute;right: 60px;top: 410px;z-index:102;width: 150px; transform: translate(0%, -50%);">
+                <a id="moveToOperahouse" onclick="moveToOperahouse()" class="btn icon-btn btn-outline-dark-menu" style="width: 150px;background-color: rgba(24, 28, 33, 0.6);"><span class="fas" style="padding-left: 10px;padding-right: 10px;">Opera house</span></a>
+            </div>
+            <!-- ON/OFF button end -->
+            <!-- 툴바 버튼 시작 -->
+            <div class="pt-1 pb-1 pr-1 pl-1 noScroll" id="toolAre2" style="position:absolute;right:0;top:50%;z-index:102;width: 50px;transform: translate(0%, -50%);">
+                <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;display:none">
+                    <a href="javaScript:IDE.MAPTOOL.initCompass();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left" title="방향 초기화">
+                        <img id="geoCompass" src="/assets/img/dt/compass.png">
+                    </a>
+                </div>
+                <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+                    <a id="gohome" href="javaScript:IDE.MAPTOOL.goHome();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-01.png' width='285'><br><div class='tooltipName'>위치 초기화</div><div class='tooltipInfo'>초기화면인 지구본으로 이동할 수 있습니다.</div>" data-html="true"><span class="fas fa-globe"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.resetMouse();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left" title="선택 초기화" data-html="true"><span class="fas fa-mouse-pointer"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.setNorth();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-04.png' width='285'><br><div class='tooltipName'>정북방향</div><div class='tooltipInfo'>지도의 방향을 정북으로 회전합니다.</div>" data-html="true"><span class="far fa-compass"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.currentLocation();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-05.png' width='285'><br><div class='tooltipName'>현재 위치로</div><div class='tooltipInfo'>크롬에서 제공하는 GPS 정보를 사용하며 지도에서 위성에서 제공하는 정보를 바탕으로 내 위치로 이동합니다.<br>오차 범위 20미터 내로 추정하며 건물 안이나 지하에서는 GPS가 부정확할 수 있습니다.</div>" data-html="true"><span class="fas fa-thumbtack"></span></a>
+                </div>
+                <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+                    <a href="javaScript:IDE.MAPTOOL.resetAll();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-06.png' width='285'><br><div class='tooltipName'>모든 앱 종료</div><div class='tooltipInfo'>실행되고있는 모든 앱을 종료할 수 있습니다.</div>" data-html="true"><span class="fas fa-redo-alt"></span></a>
+                </div>
+                <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+                    <a id="areaTransparencyBtn" href="javaScript:IDE.MAPTOOL.areaTransparency();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-14.png' width='285'><br><div class='tooltipName'>지형 투명도 설정</div><div class='tooltipInfo'>지형 투명도를 조절 할 수 있습니다.</div>" data-html="true"><span class="fas fa-map"></span></a>
+                    <a id="buildingOnOffBtn" href="javaScript:IDE.MAPTOOL.buildingOnOff();" class="btn icon-btn btn-dark" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-15.png' width='285'><br><div class='tooltipName'>건물  ON/OFF</div><div class='tooltipInfo'>건물을 키고 끌 수 있습니다.</div>" data-html="true"><span class="far fa-building"></span></a>
+                </div>
+                <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+                    <a href="javaScript:IDE.MAPTOOL.execute(1);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-07.png' width='285'><br><div class='tooltipName'>거리측정</div><div class='tooltipInfo'>지도를 클릭하여 시작점과 도착점을 지정하여 거리를 측정할 수 있습니다.<br>더블클릭하거나  esc 키를 입력하여 거리 측정을 완료할 수 있고 버튼을 한 번 더 누를 경우 거리 측정이 종료됩니다. </div>" id="distMeaBtn" data-html="true"><span class="fas fa-ruler-horizontal"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.execute(2);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-08.png' width='285'><br><div class='tooltipName'>면적측정</div><div class='tooltipInfo'>지도에서 면적을 측정할 지점을 클릭하면 해당 면적을 측정할 수 있습니다.<br>더블클릭하거나  esc 키를 입력하여 면적 측정을 완료할 수 있고 버튼을 한 번 더 누를 경우 면적 측정이 종료됩니다. </div>" id="areaMeaBtn" data-html="true"><span class="fas fa-draw-polygon"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.execute(3);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-09.png' width='285'><br><div class='tooltipName'>고도측정</div><div class='tooltipInfo'>지도에서 면적을 측정할 지점을 클릭하면 해당 면적을 측정할 수 있습니다.<br>더블클릭하거나  esc 키를 입력하여 면적 측정을 완료할 수 있고 버튼을 한 번 더 누를 경우 면적 측정이 종료됩니다. </div>" id="heightMeaBtn" data-html="true"><span class="fas fa-ruler-vertical"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.execute(9);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-10.png' width='285'><br><div class='tooltipName'>경관보기</div><div class='tooltipInfo'>지도에서 시점을 변경할 지점을 클릭하면 해당 위치에서 바라보는 시야로 변경할 수 있습니다.<br>우측 마우스를 클릭할 경우 시점을 변경할 수 있고 버튼을 한 번 더 누를 경우 경관 보기가 종료됩니다. </div>" id="heightFixBtn" data-html="true"><span class="fas fa-mountain"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.execute(11);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="휴먼모드" id="humanBtn" data-html="true"><span class="far fa-user"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.execute(4);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="<img src='https://egiscloud.com/siteData/manual/manual-11.png' width='285'><br><div class='tooltipName'>가시권 분석</div><div class='tooltipInfo'>지도에서 가시권을 분석을 지점을 클릭하고 드래그하여 해당 위치에서의 가시권을 확인할 수 있습니다.</div>" id="viewshed3dBtn" data-html="true"><span class="ion ion-md-funnel"></span></a>
+                </div>
+                <div class="btn-group-vertical bg-dark mt-2" style="width: 37px;border-radius:4px;">
+                    <a href="javaScript:IDE.MAPTOOL.execute(5);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="스크린샷" data-html="true"><span class="fas fa-camera"></span></a>
+                    <a href="javaScript:IDE.MAPTOOL.execute(6);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+                       title="메모" id="memoToobarBtn" data-html="true"><span class="fas fa-edit"></span></a>
+                </div>
+            </div>
+            <!-- 툴바 버튼 끝 -->
+        </div>
+        </body>
+    </th:block>
+</html>

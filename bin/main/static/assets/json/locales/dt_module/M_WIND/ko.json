@@ -1,0 +1,93 @@
+{
+    "wind_path_analysis":{ 
+	    "title": "바람길 분석",
+	    "load_wind_path": "바람길 불러오기",
+	    "current_location": "현재 위치",
+	    "analysis_name": "분석명",
+	    "saved_name":"_바람길분석"
+    },
+    "wind_direction": {
+        "title": "바람 방향",
+        "northwest": "북서풍",
+        "north": "북풍",
+        "northeast": "북동풍",
+        "west": "서풍",
+        "east": "동풍",
+        "southwest": "남서풍",
+        "south": "남풍",
+        "southeast": "남동풍"
+    },
+    "wind_type": {
+        "title": "바람유형",
+        "wind_power_2d": "풍력 2D",
+        "wind_power_3d": "풍력 3D",
+        "wind_direction_2d": "풍향 2D",
+        "wind_field": "바람장"
+    },
+    "wind_field_settings": {
+        "title": "바람장 설정",
+        "speed": "속도",
+        "height": "높이",
+        "particle_count": "파티클 수",
+        "max_particle_count": "최대 파티클 수",
+        "min_particle_count": "최소 파티클 수",
+        "wind_speed_reference": "풍속 기준",
+        "line_reference": "선 기준",
+        "legend": "범례",
+        "automatic": "자동"
+    },
+    "representation_type": {
+        "title": "표현 유형",
+        "wind_path": "바람길",
+        "pollution_source": "오염원",
+        "wind_power_2d": "* 풍력2D"
+    },
+    "alert": {
+        "analysis_already_in_progress": "이미 바람길 분석이 진행중입니다.",
+        "no_area_selected": "영역이 선택되지 않았습니다.",
+        "selected_area_too_small": "선택 영역이 작아 분석할 수 없습니다.",
+        "analysis_requested": "바람길 분석이 요청되었습니다.",
+        "error_occurred": "오류가 발생했습니다. 관리자에게 문의하세요.",
+        "analysis_complete": "분석이 완료되었습니다.",
+        "deleted": "삭제되었습니다.",
+        "modified": "수정되었습니다.",
+        "select_direction":"풍향을 선택하여주세요.",
+        "confirm_deleted":"삭제하시겠습니까?",
+        "confirm_deleted_detail":"삭제 후 복구할 수 없습니다."
+    },
+    "settings": {
+        "representation_time": "표현 시간",
+        "hour": "시",
+        "minute": "분",
+        "area_selection": " 영역선택",
+        "pollution_source_selection": " 오염원선택",
+        "selection_complete": " 선택 완료",
+        "automatic_central_setting": "* 오염원 미선택시 자동 중앙 설정",
+        "humidity": "습도",
+        "temperature": "기온",
+        "wind_speed": "풍속",
+        "wind_direction": "풍향",
+        "current_information": "현재 정보",
+        "representation_wind_speed": "표현 풍속",
+        "representation_precision": "표현 정밀도",
+        "pollution_concentration": "오염원 농도",
+        "representation_wind_direction": "표현 풍향",
+        "all_directions": "모든 방향",
+        "single_direction": "단방향 (선택 방향)",
+        "click_area_selection": "클릭: 영역 선택",
+        "esc_exit": "ESC: 종료",
+        "wind_strength": "바람 세기",
+        "analysis_date": "분석 일자",
+        "modify_name": "분석명 수정",
+        "save_wind_path_analysis": "바람길 분석 저장"
+    },
+    "button": {
+        "save": "저장",
+        "edit": "수정",
+        "delete": "삭제",
+        "confirm": "확인",
+        "initialize": "초기화",
+        "load": "불러오기",
+    	"add":"추가"
+    }
+}

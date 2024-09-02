@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------------------
+ * basic input
+ *----------------------------------------------------------------------------*/
+.eg-row {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -2px;
+	margin-right: -2px;
+}
+
+.eg-row > * {
+	padding-left: 2px;
+	padding-right: 2px;
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+}
+
+/*------------------------------------------------------------------------------
+ * basic input
+ *----------------------------------------------------------------------------*/
+.eg-form-control {
+	padding: 0 10px;
+	max-width: 100%;
+	width: 100%;
+	height: 35px;
+	color: #102F50;
+	font-weight: 700;
+	border: 1px solid #102F50;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+input[readonly="readonly"], input[disabled="disabled"],
+.eg-form-control:disabled {
+	color: #ccc;
+	border-color: #ccc;
+	background-color: #eee;
+}
+
+input::placeholder {
+	color: #9AAABC;
+	opacity: 1; /* 파이어폭스에서 뿌옇게 나오는 현상을 방지하기 위한 css */
+}
+input::-webkit-input-placeholder {
+	color: #9AAABC;
+}
+  /* IE */
+input:-ms-input-placeholder {
+	color: #9AAABC;
+}
+  /* Firefox */
+input:-mos-input-placeholder {
+	color: #9AAABC;
+}
+
+textarea.eg-form-control {
+	padding: 10px;
+	height: auto;
+	resize: none;
+}
+
+/*------------------------------------------------------------------------------
+ * basic input
+ *----------------------------------------------------------------------------*/
+select::-ms-expand {
+	display: none;
+}
+
+.eg-form-select {
+	padding: 0 25px 0 10px;
+	min-width: 80px;
+	width: 100%;
+	max-width: 100%;
+	height: 35px;
+	border: 1px solid #102F50;
+	background: #fff url(/assets/images/s-map/form/form-select-arrow.png) no-repeat right 10px top 50%;
+	border-radius: 5px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.eg-form-select:disabled {
+	color: #ccc;
+	border-color: #ccc;
+	background-color: #eee;
+}
+
+
+/*------------------------------------------------------------------------------
+ * form-checkbox & form-radio
+ *----------------------------------------------------------------------------*/
+.eg-form-checkbox, .eg-form-radio {
+	position: relative;
+	display: block;
+}
+
+.eg-form-checkbox > span, .eg-form-radio > span {
+	position: relative;
+	display: inline-block;
+	padding-left: 20px;
+	min-height: 14px;
+}
+
+.eg-form-checkbox input[type=checkbox], .eg-form-radio input[type=radio] {
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	margin-top: -6px;
+	width: 10px;
+	height: 12px;
+}
+
+.eg-form-checkbox input[type="checkbox"] + label, .eg-form-radio input[type=radio] + label {
+	display: inline-block;
+	margin-top: -5px;
+	color: #102F50;
+	font-size: 12px;
+	font-weight: 700;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.eg-form-checkbox input[type="checkbox"] + label::before, .eg-form-radio input[type=radio] + label::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -7px;
+	width: 14px;
+	height: 14px;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	cursor: pointer;
+}
+
+.eg-form-checkbox input[type="checkbox"] + label::before {
+	background-image: url(/assets/images/s-map/form/form-checkbox.png);
+}
+
+.eg-form-checkbox input[type="checkbox"]:checked + label::before {
+	background-image: url(/assets/images/s-map/form/form-checkbox-on.png);
+}
+
+.eg-form-radio input[type=radio] + label::before {
+	background-image: url(/assets/images/s-map/form/form-radio.png);
+}
+
+.eg-form-radio input[type=radio]:checked + label::before {
+	background-image: url(/assets/images/s-map/form/form-radio-on.png);
+}
+
+.eg-form-checkbox input[type="checkbox"]:disabled + label, .eg-form-radio input[type="radio"]:disabled + label {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.eg-form-checkbox.group, .eg-form-radio.group {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.eg-form-checkbox.group > span, .eg-form-radio.group > span {
+	margin: 0 30px 0 0;
+}
+
+.eg-form-checkbox.group > span:last-child, .eg-form-radio.group > span:last-child {
+	margin-right: 0 !important;
+}
+
+
+/*------------------------------------------------------------------------------
+ * Thumbnail
+ *----------------------------------------------------------------------------*/
+ .eg-thumb-box {
+	position: relative;
+	margin-bottom: 10px;
+	height: 200px;
+	border: 1px solid #9CAAB9;
+	background-color: #EDF2F8;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.eg-thumb-box::before {
+	content: '미리보기';
+	display: inline-block;
+}
+
+.eg-thumb-box img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+/*------------------------------------------------------------------------------
+ * form - file
+ *----------------------------------------------------------------------------*/
+.eg-form-file {
+	position: relative;
+	padding: 0 5px;
+	max-width: 100%;
+	width: 100%;
+	height: 35px;
+	line-height: 33px;
+	border: 1px solid #102F50;
+	border-radius: 5px;	
+}

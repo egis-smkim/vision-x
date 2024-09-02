@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="sidebarFragment">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar"  >
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="description" content="">
+            <meta name="author" content="">
+        </head>
+        <body>
+        <!-- BEGIN #app -->
+        <div id="app" class="app app-sidebar-collapsed" style="width: 20% !important;left:0px !important; height: 100%">
+            <!-- BEGIN #sidebar -->
+            <div id="sidebar" class="app-sidebar" style="width: 150px;">
+                <!-- BEGIN scrollbar -->
+                <div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+                    <!-- BEGIN menu -->
+                    <div class="menu">
+                        <div class="menu-header">Navigation</div>
+                        <div class="menu-item active">
+                            <a href="index.html" class="menu-link">
+                                <span class="menu-icon"><i class="bi bi-house-door"></i></span>
+                                <span class="menu-text">Home</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- END menu -->
+                </div>
+                <!-- END scrollbar -->
+            </div>
+            <!-- END #sidebar -->
+
+            <!-- BEGIN mobile-sidebar-backdrop -->
+            <button class="app-sidebar-mobile-backdrop" data-toggle-target=".app" data-toggle-class="app-sidebar-mobile-toggled"></button>
+            <!-- END mobile-sidebar-backdrop -->
+
+            <!-- BEGIN #content -->
+            <div id="content" class="app-content" style="margin-left: 150px;">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">BREADCRUMB</a></li>
+                    <li class="breadcrumb-item active">HOME PAGE</li>
+                </ul>
+
+                <h1 class="page-header">
+                    Starter Page <small>page header description goes here...</small>
+                </h1>
+
+                <p>
+                    Start build your page here
+                </p>
+            </div>
+            <!-- END #content -->
+
+            <!-- BEGIN btn-scroll-top -->
+            <a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade"><i class="fa fa-arrow-up"></i></a>
+            <!-- END btn-scroll-top -->
+        </div>
+        <!-- END #app -->
+        </body>
+    </ul>
+</th:block>
+</html>

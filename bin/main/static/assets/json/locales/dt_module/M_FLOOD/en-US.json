@@ -1,0 +1,27 @@
+{
+	
+	"settings":{
+		"height_plus":"Height+",
+		"height_minus":"Height-",
+		"velocity": "Velocity",
+		"minimum_height": "Minimum Height",
+		"maximum_height": "Maximum Height",
+		"current_height": "Current Height",
+		"surface_effect": "Surface Effect",
+		"flood_layer": "Flood Layer",
+		"global_warming" : "Global warming",
+		"contact_app_developer":"Contact App Developer",
+		"close":"Close"
+	},
+	"play":{
+		"backward":"Backward",
+		"forward":"Forward",
+		"pause":"Pause",
+		"play":"Play",
+		"stop":"Stop",
+		"start":"Start",
+		"reset":"Reset",
+		"exit":"Exit"
+	}
+   
+}

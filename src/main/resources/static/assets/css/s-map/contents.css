@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------------------
+ * sub title
+ *----------------------------------------------------------------------------*/
+.sub-tit-wrap {
+	margin: 0 0 30px -30px;
+}
+
+.sub-tit-wrap .eng {
+	position: relative;
+	display: inline-block;
+	font-family: 'Chakra Petch';
+	font-size: 80px;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	background: -webkit-linear-gradient(50deg, rgba(255, 0, 255, 0.3) 0, rgba(37, 143, 255, 0.3) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 4px transparent;
+	letter-spacing: 0;
+	z-index: 1;	
+}
+
+.sub-tit-wrap .sub-tit {
+	position: relative;
+	margin-top: -30px;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 1;
+	z-index: 5;	
+}
+
+/*------------------------------------------------------------------------------
+ * content
+ *----------------------------------------------------------------------------*/
+ .eg-intro-box {
+	margin: 60px 0 20px;
+	padding: 27px;
+	color: #758395;
+	font-size: 14px;
+	line-height: 1.2;
+	border: 1px solid #D8DFE8;
+	background-color: #F2F6FB;	
+}
+
+.eg-cont-box {
+	margin: 30px 0;
+	padding: 40px;
+	font-size: 18px;	
+	/*border: 1px solid #9CAAB9;
+	background: #F7F9FC;*/
+}
+
+.eg-thumb-box {
+	margin: 10px 0;
+}
+
+.eg-cont-tit {
+	color: #102F50;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.eg-stxt {
+	font-size: 11px;
+}
+
+.eg-underline, .eg-underline:hover {
+	text-decoration: underline;
+}
+
+.eg-ex-box {
+	padding: 20px 25px;
+	color: #727D8B;
+	background-color: #EFF4FA;
+	border-radius: 8px;
+}
+
+/*------------------------------------------------------------------------------
+ * card-group
+ *----------------------------------------------------------------------------*/
+.eg-card-group {
+	display: flex;
+	justify-content: space-between;
+	margin: 30px 0;
+}
+
+.eg-card-group .img-items {
+	position: relative;
+	flex-shrink: 0;
+	width: 550px;	
+}
+
+.eg-card-group .txt-items {
+	position: relative;
+	margin-left: 15px;
+	flex: 1 1 auto;
+	font-size: 18px;
+	word-break: keep-all;
+}
+
+.eg-card-group .txt-items p + p {
+	margin-top: 30px;
+}
+
+.eg-card-group.vertical {
+	flex-direction: column;
+}
+
+.eg-card-group.vertical .txt-items {
+	margin: 10px 0 0 0;
+}
+
+/*------------------------------------------------------------------------------
+ * list-type
+ *----------------------------------------------------------------------------*/
+p.list-type1, ul.list-type1 > li {
+	position: relative;
+	padding-left: 8px;
+	color: #102F50;
+	font-size: 15px;
+}
+
+p.list-type1::before, ul.list-type1 > li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 12px;
+	left: 0;
+	width: 5px;
+	height: 1px;
+	background-color: #102F50;
+}
+
+p.list-type2, ul.list-type2 > li {
+	color: #102F50;
+	font-size: 15px;
+}
+
+p.list-type2 + p.list-type2, ul.list-type2 > li + li {
+	margin-top: 10px;
+}
+
+p.list-type2 .num, ul.list-type2 > li .num {
+	display: inline-block;
+	margin: -2px 3px 0 0;
+	width: 20px;
+	height: 20px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	background-color: #4371B0;
+	border-radius: 50%;
+	text-indent: -1px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/*------------------------------------------------------------------------------
+ * table text align
+ *----------------------------------------------------------------------------*/
+/* table th,td 전체 정렬 */
+.tbl-all-left th, .tbl-all-left td {text-align: left !important;}
+.tbl-all-center th, .tbl-all-center td {text-align: center !important;}
+.tbl-all-right th, .tbl-all-right td {text-align: right !important;}
+
+/* table th,td 개별 정렬 */
+th.align-left, td.align-left {text-align: left !important;}
+th.align-center, td.align-center {text-align: center !important;}
+th.align-right, td.align-right {text-align: right !important;}
+
+/*------------------------------------------------------------------------------
+ * media
+ *----------------------------------------------------------------------------*/
+@media screen and (max-width: 1500px){
+
+	.sub-tit-wrap {
+		margin: 0 0 30px 0;
+	}
+
+	.sub-tit-wrap .eng {
+		font-size: 50px;
+	}
+	
+	.sub-tit-wrap .sub-tit {
+		margin-top: -20px;
+		font-size: 30px;
+	}
+	
+
+}

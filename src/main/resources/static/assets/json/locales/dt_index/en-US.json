@@ -1,0 +1,456 @@
+{
+	"Index": {
+		"page_title":"Digitaltwin Cloud",
+		"nav": {
+			"myapp": {
+				"add": "Add Analysis",
+				"reset": "Reset"
+			},
+			"layer": {
+				"nav_title": "Layer",
+				"title": "Layer List",
+				"search_holder": "Search layers",
+				"layer_tabs": {
+					"my_layer": "My Layers",
+					"my_share_layer": "Shared Layers",
+					"my_group_layer": "Group Layers",
+					"saveJstree": "Save",
+					"loadjstree": "Load",
+					"options": {
+						"SHP": {
+							"export": "Export",
+							"attr": "Attribute",
+							"style": "Style Setting",
+							"legend": "Legend",
+							"info": "Information",
+							"del": "Delete"
+						},
+						"IMAGE": {
+							"info": "Information",
+							"legend": "Legend",
+							"edit": "Edit",
+							"del": "Delete",
+							"sel": "Select"
+						},
+						"CSV": {
+							"export": "Export",
+							"attr": "Attribute",
+							"info": "Information",
+							"del": "Delete"
+						},
+						"POINT_C": {
+							"edit": "Edit",
+							"info": "Information",
+							"del": "Delete"
+						},
+						"DRONE_3D": {
+							"setting": "Setting",
+							"info": "Information",
+							"del": "Delete"
+						},
+						"3DS": {
+							"attr": "Attribute",
+							"info": "Information",
+							"del": "Delete"
+						},
+						"GPX": {
+							"info": "Information",
+							"del": "Delete"
+						},
+						"BIM": {
+							"info": "Information",
+							"del": "Delete"
+						},
+						"JPG": {
+							"info": "Information",
+							"del": "Delete"
+						},
+						"DXF": {
+							"info": "Information",
+							"del": "Delete"
+						}
+					}
+				},
+				"add_layer_modal":{
+					"tab":{
+						"file_upload":"",
+						"settings":"",
+						"cloud_trans":""	
+					},
+					"drop_zone":{
+						"dz_message":"Click or Drag&Drop your files to upload \n<span class=\"note needsclick\">ESRI shape(shp,shx,dbf,prj,cpg), CSV, Orthophoto(tif,img) DEM(dem), Lidar(las) Only Supported.</span>"
+					},
+					"upload_setting":{
+						"SHP":{
+							"data_name":"Data Name",
+							"coordinate_ref":"Coordinate Reference System",
+							"attr_encoding":"Encoding",
+							"description":"Description",
+							"point_label_setting":"Point's labelling Setting'",
+							"total_record_num":"Total number of records"			
+						},
+						"CSV":{
+							"layer_name":"Layer Name",
+							"visual_type":"Visualization Type",
+							"lon_lat":"Lon,Lat",
+							"geocoding":"Geocoding",
+							"lon":"Logitude",
+							"lat":"Latitude",
+							"addr_col":"Address Column",
+							"marker_title":"Marker Title",
+							"encoding":"Encoding",
+							"coordinate_ref":"Coordinate Reference System",
+							"grouping_check":"Grouping Check",
+							"clustering":"Clustering",
+							"marker_type":"Marker Type",
+							"point":"Point",
+							"image":"Image",
+							"marker_color":"Marker Color",
+							"marker_image":"Marker Image",
+							"marker_3ds":"Marker 3DS",
+							"texture_needed":"3ds,Texture file needed.",
+							"description":"Description",
+							"sample_text":"5 samples out of <span class=\"ts-11 text-info\" id=\"totalCsvRecods\"></span>",
+							"addr":"Address",
+							"marker_text":"Marker Text",
+							"point_color":"Point Color"
+						},
+						"IMG":{
+							"layer_name":"Layer Name",
+							"coordinate_ref":"Coordinate Reference System(CRS)",
+							"visual_type":"Visualiztion Type",
+							"select":"Select",
+							"tile_image":"Tile Image",
+							"dem_terrain":"DEM Terrain",
+							"band":"단일 밴드 유사 색상",
+							"settings":"Settings",
+							"description":"Description",
+							"band_num":"Number of bands ",
+							"width":"Width",
+							"height":"Height",
+							"pixel_size":"Size of Pixel",
+							"compress_way":"Way of Compressing a file"
+						},
+						"PCL":{
+							"layer_name":"Layer Name",
+							"coordinate_ref":"Coordinate Reference System(CRS)",
+							"point_density":"Density of Point",
+							"low":"Low",
+							"default":"Default",
+							"high":"High",
+							"very_high":"Very High",
+							"ps":"* 높음 선택 시 사양에 따라 느릴 수가 있습니다.",
+							"description":"설명",
+							"total_cnt":"총개수",
+							"thumb_ps":"*해당 이미지는 포인트클라우드 위치입니다."
+						},
+						"ZIP":{
+							"data_type":"데이터 타입",
+							"3ds_data":"3DS 데이터",
+							"drone_collada":"Drone collada 데이터",
+							"layer_name":"레이어명",
+							"texture_col":"텍스쳐 컬럼",
+							"coordinate_ref":"좌표계",
+							"description":"설명",
+							"attr_sample":"속성 샘플",
+							"3ds_thumb_ps":"*해당 이미지는 3DS 모델 위치입니다.",
+							"drone_thumb_ps":"*해당 이미지는 드론 모델 위치입니다."
+						},
+						"GPX":{
+							"layer_name":"레이어명",
+							"description":"설명",
+							"gpx_thumb_ps":"*해당 이미지는 GPX 경로입니다.",
+							"total_distance":"총 거리"
+						},
+						"BIM":{
+							"layer_name":"레이여명",
+							"coord_ordinate":"좌표계",
+							"description":"설명",
+							"bim_thumb_ps":"*썸네일 이미지입니다."
+						},
+						"JPG":{
+							"layer_name":"레이어명",
+							"lon":"경도",
+							"lat":"위도",
+							"description":"설명",
+							"jpg_thumb_ps":"*썸네일 이미지입니다."
+						},
+						"DXF":{
+							"layer_name":"레이어명",
+							"encoding":"*인코딩",
+							"select":"선택",
+							"cp949":"CP949 - 한글",
+							"coordinate_ref":"*좌표계",
+							"space_range":"공간범위",
+							"obj_cnt":"객체 수",
+							"figure_type":"도형 유형",
+							"jpg_thumb_ps":"*해당 이미지는 도면 위치입니다."
+						}
+					},
+					"common":{
+						"data_name":"데이터명",
+						"layer_name":"레이어명",
+						"coordinate_ref":"좌표계",
+						"description":"설명",
+						"delete_all":"전체 삭제",
+						"show_csv_attr":"CVS 데이터 보기",
+						"show_attr":"속성 데이터 보기",
+						"previous":"이전",
+						"next":"다음",
+						"close":"닫기",
+						"content":"주사용 좌표계는 EPSG:4326입니다."
+					},
+					"alert_message:":{
+						
+					}
+				}
+			},
+			"search": {
+				"nav_title": "Search",
+				"place":"Place",
+				"search_placeholder": "Search places",
+				"sites": "Sites",
+				"no_keyword": "Please Enter Keyword",
+				"no_search_data": "No Result"
+			},
+			"ai": {
+				"nav_title": "AI",
+			    "help": "What do you think of this kind of AI?",
+			    "create_ai": "Creating AI",
+			    "create_my_ai": "Create your own AI.",
+			    "my_ai": "My AI",
+			    "ai_workshop": "AI Workshop",
+			    "upload": "Upload",
+			    "load": " Load",
+			    "public": "Public",
+			    "private": "Private",
+			    "layer_list": "Layer List",
+			    "list_name": "Layer Name",
+			    "list_info": "Layer Information",
+			    "list_five_sample": "Layer five Sample Data",
+			    "select_again": " Select Again",
+			    "settings": " AI Settings",
+			    "save": "Save",
+			    "ai_settings": "AI Settings",
+			    "sharing_option": "Sharing Option",
+			    "applied_prompt": "Applied Prompt : ",
+			    "applied_response_example": "Applied Response Example : ",
+			    "sample": "(Sample)",
+			    "alert": {
+			        "no_additional_ai": "No additional AI added.",
+			        "no_created_ai": "No AI created.",
+			        "hello_message": "Hello! How can I assist you?",
+			        "search_example": "Try searching like this: 'Tell me about Summarize the data'",
+			        "enter_search_content": "Enter search content:",
+			        "enter_ai_name": "Enter AI name:",
+			        "enter_ai_description": "Enter AI description:",
+			        "ai_created": "AI created successfully.",
+			        "unable_to_respond_now": "Unable to respond at the moment. Please try again later.",
+			        "no_applied_prompt_response": "No applied prompt and response example.",
+			        "how_about_this_prompt": "How about this prompt?",
+			        "how_about_this_response": "How about this response?",
+			        "ask_anything_about_this_data": "Ask anything about this data.",
+			        "is_an_ai_for": "is an AI for",
+			        "reset_loaded_content": "Do you want to reset the loaded content?",
+			        "exit_ai_creation": "Do you want to exit AI creation?",
+				    "delete_ai_history": "Do you want to delete this history?",
+				    "copy_ai_answer": "copied the answer.\n<h5 style='display: contents'>You can share the answer by pasting it.<h5>"
+			    },
+			    "set_example":{
+			    	"respond_korean":"Respond in Korean",
+			    	"speak_guide":"Speak like a tour guide",
+			    	"create_report":"Create in report format",
+			    	"state_location":"State 'Location (Longitude, Latitude)' Description"
+			    }
+			},
+			"map": {
+				"nav_title": "Save Map",
+				"app_sel": "Select App",
+				"save_plaeceholder": "A map with no title",
+				"saveBtn": "Save",
+				"list": "Map List",
+				"no_map": "No Saved Map",
+				"map_list": {
+					"options": {
+						"show": "Show",
+						"del": "Delete"
+					}
+				},
+				"alert_massege":{
+					"create_map":"New Map Created",
+					"delete_map":"Do you want to delete this map?",
+					"delete_complete":"Deleted"
+				}
+			},
+			"market_place": {
+				"nav_title": "Market Place",
+				"tabs": {
+					"apps": "APPS",
+					"apps_item": {},
+					"thematic_map": "Thematic Map",
+					"thematic_map_item": {},
+					"dataset": "Dataset",
+					"dataset_item": {},
+					"all":"All"
+				},
+				"alert":{
+					"no_app":"No registered applications."
+				}
+			},
+			"help": {
+				"nav_title": "Help"
+			},
+			"settings": {
+				"nav_title": "Settings",
+				"accordians": {
+					"base_map": {
+						"title": "Base Map",
+						"base_map_item": {
+							"no_map": "None",
+							"EgisMap": "EGIS Base Map 2023 (Satellite)",
+							"VWORLD": "VWORLD",
+							"GoogleMaps_Gen": "Google Maps (General)",
+							"GoogleMaps_Sat": "Google Maps (Satellite)",
+							"GoogleMaps_Sat_Hybrid": "Google Maps (Hybrid)",
+							"GoogleMaps_Contour": "Google Maps (Contour)",
+							"ArcMaps_Gen": "ArcMaps (General)",
+							"ArcMaps_Sat": "ArcMaps (Satellite)",
+							"ArcMaps_Contour": "ArcMaps (Contour)",
+							"MapBox_Sat": "MapBox (Satellite)",
+							"OpenStreetMap": "OpenStreetMap (General)",
+							"NASA": "NASA"
+						}
+					},
+					"layerSampleList": {
+						"title": "Layer Sample List",
+						"list_item": {
+							"EGIS": {
+								"image2023": "EGIS Base Map 2023 (Hybrid)"
+							},
+							"VWORLD": {
+								"title": "VWORLD",
+								"building": "Buildings",
+								"bridge": "Bridges",
+								"district":"Administrative district"
+							},
+							"facilities": {
+								"title": " Facilities",
+								"busan": "Busan Eco-Delta Smart City",
+								"knps": "National Parks Facilities",
+								"osan": "Osan Unamdeul Virtual Building",
+								"ngii": "Buildings of the Korean National Geographic Information Institute",
+								"seoul": "Seoul OpenLab",
+								"jakarta_b": "Jakarta Buildings",
+								"jakarta_s": "Jakarta Block M Station"
+							},
+							"image": {
+								"title": "<i class=\"fas fa-images\"></i> Image",
+								"busan": "Busan Eco-Delta Land Use Plan",
+								"osan": "Osan Unamdeul Land Use Plan"
+							},
+							"terrain": {
+								"title": "<i class=\"fas fa-mountain\"></i> Terrain",
+								"m_terrain": "Marine Terrain",
+								"m_terrain_contour": "Marine Terrain Contour",
+								"gwanak": "Gwanak-gu 1 Terrain (1m)",
+								"jakarta": "Jakarta"
+							},
+							"yongin_cityhall": {
+								"title": "<i class=\"fas fa-images\"></i> Yongin City Hall",
+								"facilities": "Yongin City Hall Facilities Data"
+							},
+							"ulsan_cityhall": {
+								"title": "<i class=\"fas fa-images\"></i> Ulsan City Hall",
+								"facilities": "Ulsan City Hall Facilities Data"
+							},
+							"etc": {
+								"title": "<i class=\"fas fa-images\"></i> Others",
+								"sumjin": "Sumjin River",
+								"golf": "Bear's Best Golf Course",
+								"jakarta": "Jakarta Cadastral"
+							}
+						}
+					},
+					"building_resolution": {
+						"title": "Building Resolution",
+						"title_ps": "*Excessive increase may result in performance degradation.",
+						"texture_mode": "Texture Mode",
+						"simple_mode": "Simple Mode",
+						"viewshed_dis": "Viewshed Distance",
+						"viewshed_ps": "*Visibility range of buildings",
+						"resolution": "Resolution",
+						"resolution_ps": "*Sharpness of buildings"
+					},
+					"terrain_rendering_mode": {
+						"title": "Terrain Rendering Mode",
+						"gen": "General",
+						"slope_dir": "Slope Direction",
+						"slope_deg": "Slope Degree",
+						"slope_deg_ps": "Elevation range for legend application",
+						"theme_color_basic": "Theme Color Basic",
+						"theme_color_warm": "Theme Color Warm",
+						"theme_color_sea": "Theme Color Sea",
+						"theme_color_plant": "Theme Color Plant",
+						"theme_color_sky": "Theme Color Sky"
+					},
+					"terrain_opacity": {
+						"title": "Terrain Opacity"
+					},
+					"map_auto_move": {
+						"title": "Map Auto Move",
+						"use": "Enable",
+						"unuse": "Disable"
+					},
+					"keyboard_move": {
+						"title": "Keyboard Move",
+						"use": "Enable",
+						"unuse": "Disable"
+					},
+					"terrain_color": {
+						"title": "Terrain Color Adjustment",
+						"color": "Color",
+						"saturation": "Saturation",
+						"brightness": "Brightness"
+					},
+					"building_color": {
+						"title": "Building Color Adjustment",
+						"color": "Color",
+						"saturation": "Saturation",
+						"brightness": "Brightness"
+					},
+					"legend_setting": {
+						"title": "Legend Setting",
+						"legend_reg": "Register Legend",
+						"legend_mod": "Modify Legend",
+						"legend_load": "Load Legend",
+						"use": "Enable",
+						"unuse": "Disable"
+					}
+				}
+			}
+		},
+		"tool": {
+			"reset_location": "<img src='/siteData/manual/manual-01.png' width='285'><br><div class='tooltipName' >Reset location</div><div class='tooltipInfo'>You can navigate to the initial screen, which is the globe.</div>",
+			"select_reset": "Reset Mouse Mode",
+			"national_point_num": "<img src='/siteData/manual/manual-03.png' width='285'><br><div class='tooltipName'>National Points Number</div><div class='tooltipInfo'>You can click on the map to check the country's point number at that location.</div>",
+			"true_north": "<img src='/siteData/manual/manual-04.png' width='285'><br><div class='tooltipName'>True North</div><div class='tooltipInfo'>I'm rotating the map to face north.</div>",
+			"curr_point": "<img src='/siteData/manual/manual-05.png' width='285'><br><div class='tooltipName'>Current Point</div><div class='tooltipInfo'>Using the GPS information provided by Chrome, I will move to my current location based on the information provided by the satellite on the map.<br>I estimate the margin of error to be within 20 meters, and GPS accuracy may be compromised indoors or underground.</div>",
+			"all_apps_close": "<img src='/siteData/manual/manual-06.png' width='285'><br><div class='tooltipName'>Quit all excuted apps</div><div class='tooltipInfo'>You can close all running apps.</div>",
+			"area_transparency":"<img src='/siteData/manual/manual-14.png' width='285'><br><div class='tooltipName'>Terrain transparency</div><div class='tooltipInfo'>You can adjust the terrain transparency.</div>",
+			"buildings_yn":"<img src='/siteData/manual/manual-15.png' width='285'><br><div class='tooltipName'>Buildings ON/OFF</div><div class='tooltipInfo'>You can turn buildings on and off.</div>",
+			"distance": "<img src='/siteData/manual/manual-07.png' width='285'><br><div class='tooltipName'>Distance Measurement</div><div class='tooltipInfo'>You can click on the map to specify the starting point and destination in order to measure the distance.<br>You can double-click or press the esc key to complete the distance measurement, and pressing the button again will end the distance measurement.</div>",
+			"area": "<img src='/siteData/manual/manual-08.png' width='285'><br><div class='tooltipName'>Area Measurement</div><div class='tooltipInfo'>Click on points on the map to measure the corresponding area.<br>Double-clicking or pressing the esc key completes the area measurement, and pressing the button again will end the area measurement.</div>",
+			"height": "<img src='/siteData/manual/manual-09.png' width='285'><br><div class='tooltipName'>Hegiht Measurement</div><div class='tooltipInfo'>Click on a point on the map to measure the altitude corresponding to that point.<br>Pressing the button again will end the hegiht measurement.</div>",
+			"landscape": "<img src='/siteData/manual/manual-10.png' width='285'><br><div class='tooltipName'>Landscape</div><div class='tooltipInfo'>Clicking on a point on the map allows you to change the viewpoint to the perspective from that location.<br>If you right-click, you can change the perspective, and pressing the button again will end the landscape view.</div>",
+			"human_mode": "Human Mode",
+			"viewshed": "<img src='/siteData/manual/manual-11.png' width='285'><br><div class='tooltipName'>Viewshed</div><div class='tooltipInfo'>You can click and drag on the map to analyze the visibility from a specific location.</div>",
+			"screenshot": "Screenshot",
+			"memo": "Memo",
+			"viewshed_set_mouse":"Set Visibility Range (Mouse Mode)",
+			"viewshed_set":"Set Visibility Range",
+			"viewshed_set_move":"Map Navigation Mode",
+			"elevation":"Elevation : ",
+			"altitude":"Altitude : "
+		}
+	}
+}

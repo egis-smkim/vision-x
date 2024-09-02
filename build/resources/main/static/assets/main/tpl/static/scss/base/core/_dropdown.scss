@@ -1,0 +1,20 @@
+// Dropdown arrows
+// Replace original arrows with Custom icons
+// 
+
+.dropdown-header {
+	font-weight: 700;
+	font-size: 0.95rem;
+}
+
+.dropdown-toggle {
+  &:after {
+    content: "\f078";
+    font-family: 'Font Awesome 5 Free';
+    font-size: 0.5rem;
+    margin-left: 0.35rem;
+    font-weight: 900;
+    vertical-align: middle;
+    border: none;
+  }
+}

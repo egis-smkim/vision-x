@@ -1,0 +1,56 @@
+button {
+	outline: none !important;
+}
+
+.btn {
+	.btn--text {
+		&:not(:last-child) {
+			margin-right: .75em;
+		}
+		&:not(:first-child) {
+			margin-left: .75em;
+		}
+	}
+}
+
+.link-effect {
+	position: relative;
+	padding: 0;
+	border: none;
+	background: none;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: auto;
+		width: 100%;
+		height: 1px;
+		background: currentColor;
+		transition: ease all 0.35s;
+	}
+	&:hover {
+		&:after {
+			width: 0;
+			right: 0;
+			left: auto;
+		}
+	}
+}
+
+
+@mixin px-light-button-variant($bg, $text) {
+  color: $text;
+  background-color: $bg;
+}
+
+
+@each $color, $value in $px-theme-colors {
+	.btn-#{$color}-light {
+		@include px-light-button-variant(rgba($value, 0.2), $value);
+		&:hover {
+			@include px-light-button-variant($value, $white);
+		}
+	}
+}
+

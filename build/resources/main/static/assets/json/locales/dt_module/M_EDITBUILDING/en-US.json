@@ -1,0 +1,89 @@
+{
+	"project":{
+		"title":"Project",
+		"load":"Load",
+		"save":"Save new project",
+		"close":"Close",
+		"save_btn":"Save",
+		"loaded_project":"The loaded project"
+	},
+	"install":{
+		"building":" Building",
+		"facility":" Facility",
+		"upload":" Upload",
+		"shape":" Shape",
+		"delete":" Delete"
+	},
+	"category":{
+		"all":"All",
+		"residential":"Residential",
+		"industrial":"Industrial",
+		"commercial":"Commercial",
+		"education_welfare":"Education & Welfare",
+		"culture_tourism":"Culture & Tourism",
+		"business":"Business",
+		"other":"Other",
+		
+		"roads_transportation":"Roads & Transportation",
+		"marine_coastal":"Marine & Coastal",
+		"landscaping":"Landscaping",
+		"energy":"Energy",
+		
+		"apartment":"Apartment",
+		"single-family house":"Single-family House",
+		"multi-family house":"Multi-family House",
+		"transport_facility":"Transport Facility",
+		"warehouse_facility":"Warehouse Facility",
+		"factory":"Factory",
+		"power_generation_facility":"Power Generation Facility",
+		"sales_facility":"Sales Facility",
+		"sports_facility":"Sports Facility",
+		"accommodation":"Accommodation",
+		"medical_facility":"Medical Facility",
+		"educational_facility":"Educational Facility",
+		"welfare_facility":"Welfare Facility",
+		"cultural_facility":"Cultural Facility",
+		"religious_facility":"Religious Facility",
+		"recreation_facility":"Recreation Facility",
+		"tourist_recreation_facility":"Tourist Recreation Facility",
+		"public_office_facility":"Public Office Facility",
+		"daily_office_facility":"Daily Office Facility",
+		"bridge":"Bridge",
+		"tunnel":"Tunnel",
+		"road_facility":"Road Facility",
+		"breakwater":"Breakwater",
+		"coastal_facility":"Coastal Facility",
+		"trees":"Trees",
+		"landscape_facility":"Landscape Facility"
+	},
+	"settings":{
+		"data_upload":"Data Upload",
+		"altitude_display":"Altitude Display",
+		"contact_app_developer":"Contact App Developer"
+	},
+	"alert":{
+		"height_change":"※ Press [SHIFT] while moving to change the height.",
+		"double_click":"Double-click: Switch to edit mode. <br> ESC: Exit",
+		"click":"Click: Delete building <br> ESC: Exit",
+		"edit_complete": "Edited successfully.",
+		"select_project": "Please select the project to delete.",
+		"confirm_delete": "Are you sure you want to delete?",
+		"delete_complete": "Deleted successfully.",
+		"no_download": "The building cannot be downloaded.",
+		"upload_complete": "Uploaded successfully.",
+		"no_upload": "Cannot upload.",
+		"no_file_upload": "Files cannot be uploaded.",
+		"saving_project": "Saving project...",
+		"save_project": "Project saved."
+	},
+	"etc":{
+		"altitude":"altitude"
+	},
+	"file_upload":{
+		"title":"File Upload",
+		"file_info":"(You can upload by clicking or dragging & dropping, and you can upload 3DS single, 3DS+Texture files (JPG).)",
+		"upload":"Upload",
+		"close":"Close"
+	}
+   
+}

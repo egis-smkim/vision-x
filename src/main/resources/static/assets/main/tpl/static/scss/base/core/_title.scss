@@ -1,0 +1,28 @@
+.divider-title {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    &:after,
+    &:before {
+    	background: $px-gray-300;
+	    content: "";
+	    display: inline-block;
+	    height: 1px;
+	    margin: 0 16px 0 -100%;
+	    vertical-align: top;
+	    width: 50%;
+    }
+    &:after {
+    	margin: 0 -100% 0 16px;
+    }
+    &.white  {
+    	&:after,
+    	&:before {
+    		background: rgba($px-white, 0.1);
+    	}
+    }
+}

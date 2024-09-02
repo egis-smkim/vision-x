@@ -1,0 +1,221 @@
+.filebox .upload-name {
+    display: inline-block;
+    /* height: 40px; */
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 78%;
+    color: #999999;
+}
+
+.filebox label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.cal-btn{
+    width: 45px !important;
+    margin:2px;
+    font-size:12px;
+}
+
+.cal-md-btn{
+    width: 71px !important;
+    margin:2px;
+    font-size:12px;
+}
+
+.cal-lg-btn{
+    width: 155px;
+}
+
+.cal-value-btn{
+    display: inline-block;
+    width: 88px;
+    border-radius: 4px;
+}
+
+.cal-btn:hover,.cal-md-btn:hover,.cal-lg-btn:hover{
+    background-color: cornflowerblue !important;
+}
+
+
+.align-box-right{
+    width: 75px;
+    position: absolute;
+    right:350px;
+    text-align:right;
+}
+
+.align-color-box-right{
+    width: 75px;
+    position: absolute;
+    right:350px;
+    text-align:right
+}
+
+
+/* 설정규칙 모달용 */
+.align-box-right2{
+    width: 240px;
+    position: absolute;
+    right:0px;
+    text-align:right
+}
+.align-color-box-right2{
+    width: 240px;
+    position: absolute;
+    right:0px;
+    text-align:right
+}
+
+#point-attribute-headers > tr{
+    cursor: pointer;
+}
+#point-attribute-headers > tr:hover{
+    background-color: rgb(0 199 255 / 74%) !important;
+}
+
+#point-attribute-headers .tr_active{
+    background-color: rgb(0 199 255 / 74%) !important;
+}
+
+.zoomExtent{
+    /*zoom:0.7 !important; */
+
+}
+
+#exampleModalCenter > p{
+    font-size: 12px;
+}
+
+#exampleModalCenter > span {
+    font-size: 12px;
+}
+
+#exampleModalCenter > div {
+    font-size:12px;
+}
+#rule-based-modal > p{
+    font-size: 12px;
+}
+
+#rule-based-modal > span {
+    font-size: 12px;
+}
+
+#rule-based-modal > div {
+    font-size:12px;
+}
+
+#rule-based-label-modal > p{
+    font-size: 12px;
+}
+
+#rule-based-label-modal > span {
+    font-size: 12px;
+}
+
+#rule-based-label-modal > div {
+    font-size:12px;
+}
+
+#exampleModalCenter > hr {
+    border: none;
+    border-top: 3px dotted blue;
+    color: #fff;
+    background-color: #fff;
+    height: 1px;
+    width: 50%;
+}
+
+.bfh-selectbox-filter{
+    color:black !important;
+    border: 1px solid black;
+
+}
+
+#point-sample-attribute-body > .tr_target_value:hover {
+	background-color: rgb(0 199 255 / 74%) !important;
+	cursor:pointer;
+}
+
+
+#label-attribute-headers > .label_tr_target:hover {
+	background-color: rgb(0 199 255 / 74%) !important;
+	cursor:pointer;
+}
+
+#label-attribute-headers .tr_active{
+    background-color: rgb(0 199 255 / 74%) !important;
+}
+
+#point-sample-attribute-body > .label_tr_target_value:hover{
+	background-color: rgb(0 199 255 / 74%) !important;
+	cursor:pointer;
+}
+
+#label-sample-attribute-body > .label_tr_target_value:hover{
+	background-color: rgb(0 199 255 / 74%) !important;
+	cursor:pointer;
+}  
+
+#rule-box > tr:hover {
+	cursor:pointer;
+}
+
+#polygon-rule-box > tr:hover {
+	cursor:pointer;
+}
+
+#line-rule-box > tr:hover {
+	cursor:pointer;
+}
+
+ 
+#label-rule-box > tr:hover {
+	cursor:pointer;
+}
+
+#label-rule-box > tr:hover{
+	cursor:pointer;
+}
+
+.alert_container{
+	max-height:250px;
+	
+}
+
+div[contenteditable=true] {
+  display: inline-block;
+  white-space: pre-wrap;
+  width: 400px;
+  height: 100%;   
+}
+
+.labelName{
+	max-width:20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.ruleString{
+	max-width:180px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.tooltip,.tooltip-title{
+	z-index:20000;
+}

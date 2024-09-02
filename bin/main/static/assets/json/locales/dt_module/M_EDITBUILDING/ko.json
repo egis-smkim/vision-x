@@ -1,0 +1,60 @@
+{
+   "category":{
+		"all":"전체",
+		"residential":"주거",
+		"industrial":"산업",
+		"commercial":"상업",
+		"education_welfare":"교육·복지",
+		"culture_tourism":"문화·관광",
+		"business":"업무",
+		"other":"기타",
+		
+		"roads_transportation":"도로·교통",
+		"marine_coastal":"해양·해안",
+		"landscaping":"조경",
+		"energy":"에너지 ",
+		
+		
+		"apartment":"공동주택 ",
+		"single-family house":"단독주택 ",
+		"multi-family house":"다세대주택",
+		"transport_facility":"운수시설 ",
+		"warehouse_facility":"창고시설",
+		"factory":"공장",
+		"power_generation_facility":"발전시설",
+		"sales_facility":"판매시설",
+		"sports_facility":"운동시설",
+		"accommodation":"숙박",
+		"medical_facility":"의료시설",
+		"educational_facility":"교육시설",
+		"welfare_facility":"복지시설",
+		"cultural_facility":"문화시설",
+		"religious_facility":"종교시설",
+		"recreation_facility":"위락시설",
+		"tourist_recreation_facility":"관광휴게시설",
+		"public_office_facility":"공공업무시설",
+		"daily_office_facility":"일일업무시설 ",
+		"bridge":"교량 ",
+		"tunnel":"터널 ",
+		"road_facility":"도로시설물",
+		"breakwater":"방파제 ",
+		"coastal_facility":"해안시설물 ",
+		"trees":"수목 ",
+		"landscape_facility":"조경시설물"
+	},
+	"alert":{
+		"edit_complete":"수정되었습니다.",
+		"select_project":"삭제할 프로젝트를 선택하여주세요.",
+		"confirm_delete":"삭제하시겠습니까?",
+		"delete_complete":"삭제되었습니다.",
+		"no_download":"해당 건물은 다운로드할 수 없습니다.",
+		"upload_complete":"업로드되었습니다.",
+		"no_upload":"업로드할 수 없습니다.",
+		"no_file_upload":"파일은 업로드할 수 없습니다",
+		"saving_project":"프로젝트 저장중...",
+		"save_project":"프로젝트가 저장되었습니다."
+	},
+	"etc":{
+		"altitude":"해발"
+	}
+}

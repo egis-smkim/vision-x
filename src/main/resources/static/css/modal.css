@@ -1,0 +1,43 @@
+/* 모달 스타일 */
+.modal-dashboard {
+    display: none; /* 초기에는 숨김 */
+    position: fixed; /* 위치 고정 */
+    z-index: 1; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: calc(100%);
+    height: calc(100%);
+    background-color: rgba(0,0,0,0.5); /* 배경 색상과 투명도 설정 */
+    margin-left: auto;
+    margin-right: auto;
+    right: 0px;
+}
+
+/* 모달 내용 */
+.modal-content {
+    background-color: #062535b8 !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 0px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80% !important; /* 모달 너비 */
+    max-height: 80% !important;
+    overflow: auto !important; /* 스크롤 가능하도록 */
+}
+
+/* 닫기 버튼 */
+.modal-close {
+    color: #aaa;
+    float: right !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

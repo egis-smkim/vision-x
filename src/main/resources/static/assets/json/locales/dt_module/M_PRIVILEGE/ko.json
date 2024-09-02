@@ -1,0 +1,17 @@
+{
+	
+	"settings":{
+		"building_exterior": "건물외부",
+		"building_interior": "건물내부",
+		"lump_sum_deposit": "전세",
+		"monthly_rent": "월세"
+	},
+	"etc":{
+		"building_name":"서원킹스밀오피스텔",
+		"address15th": "대구광역시 동구 신서동 1149 - 1 15층",
+		"address13th": "대구광역시 동구 신서동 1149 - 1 13층",
+		"contract_date": "계약일자",
+		"deposit": "보증금(만)"
+	}
+   
+}

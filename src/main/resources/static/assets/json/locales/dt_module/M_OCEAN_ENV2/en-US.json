@@ -1,0 +1,36 @@
+{
+
+	"marine": {
+		"title":"Marine Environment",
+		
+		"real_time_layer": "Real-time Marine Data Layer",
+		"sea_level": "Sea Level (cm)",
+		"sea_temperature": "Sea Temperature (℃)",
+		"salinity": "Salinity (PSU)",
+		"wave_height": "Wave Height (m)",
+		"air_temperature": "Air Temperature (℃)",
+		"atmospheric_pressure": "Atmospheric Pressure (hPa)",
+		"wind_direction_speed": "Wind Direction (Angle) / Speed (m/s)",
+		"current_direction_speed": "Current Direction (Angle) / Speed (cm/s)",
+		"eddy_currents": "Eddy Currents (Index)",
+		"beach_information": "Beach Information (Weather, Index)",
+		
+		"thematic_map_layer": "Marine Thematic Map Layer",
+		"traffic_safety_feature_area": "Traffic Safety Feature Area",
+		"port_area": "Port Area",
+		"ship_safety_traffic_control_zone": "Ship Safety Traffic Control Zone",
+		"depth_contour_line": "Depth Contour Line",
+		"restricted_area_boundary": "Restricted Area Boundary",
+		"no_entry_for_tankers": "No Entry for Tankers",
+		"port_boundary": "Port Boundary",
+		"life_saving_equipment_vessel": "Life-saving Equipment Vessel",
+		"marine_rescue_station": "Marine Rescue Station",
+		"distress_relief_jurisdictional_area": "Distress Relief Jurisdictional Area",
+		"contiguous_zone_boundary": "Contiguous Zone Boundary",
+		"radio_reporting_point": "Radio Reporting Point",
+		"rocky_area": "Rocky Area",
+		"breakwater_seawall": "Breakwater/Seawall",
+		"submarine_pipeline": "Submarine Pipeline",
+		"national_coastline": "National Coastline"
+	}
+}

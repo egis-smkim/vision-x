@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------------------
+ * eg-mapCtrl-wrap
+ *----------------------------------------------------------------------------*/
+.eg-mapCtrl-wrap {
+	position: fixed;
+	left: 50%;
+	bottom: -219px;
+	margin-left: -312px;
+	padding: 16px 20px 20px;
+	width: 625px;
+	height: 219px;
+	border-radius: 7px;
+	background-color: rgba(0, 0, 0, 0.7);
+	background-image: url(/assets/images/s-map/mapControl/eg-control-menu.png);
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	z-index: 99;
+	-webkit-transition: bottom .2s;
+	transition: bottom .2s;
+}
+
+.eg-mapCtrl-wrap.fold {
+	bottom: 20px;
+}
+
+.eg-mapCtrl-wrap.fold .eg-mapCtrl-toggle::after {
+	transform: rotate(-180deg);
+}
+
+.eg-mapCtrl-wrap * {
+	font-family: 'Noto Sans KR';
+}
+
+.eg-mapCtrl-wrap p {
+	margin: 0;
+}
+
+.eg-mapCtrl-wrap button {
+	outline: none;
+}
+
+.eg-mapCtrl-wrap .eg-mapCtrl-toggle {
+	position: absolute;
+	top: -28px;
+	left: 50%;
+	margin-left: -111px;
+	width: 198px;
+	height: 28px;
+	border: 0;
+	background: url(/assets/images/s-map/mapControl/eg-mapCtrl-toggle.png) no-repeat 50% 50%;
+	-webkit-transition: all .2s;
+    transition: all .2s;
+}
+
+.eg-mapCtrl-wrap .eg-mapCtrl-toggle::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -2px 0 0 -2px;
+	width: 0px;
+	height: 0px;
+	border-bottom: 5px solid #C0C0C0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+/*------------------------------------------------------------------------------
+ * 화면크기, 각도
+ *----------------------------------------------------------------------------*/
+.eg-mapCtrl-wrap .eg-mapCtrl-group {
+	display: flex;
+	justify-content: space-between;
+}
+
+.eg-mapCtrl-wrap .eg-ctrl-tit {
+	margin-bottom: 5px;
+	font-size: 12px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .eg-ctrl-btn {
+	display: block;
+	width: 70px;
+	height: 80px;
+	border: 1px solid #fff;
+	border-radius: 42px;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;	
+}
+
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .eg-ctrl-btn.eg-active {
+	background-color: #1AA9E4;
+}
+
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .eg-ctrl-btn:first-child {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .eg-ctrl-btn:last-child {
+	border-top: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .zoomIn {background-image: url(/assets/images/s-map/mapControl/icon-eg-zoomIn.png);}
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .zoomOut {background-image: url(/assets/images/s-map/mapControl/icon-eg-zoomOut.png);}
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .angleTop {background-image: url(/assets/images/s-map/mapControl/icon-angle-top.png);}
+.eg-mapCtrl-wrap .eg-ctrlBtn-group .angleBottom {background-image: url(/assets/images/s-map/mapControl/icon-angle-bottom.png);}
+
+/*------------------------------------------------------------------------------
+ * 정북,전체, 좌회전, 우회전
+ *----------------------------------------------------------------------------*/
+.eg-mapCtrl-wrap .eg-mapCtrl-group .item-drc {
+	position: relative;
+	width: 372px;
+	height: 160px;
+}
+
+.eg-mapCtrl-wrap .eg-ctrl-north,
+.eg-mapCtrl-wrap .eg-ctrl-all {	
+	display: inline-block;
+	position: absolute;
+	top: 12px;
+	padding: 0 10px;
+	height: 35px;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+	border: 1px solid #fff;
+	border-radius: 7px;
+	background-color: transparent;
+	text-align: center;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-mapCtrl-wrap .eg-ctrl-north.eg-active,
+.eg-mapCtrl-wrap .eg-ctrl-all.eg-active {
+	color: #102F50;
+	background-color: #fff;
+}
+
+.eg-mapCtrl-wrap .eg-ctrl-north {left: 0;}
+.eg-mapCtrl-wrap .eg-ctrl-all {right: 0;}
+
+
+.eg-mapCtrl-wrap .eg-leftTurn,
+.eg-mapCtrl-wrap .eg-rightTurn {	
+	display: inline-block;
+	position: absolute;
+	top: 64px;
+	width: 70px;
+	height: 70px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.6);
+	text-align: center;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-mapCtrl-wrap .eg-leftTurn.eg-active,
+.eg-mapCtrl-wrap .eg-rightTurn.eg-active {
+	background-color: #1AA9E4;
+}
+
+.eg-mapCtrl-wrap .eg-leftTurn::before,
+.eg-mapCtrl-wrap .eg-rightTurn::before {	
+	content: '';
+	display: block;
+	margin: 0 auto 1px;
+	width: 44px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.eg-mapCtrl-wrap .eg-leftTurn {left: 3px;}
+.eg-mapCtrl-wrap .eg-rightTurn {right: 3px;}
+.eg-mapCtrl-wrap .eg-leftTurn::before {background-image: url(/assets/images/s-map/mapControl/icon-eg-leftTurn.png);}
+.eg-mapCtrl-wrap .eg-rightTurn::before {background-image: url(/assets/images/s-map/mapControl/icon-eg-rightTurn.png);}
+
+/*------------------------------------------------------------------------------
+ * 방향 (상하좌우)
+ *----------------------------------------------------------------------------*/
+.eg-mapCtrl-wrap .item-drc .eg-ctrl-btn {
+	display: inline-block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	border: 1px solid #fff;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.6);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-mapCtrl-wrap .item-drc .eg-ctrl-btn.eg-active {
+	background-color: #1AA9E4;
+}
+
+.eg-mapCtrl-wrap .item-drc .eg-bi-top {
+	top: 0;
+	left: 156px;
+	background-image: url(/assets/images/s-map/mapControl/icon-eg-ctrl-top.png);
+}
+
+.eg-mapCtrl-wrap .item-drc .eg-bi-left {
+	top: 50px;
+	left: 96px;
+	background-image: url(/assets/images/s-map/mapControl/icon-eg-ctrl-left.png);
+}
+
+.eg-mapCtrl-wrap .item-drc .eg-bi-right {
+	top: 50px;
+	right: 96px;
+	background-image: url(/assets/images/s-map/mapControl/icon-eg-ctrl-right.png);
+}
+
+.eg-mapCtrl-wrap .item-drc .eg-bi-bottom {
+	bottom: 0;
+	left: 156px;
+	background-image: url(/assets/images/s-map/mapControl/icon-eg-ctrl-bottom.png);
+}

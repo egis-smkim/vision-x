@@ -1,0 +1,508 @@
+{
+   "Login":{
+   	  "page_title":"Digitaltwin Cloud",
+   	  "menu":{
+   	  	"Language":"<i class=\"fas fa-globe mr-1\"></i>Language",
+	    "Korean":"Korean",
+	    "English":"English"
+   	  },
+   	  "title":{
+		"upper":"3D GIS DigitalTwin Company, Egis inc."   	  
+   	  },
+   	  "popper":{
+		"login":{
+			"title":"Sign in",
+			"alert_message":{
+				"login_validation":{
+					"no_id":{
+						"param1":"Please,Enter ID."
+					},
+					"no_password":{
+						"param1":"Please,Enter Password."
+					},
+					"id_umatched":{
+						"param1":"Wrong ID or Password"
+					},
+					"fivetimes":{
+						"header":"Password Input Errors Notification",
+						"body":"<p>Your account has been temporarily suspended <br><strong style=\"text-decoration:underline;\">due to 5 or more consecutive password input errors</strong>,in accordance with</p><p><strong style=\"text-decoration:underline;\"> our internal information security regulations</strong></p></br></br><p>Please go through <strong style=\"text-decoration:underline;\">the password recovery process</strong> to obtain a temporary password and proceed with logging in.</p><p>After logging in,we kindly <strong style=\"text-decoration:underline;\">request you to change your password.</strong></p></br></br><div style=\"text-align: center;\"><button type=\"button\" id=\"closeMistypedBtn\" class=\"btn\" style=\"background-color:blue;\" onclick=\"javascirpt:D_MEMBER.LOGIN.closeMistypePannel();\">Close</button></div>"
+					},
+					"pwd_unmatched":{
+						"param1":"Wrong ID or Password",
+						"param2":"(Failure Count:",
+						"param3":"/5)"
+					},
+					"unauthorized":{
+						"param1":"Unauthorized",
+						"param2":"Please Contact us at dtwincloud@egiskorea.com"
+					},
+					"unauthenticated":{
+						"param1":"unauthenticated user by E-mail ",
+						"param2":"Please,confirm your E-mail history"
+					},
+					"unauthorized_admin":{
+						"param1":"Unauthorized Amdin ID"
+					}
+				}
+			}
+		},	
+		"logout":{
+			"title":"Sign out"
+		},
+		"join":{
+			"title":"Sign up",
+			"id":"ID",
+			"id_holder":"Please,Enter ID.",
+			"name":"Name",
+			"name_holder":"Please,Enter Name.",
+			"email":"E-mail",
+			"email_holder":"Please,Enter Email.",
+			"password":"Password",
+			"password_holder":"Please,Enter Password.",
+			"password_rec":"* We recommend using <strong style=\"text-decoration:underline\">a combination of numbers, letters, and special characters for a password of at least 9 characters.</strong>",
+			"passwordConf":"Password Confirmation",
+			"passwordConf_holder":"Please,Enter your password again.",
+			"content1":"I agree to <a href=\"javascript:D_MEMBER.SIGNUP.openModal('modals-cloudAgr');\">the Service Level Agreement (SLA)</a> For DIGITAL TWIN CLOUD",
+			"content2":"I agree to <a href=\"javascript:D_MEMBER.SIGNUP.openModal('modals-perInfoAgr');\">the Personal Information Usage Agreement</a>",
+			"registBtn":"Sign Up",
+			"alert_message":{
+				"join_validation":{
+					"no_id": "Please enter your ID.",
+					"no_id_length": "ID must be at least 6 characters long.",
+					"no_id_rule": "ID can only contain lowercase letters.",
+					"no_id_blacklist": "This ID is not available.",
+					"no_name":"Please enter your name",
+					"no_email": "Please enter your email.",
+					"no_email_reg": "Invalid email format.",
+					"no_password": "Please enter your password.",
+					"no_password_reg": "Invalid password format.",
+					"no_password_reg_consecutive": "Invalid password format.",
+					"no_password_reg_consecutive2": "Password cannot be a consecutive sequence (e.g., abcd, 1234) or a keyboard pattern (e.g., asdf, qwer).",
+					"no_password_reg_dup": "Invalid password format.",
+					"no_password_reg_dup2": "Password cannot be the same as your ID or email.",
+					"no_password_reg_dup3": "Invalid password format.",
+					"no_password_reg_dup4": "Password cannot contain your ID.",
+					"no_passwordconf": "Please enter the password confirmation.",
+					"no_passwordconf_reg": "Password confirmation does not match.",
+					"no_consent1": "Please agree to the Egis Cloud Service Level Agreement (SLA).",
+					"no_consent2": "Please agree to the collection and use of personal information.",
+					"alreadyExist": "ID already exists.",
+					"success": "Registration completed successfully.",
+					"success2": "An authentication email has been sent. Please proceed with the authentication process."
+				}
+			}
+		},
+		"findpwd":{
+			"title":"Reset Password",
+			"title2":"Reset Password",
+			"id":"ID",
+			"id_holder":"Please,Enter ID.",
+			"name":"Name",
+			"name_holder":"Please,Enter Name.",
+			"email":"E-mail",
+			"email_holder":"Please,Enter E-mail.",
+			"ps":"* Please contact us at <strong style=\"text-decoration:underline\">Khaia@egiskorea.com</strong> if you are having trouble finding your password.",
+			"resetBtn":"Continue",
+			"alert_message":{
+				"no_id": "Please enter your ID.",
+				"no_name":"Please enter your name",
+				"no_email": "Please enter your email.",
+				"no_email_reg": "Invalid email format.",
+				"success": "An email has been sent with a temporal password.",
+				"success2": "Please confirm your e-mail history",
+				"no_match_id": "There are no one who match the information you entered.",
+				"error":"Call the administrator.",
+				"error2":"Please Contact us at dtwincloud@egiskorea.com"
+			}
+		}
+   	  }
+      
+   },
+   "Main":{
+   		"popper":{
+   			 "home":{
+   			 	"content":{
+   			 		"num1":"Domestic 3D GIS Engine",
+	   			 	"num2":"Support for Various Spatial Data Formats",
+	   			 	"num3":"Developer Tools",
+	   			 	"num4":"Marketplace",
+	   			 	"num5":"QGIS Plugin Support",
+	   			 	"num6":"Spatial Analysis and Visualization",
+	   			 	"num7":"Integration with IoT",
+	   			 	"num8":"Digital Twin SaaS Service"
+   			 	}
+   			 },
+   			 "notice":{
+   			 	"title":"Notice",
+   			 	"content":{
+   			 		"subject":"Subject",
+   			 		"date":"Date",
+   			 		"view":"View",
+   			 		"edited":"(Edited)"
+   			 	}
+   			 },
+   			 "customer_service":{
+   			 	"title":"Customer Service",
+   			 	"category":{
+   			 			"all":"All",
+   			 			"map":"Map",
+   			 			"data":"Data",
+   			 			"function":"Function",
+   			 			"membership":"Membership",
+   			 			"payment":"Payment",
+   			 			"etc":"Etc"
+   			 	},
+   			 	"faq":{
+   			 		"title":"FAQ"
+   			 	},
+   			 	"qna":{
+   			 		"title":"Q&A",
+   			 		"intro":"This is a menu where you can make 1:1 inquiries regarding DT Cloud's overall matters.",
+   			 		"function":{
+   			 			"write":"Write",
+   			 			"edit":"Edit",
+   			 			"delete":"Delete",
+   			 			"list":"List",
+   			 			"upload":"Upload",
+   			 			"go_back":"Go back",
+   			 			"post":"Post",
+   			 			"edited":"(Edited)"
+   			 		},
+   			 		"content":{
+   			 			"category":"Category",
+   			 			"topic":"Topic",
+   			 			"date":"Date",
+   			 			"subject":"Subject",
+   			 			"details":"Details",
+   			 			"upload_file":"Upload file",
+   			 			"download_file":"Download file",
+   			 			"answer_write":"Answer write",
+   			 			"answer_state":"Answer",
+   			 			"answer":"Answer",
+   			 			"answer_completed":"Completed",
+   			 			"answer_waiting":"Waiting",
+   			 			"no_subject":"Please write a subject",
+   			 			"drag_drop":"Drag and drop or click"
+   			 		},
+   			 		"alert":{
+   			 			"no_subject":"Please write a subject",
+   			 			"no_detail":"Please write a content",
+   			 			"upload_board":"Post has been uploaded",
+   			 			"delete_board_confirm":"Do you want to delete this post?",
+   			 			"delete_board":"Post has been deleted",
+   			 			"update_board":"Post has been updated",
+   			 			"upload_answer":"Answer has been uploaded",
+   			 			"delete_answer_confirm":"Do you want to delete this answer?",
+   			 			"delete_answer":"Answer has been deleted"
+   			 		}
+   			 	}
+   			 },
+   			 "intro":{
+   			 	"title":"Intro",
+   			 	"content":{
+   			 		"num1":{
+   			 			"title":"Digital Representation of Real-World Objects",
+   			 			"info":"Digitally represents physical objects from the real world in a 3D GIS-based space.\n This allows for virtual representation of object attributes, status, behavior, etc., and real-time monitoring. Real-world objects are synchronized and updated in the digital twin space, reflecting changes in object status in real-time."
+   			 		},
+   			 		"num2":{
+   			 			"title":"Spatial Analysis",
+   			 			"info":"Integrates digital twins with geographic information systems to interpret the meaning of spatial information data through simulations and analyses that reflect patterns, relationships, interactions, phenomena, and variability, and can be used for decision-making."
+   			 		},
+   			 		"num3":{
+   			 			"title":"Real-Time Data Collection and Analysis",
+   			 			"info":"Utilizes various data collected in real-time through sensors, devices, and IoT systems of digital twin objects to create spatial analysis, statistics, visualization, and predictive models."
+   			 		},
+   			 		"num4":{
+   			 			"title":"Obtaining Cloud Security Certification (CSAP SaaS) - Spatial Information-Based Digital Twin SaaS Platform",
+   			 			"info":"Provides a platform environment that can be universally used without constraints in private, educational, and public sectors.\nAlso offers cloud services with validated security and reliability required by national and public institutions."
+   			 		}
+   			 	},
+   			 	"sub_content":{
+   			 		"num1":"Digital Twin",
+   			 		"num2":"Smart Cities, Urban Heat Islands,\nFine Dust, Urban Regeneration",
+   			 		"num3":"Smart Construction\nBIM",
+   			 		"num4":"Smart Buildings, Indoor Positioning",
+   			 		"num5":"Urban Landscapes, Line of Sight Analysis",
+   			 		"num6":"IoT/AI Integration",
+   			 		"num7":"Disasters, Hazards, Safety",
+   			 		"num8":"3D, \n Underground Spaces",
+   			 		"num9":"Precise Road Mapping (MMS)",
+   			 		"num10":"Drone Observation, Integrated Management",
+   			 		"num11":"Spatial Information, Quality Management",
+   			 		"num12":"Land/Real Estate, Buildings/Cultural Heritage"
+   			 	}
+   			 },
+   			 "key_function": {
+			    "title": "Key Functions",
+			    "content": {
+			        "num1": {
+			            "title": "National 3D GIS Engine-Based Platform",
+			            "info": "A digital twin platform based on our proprietary 3D GIS engine (XDWorld) with over 20 years of accumulated technology and expertise.",
+			            "intro": "We have developed mobile 3D engines and web standard HTML5-based engines to support customized consulting services for various customer environments in order to provide systematic and scientific information in the field of GIS Engine Software and GIS application solutions (WEB environment, C/S environment) for the first time in Korea. Our platform offers the following functionalities:",
+			            "func1": "Support for real-world 3D-based map background services",
+			            "func2": "Large-scale spatial information data utilizing cloud distributed processing",
+			            "func3": "User-generated map personalized services"
+			        },
+			        "num2": {
+			            "title": "Support for Various Spatial Data Formats",
+			            "info": "Supports ERDAS Image, glTF, GeoTiff, ECW, 3DS, CityGML, 3DTiles, CSV, LAS, BIM, and OGC standards.",
+			            "intro": "We support various spatial data formats such as ErdasIMG/GeoTIFF/LAS/3DS/OGC CityGML/BIM/GIS/drone3D/EXCEL/CSV based on national terrain, high-resolution images, 3D building data, and other spatial information data. Our platform offers the following functionalities:",
+			            "func1": "Processing of terrain, image, and facility data",
+			            "func2": "Support for government 3.0 open data and other spatial information data",
+			            "func3": "Visualization of statistical information"
+			        },
+			        "num3": {
+			            "title": "Developer Tools (API, SandBOX)",
+			            "info": "Develop your own digital twin app using the XDWorld engine API and share it on the marketplace.",
+			            "intro": "We provide a WEBGL-based GIS service API for developers that anyone can develop and use, along with 1,150 libraries (SandBOX) and support for various language-based development tools (GITHUB). Our platform offers the following functionalities:",
+			            "func1": "Support for various programming languages",
+			            "func2": "Easily build 3D GIS tailored to your development goals",
+			            "func3": "A wide range of concrete examples"
+			        },
+			        "num4": {
+			            "title": "Marketplace",
+			            "info": "Subscribe to or sell various applications developed using digital twin platform developer tools.",
+			            "intro": "As the first 3D spatial information-based cloud service store in Korea, users can directly promote and distribute applications they have developed, and create new maps and analyses by mixing data created by other users. Our platform offers the following functionalities:",
+			            "func1": "Diverse urban planning simulation and analysis functions",
+			            "func2": "Open service platform space, not a closed one",
+			            "func3": "Subscribe to and sell various applications developed by others"
+			        },
+			        "num5": {
+			            "title": "QGIS Plugin Support",
+			            "info": "Leverage the digital twin platform, with bidirectional layer integration with QGIS, for geoprocessing, spatial analysis, and data editing.",
+			            "intro": "We support the use of WMS layers generated in DIGITAL TWIN CLOUD in QGIS Desktop by linking public spatial information and user-registered spatial information using plugins. Our platform offers the following functionalities:",
+			            "func1": "Utilize WMS layers generated in DIGITAL TWIN CLOUD",
+			            "func2": "An open laboratory where users can freely conduct research"
+			        },
+			        "num6": {
+			            "title": "Spatial Analysis and Visualization",
+			            "info": "Enhance understanding of analytical data through N-dimensional analysis and visualization.",
+			            "intro": "We provide specialized data analysis simulation functions for various industries, such as above ground, below ground, indoor, and outdoor 3D GIS spatial information, as well as various forms of spatial analysis visualization and application subscriptions through the marketplace. Our platform offers the following functionalities:",
+			            "func1": "Visualize a wide range of analysis and statistical big data",
+			            "func2": "Visualize non-expert data on a map-based platform"
+			        },
+			        "num7": {
+			            "title": "Integration with IoT",
+			            "info": "Process large-scale real-time data and perform real-time analysis and monitoring by integrating it with GIS.",
+			            "intro": "By linking external APIs provided by local governments, the Korea Meteorological Administration, and observation stations, we visualize data secured in real-time on a 3D map and assist in decision-making for various disasters and safety situations through analysis and monitoring. Our platform offers the following functionalities:",
+			            "func1": "Real-time 3D visualization of external real-time data collection",
+			            "func2": "Connect maps and social networks"
+			        },
+			        "num8": {
+			            "title": "Digital Twin SaaS Service (CSAP)",
+			            "info": "Korea's first 3D digital twin cloud SaaS platform based on spatial information, including CSAP cloud security certification.",
+			            "intro": "To allow users of cloud computing services to adopt and use the service with confidence, we have been objectively judged and certified for security compliance by the Korea Internet & Security Agency (KISA), an information protection specialist institution. This certification eliminates the need for a security review of additional protective measures related to public institutions in the future. Our platform offers the following functionalities:",
+			            "func1": "Cloud service security certification (CSAP) [CSAP-2022-019]",
+			            "func2": "'DIGITAL TWIN CLOUD' SaaS service registration completed (November 22, 2022)",
+			            "func3": "User-generated map personalized services"
+			        },
+			        "num9": {
+			            "title": "Storymap Function",
+			            "info": "Create messages by combining text, images, and other content with maps to convey your message.",
+			            "intro": "This feature allows you to create stories in your preferred way using location information and various visual elements such as text, images, and arrows on a 3D map, such as places and areas of interest within the 3D map. Our platform offers the following functionalities:",
+			            "func1": "Spatial analysis and information sharing through visual elements",
+			            "func2": "Implementation of stories for promotion, presentations, etc., depending on usage"
+			        },
+			        "num10": {
+			            "title": "Studio Function",
+			            "info": "Build video content summarizing the analysis conducted through the digital twin platform for easy viewing.",
+			            "intro": "By developing and analyzing information visualized within the 3D map through development and analysis, you can create video content by moving the globe, creating orbits using keyframes, or using features such as the sun's position and camera field of view. Our platform offers the following functionalities:",
+			            "func1": "Use for research, educational materials, etc., depending on purpose",
+			            "func2": "Comprehensive presentation of business and activity performance by enterprises"
+			        },
+			        "num11": {
+			            "title": "AI Utilization",
+			            "info": "Utilize artificial intelligence (AI) to collect, process, and analyze vast amounts of spatial information and provide high-quality spatial information.",
+			            "intro": "Our AI-based server, which uses machine learning, analyzes terrain image data to identify objects and object positions within images and provides map-based visual results. Our platform offers the following functionalities:",
+			            "func1": "Provision of cutting-edge technology proof and administrative environment",
+			            "func2": "Data sharing and spatial information big data construction among governments and local governments"
+			        }
+			    }
+			 },
+   			 "market_place":{
+   			 	"title":"Market Place",
+   			 	"category":{
+   			 		"all":"All",
+   			 		"analysis_function":"Analysis function",
+   			 		"data_linkage":"Data linkage",
+   			 		"visible_effect":"Visualization Effect "
+   			 	},
+   			 "content": {
+				    "num1": {
+				        "title": "Wind Path Analysis",
+				        "category": "Analysis Function > Natural/Environmental",
+				        "intro": "Wind Path Analysis is a service that analyzes and predicts marine situations by understanding the causes and flow of wind."
+				    },
+				    "num2": {
+				        "title": "Real-time Marine Environment",
+				        "category": "Data linkage > Natural/Environmental",
+				        "intro": "Real-time marine environmental information visualizes data obtained through the National Oceanographic Survey's Ocean Info Service using tide observation station APIs on a map."
+				    },
+				    "num3": {
+				        "title": "Solar Panel",
+				        "category": "Visualization Effect > Urban Planning",
+				        "intro": "Solar Panel is a placement simulation service that automatically arranges panels on buildings with various options for installation."
+				    },
+				    "num4": {
+				        "title": "Low-Lying Area Analysis",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "A service designed to help respond to concentrated heavy rainfall by identifying flood-prone areas during heavy rainfall."
+				    },
+				    "num5": {
+				        "title": "Tide Analysis",
+				        "category": "Data linkage > Natural/Environmental",
+				        "intro": "This service allows the setting of observation points and provides tide forecasts and analyses over time."
+				    },
+				    "num6": {
+				        "title": "Weather Effects",
+				        "category": "Visualization Effect > Natural/Environmental",
+				        "intro": "A service that simulates weather effects with various options in a 3D map space, including rain, snow, fog, and fine dust."
+				    },
+				    "num7": {
+				        "title": "Typhoon Path",
+				        "category": "Analysis Function > Natural/Environmental",
+				        "intro": "A service that allows you to check real-time typhoon information and past typhoon information by linking with the Korea Meteorological Administration and predict the path through simulation."
+				    },
+				    "num8": {
+				        "title": "Building Editing",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "Users can directly place 3DS models and V-World buildings on a 3D map and conduct landscape change analysis using 3D visualization and simulation techniques."
+				    },
+				    "num9": {
+				        "title": "Flood",
+				        "category": "Visualization Effect > Natural/Environmental",
+				        "intro": "A service designed to help users quickly identify flood-prone areas through changes in sea level, assisting in disaster/safety situation decision-making."
+				    },
+				    "num10": {
+				        "title": "Shadow Analysis",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "A service that simulates the movement of shadows within a specified time range and time of day."
+				    },
+				    "num11": {
+				        "title": "Wave Analysis",
+				        "category": "Analysis Function > Natural/Environmental",
+				        "intro": "A service for analyzing waves generated in the event of typhoons and storms."
+				    },
+				    "num12": {
+				        "title": "Image Overlay",
+				        "category": "Visualization Effect > Urban Planning",
+				        "intro": "An image overlay service that allows you to plan urban regeneration and construction by analyzing apartment perspective drawings."
+				    },
+				    "num13": {
+				        "title": "CCTV",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "A service that allows users to install CCTV at desired coordinates and use camera features."
+				    },
+				    "num14": {
+				        "title": "Visibility Analysis (3D)",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "A service that analyzes slope, aspect, and hillshade for a selected area using digital elevation model data."
+				    },
+				    "num15": {
+				        "title": "Slope Analysis",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "A service that provides sediment and coastal information through coastal information."
+				    },
+				    "num16": {
+				        "title": "Coastal Erosion",
+				        "category": "Analysis Function > Natural/Environmental",
+				        "intro": "A service that provides sediment and coastal information through coastal information."
+				    },
+				    "num17": {
+				        "title": "CSV Statistics",
+				        "category": "Analysis Function > Urban Planning",
+				        "intro": "A service that allows you to upload CSV files with location information and create visualized statistical data by setting statistical area information."
+				    }
+				}
+
+   			 },
+   			 "guide":{
+   			 	"title":"Guide",
+   			 	"content":{
+   			 		"outline":{
+   			 			"title":"Overview",
+   			 			"start":{
+	   			 			"title":"Start"
+	   			 		},
+	   			 		"join":{
+	   			 			"title":"Join"
+	   			 		},
+	   			 		"login":{
+	   			 			"title":"Login"
+	   			 		},
+	   			 		"find_pw":{
+	   			 			"title":"Find Password"
+	   			 		}
+   			 		},
+   			 		"map":{
+   			 			"title":"Map",
+   			 			"intro":{
+	   			 			"title":"Introduction"
+	   			 		},
+	   			 		"layer":{
+	   			 			"title":"Layer",
+	   			 			"layer_list":"Layer List",
+	   			 			"layer_file_upload":"Upload Layer File"
+	   			 		},
+	   			 		"search":{
+	   			 			"title":"Search"
+	   			 		},
+	   			 		"tool":{
+	   			 			"title":"Tool Functions",
+	   			 			"reset_position_selection":"Reset Position/Selection",
+	   			 			"north_direction":"North Direction",
+	   			 			"now_location":"Go to Current Location",
+	   			 			"exit_all_apps":"Exit All Apps",
+	   			 			"distance_measurement":"Distance Measurement",
+	   			 			"area_measurement":"Area Measurement",
+	   			 			"altitude_measurement":"Altitude Measurement",
+	   			 			"view_scenery":"View Scenery",
+	   			 			"human_mode":"Human Mode",
+	   			 			"screenshot":"Screenshot"
+	   			 		},
+	   			 		"save":{
+	   			 			"title":"Save Maps",
+	   			 			"setting":"Setting"
+	   			 		}
+	   			 	},
+	   			 	"setting":{
+   			 			"title":"Setting",
+   			 			"user_info":"User Information",
+   			 			"dashboard":"Dashboard",
+   			 			"my_maps":"My Maps",
+   			 			"app_store":"App Store",
+   			 			"app_list":"App List",
+   			 			"my_app":"My Apps",
+   			 			"developers":"Developers",
+   			 			"dev_guide":"Developer Guide",
+   			 			"dev_info":"Developer Information",
+   			 			"gallery":"Gallery",
+   			 			"register_gallery":"Register Gallery",
+   			 			"my_gallery":"My Gallery",
+   			 			"data_info":"Data Information",
+   			 			"datasets":"Datasets",
+   			 			"qgis_plugin":"QGIS Plugin",
+   			 			"board":"Board",
+   			 			"qna":"Q&A",
+   			 			"notice":"Notice"
+	   			 			
+   			 		}
+   			 	}
+   			 	
+   			 },
+   			 "gotodt":{
+   			 	"title":"Go to DigitalTwin"
+   			 },
+   			 "footer":{
+	   			"company_registration_number":"Company Registration Number : 503-81-49156 ",
+	   			"online_sales_registration":"Online Sales Registration : No. 2016-Daegu Namgu-0324",
+	   			"privacy_policy":"Privacy Policy",
+	   			"terms_of_service":"Terms of Service",
+	   			"daegu_address":"DAEGU : 2, 4th Floor, 31gil, Alphacity 1-ro, Suseong-gu, Daegu",
+	   			"seoul_address":"SEOUL : 1501ho, J&K Digital Tower, 111, Digital-ro 26-gil, Guro-gu, Seoul"
+   			}
+   		}
+   		
+   			
+   }
+}

@@ -1,0 +1,93 @@
+{
+    "wind_path_analysis":{ 
+	    "title": "Wind Path Analysis",
+	    "load_wind_path": "Load List",
+	    "current_location": "Current Location",
+	    "analysis_name": "Analysis Name",
+	    "saved_name":"_wind_path_analysis"
+    },
+    "wind_direction": {
+        "title": "Wind Direction",
+        "northwest": "Northwest",
+        "north": "North",
+        "northeast": "Northeast",
+        "west": "West",
+        "east": "East",
+        "southwest": "Southwest",
+        "south": "South",
+        "southeast": "Southeast"
+    },
+    "wind_type": {
+    	"title":"Wind Type",
+        "wind_power_2d": "Wind Power 2D",
+        "wind_power_3d": "Wind Power 3D",
+        "wind_direction_2d": "Wind Direction 2D",
+        "wind_field": "Wind Field"
+    },
+    "wind_field_settings": {
+    	"title":"Wind Field Settings",
+        "speed": "Speed",
+        "height": "Height",
+        "particle_count": "Particle Count",
+        "max_particle_count": "Maximum Particle Count",
+        "min_particle_count": "Minimum Particle Count",
+        "wind_speed_reference": "Wind Speed Reference",
+        "line_reference": "Line Reference",
+        "legend": "Legend",
+        "automatic": "Auto"
+    },
+    "representation_type": {
+    	"title":"Representation Type",
+        "wind_path": "Wind Path",
+        "pollution_source": "Pollution Source",
+        "wind_power_2d": "* Wind Power 2D"
+    },
+    "alert": {
+    	"analysis_already_in_progress": "Wind Path analysis is already in progress.",
+	    "no_area_selected": "No area is selected.",
+	    "selected_area_too_small": "The selected area is too small for analysis.",
+	    "analysis_requested": "Wind Path analysis requested.",
+	    "error_occurred": "An error occurred. Please contact the administrator.",
+	    "analysis_complete": "Analysis is complete.",
+	    "deleted": "Deleted.",
+	    "modified": "Modified.",
+	    "select_direction":"Please select wind direction.",
+        "confirm_deleted":"Would you like to delete?",
+        "confirm_deleted_detail":"Deletion is irreversible."
+    },
+    "settings":{
+    	"representation_time": "Interval",
+    	"hour": "Hour",
+        "minute": "Min",
+	    "area_selection": " Area Selection",
+	    "pollution_source_selection": " Pollution Source Selection",
+	    "selection_complete": " Selection Complete",
+	    "automatic_central_setting": "* Automatic Central Setting if Pollution Source is not selected",
+	    "humidity": "Humidity",
+	    "temperature": "Temperature",
+	    "wind_speed": "Speed",
+        "wind_direction": "Direction",
+	    "current_information": "Current Information",
+	    "representation_wind_speed": "Representation Wind Speed",
+	    "representation_precision": "Representation Precision",
+	    "pollution_concentration": "Pollution Concentration",
+	    "representation_wind_direction": "Representation Wind Direction",
+	    "all_directions": "All Directions",
+	    "single_direction": "Single Direction (Selected Direction)",
+	    "click_area_selection": "Click: Area Selection / ESC: Exit",
+	    "wind_strength": "Wind Strength",
+	    "analysis_date": "Analysis Date",
+	    "modify_name": "Modify Name",
+	    "save_wind_path_analysis": "Save Wind Path Analysis",
+	    "contact_app_developer":"Contact App Developer"
+    },
+    "button":{
+    	"save": "Save",
+    	"edit": "Modify",
+    	"delete": "Delete",
+    	"confirm": "Confirm",
+    	"initialize": " Initialize",
+    	"load": "Load",
+    	"add":"Add"
+    }
+}

@@ -1,0 +1,150 @@
+<div class="row row-bordered row-border-light">
+	<div class="col-md-2">
+		<p class="m-b-5 m-l-5 m-t-5">
+			<i class="fas fa-caret-right"></i> 미리보기
+		</p>
+		<p class="m-b-5 m-l-5">
+			<img src="./assets/img/misc/empty_building_library_preview.png" id="libraryPreview"
+				class="border-secondary" width="140"
+				style="border: 1px solid rgba(72, 76, 83, 0.5);">
+		</p>
+	</div>
+	<div class="col-md-7">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="btn-group btn-group-toggle" data-toggle="buttons">
+					<label class="btn btn-sm btn-primary active"> <input
+						type="radio" name="btn-radio"
+						onclick="M_EDITBUILDING.setLibraryDisplayType('S');" checked>
+						건물
+					</label> <label class="btn btn-sm btn-primary"
+						onclick="M_EDITBUILDING.setLibraryDisplayType('F');"> <input
+						type="radio" name="btn-radio"> 시설물
+					</label> <label class="btn btn-sm btn-primary"
+						onclick="M_EDITBUILDING.setLibraryDisplayType('U');"> <input
+						type="radio" name="btn-radio"> 사용자 데이터
+					</label>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<p>
+					<input type="file" id="uploadLibarayFile" multiple accept="/*"
+						style="display: none"
+						onchange="M_EDITBUILDING.uploadLibrary(this.files);" />
+					<button type="button"
+						class="btn icon-btn btn-sm btn-outline-success"
+						data-toggle="tooltip" data-placement="top" data-state="dark"
+						onclick="M_EDITBUILDING.openFileSelector();" title="사용자 데이터 업로드">
+						<i class="fas fa-upload"></i>
+					</button>
+					<button type="button" id="addLibraryObject" class="btn icon-btn btn-sm btn-outline-info" onclick="M_EDITBUILDING.toggleMouseState('add');">
+						<i class="fa fa-plus"></i>
+					</button>
+					<button type="button" id="deleteLibraryObject"
+						class="btn icon-btn btn-sm btn-outline-secondary" onclick="M_EDITBUILDING.toggleMouseState('delete');">
+						<i class="fa fa-trash"></i>
+					</button>
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<ul id="libraryList_S" class="moduleEditBuildingLibrayListWrap"></ul>
+				<ul id="libraryList_F" class="moduleEditBuildingLibrayListWrap hide"></ul>
+				<ul id="libraryList_U" class="moduleEditBuildingLibrayListWrap hide"></ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<p class="m-b-5 m-l-5 m-t-5">
+			<i class="fas fa-caret-right"></i> 
+			<span class="col">프로젝트</span>
+			<button type="button" class="col btn icon-btn btn-sm btn-success" onclick="M_EDITBUILDING.openProjectSaveInterface();">
+				<i class="fa fa-upload"></i>
+			</button>
+			<ul id="editbuildingProjectList" class="moduleEditBuildingProjectListWrap">
+				<li id="test" class="btn_project">
+					<i class="col-1 fa fa-home"></i>
+					<span class="col">Test</span>
+					<button type="button" class="col-3 btn icon-btn btn-sm btn-secondary">
+						<i class="fa fa-download"></i>
+					</button>
+				</li>
+			</ul>
+		</p>
+	</div>
+	<div id="editModelInterface" draggable="false">
+
+		<!-- Move -->
+		<button type="button" id="editModelMove"
+			class="btn btn-warning editModelControlButton">
+			<i class="fa fa-plus"></i>
+		</button>
+
+		<input type="range" id="editModelDirection" class="form-control-range"
+			min="0.0" max="360.0" step="0.1"
+			oninput="M_EDITBUILDING.setObjectDirection(this.value);"> <span
+			class="editModelChangeValueOutput" id="editModelDirectionText">0(º)</span>
+
+		<button type="button" id="editScaleHeightUp"
+			class="btn btn-outline-success editModelControlButton" onclick="M_EDITBUILDING.modifyObjectHeight(10.0);">
+			<i class="fa fa-arrow-up"></i>
+		</button>
+		<button type="button" id="editScaleHeightDown"
+			class="btn btn-outline-success editModelControlButton" onclick="M_EDITBUILDING.modifyObjectHeight(-10.0);">
+			<i class="fa fa-arrow-down"></i>
+		</button>
+		<button type="button" id="editScaleHeightDetailUp"
+			class="btn btn-success editModelControlButton" onclick="M_EDITBUILDING.modifyObjectHeight(1.0);">
+			<i class="fa fa-arrow-up"></i>
+		</button>
+		<button type="button" id="editScaleHeightDetailDown"
+			class="btn btn-success editModelControlButton" onclick="M_EDITBUILDING.modifyObjectHeight(-1.0);">
+			<i class="fa fa-arrow-down"></i>
+		</button>
+		
+		<button type="button" id="editScaleWidthUp"
+			class="btn btn-danger editModelControlButton" onclick="M_EDITBUILDING.modifyObjectWideScale(1.1);">
+			<i class="fa fa-search-plus"></i>
+		</button>
+		<button type="button" id="editScaleWidthDown"
+			class="btn btn-danger editModelControlButton" onclick="M_EDITBUILDING.modifyObjectWideScale(0.9);">
+			<i class="fa fa-search-minus"></i>
+		</button>
+	</div>
+	<div id="tileObjectOptionInterface" draggable="false">
+		
+		<button type="button" id="uploadTileObjectAsLibrary"
+			class="btn btn-success tileObjectOptionButton" onclick="M_EDITBUILDING.uploadReal3dObjectAsLibrary();">
+			<i class="fa fa fa-upload"></i>
+		</button>
+		<button type="button" id="deleteTileObject"
+			class="btn btn-secondary tileObjectOptionButton" onclick="M_EDITBUILDING.deleteReal3dObject();">
+			<i class="fa fa-trash"></i>
+		</button>
+		
+	</div>
+	<div id="projectSaveInterface">
+		<div class="editbuilding_save_type_header">
+			<i class="fa fa-cloud"></i>
+			<span>클라우드로 저장</span>
+		</div>
+		<div class="editbuilding_save_type_body form-group">
+			<input type="text" class="form-control w-75" id="editBuildingProjectNameInput" aria-label="With textarea"/>
+			<button type="button" class="mt-1 ml-1 float-right btn-sm btn-primary" id="editbuilding_save_project_cloud" onclick="M_EDITBUILDING.uploadProject();">전송</button>
+		</div>
+		<div class="editbuilding_save_type_header">
+			<i class="fa fa-file"></i>
+			<span> 파일로 저장</span>
+		</div>
+		<div class="editbuilding_save_type_body form-group">
+			<select class="form-control w-75" id="editBuildingSaveFileFormat">
+				<option value="3ds">3ds</option>
+			</select>
+			<button type="button" class="mt-1 ml-1 float-right btn-sm btn-primary" id="editbuilding_save_project_file" onclick="M_EDITBUILDING.downloadProjectFile();">저장</button>
+		</div>
+		<button type="button" class="btn btn-light" id="editbuilding_save_project_cancel" onclick="M_EDITBUILDING.closeProjectSaveInterface();">
+			<i class="fa fa-times"></i>
+		</button>
+	</div>
+</div>

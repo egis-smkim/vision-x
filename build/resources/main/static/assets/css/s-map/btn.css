@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+.eg-btn-wrap {
+	position: relative;
+	display: flex;
+	margin-top: 30px;
+	min-height: 42px;
+	justify-content: center;
+}
+
+.eg-btn-wrap .left, .eg-btn-wrap .right {position: absolute;}
+.eg-btn-wrap .left {left: 0;}
+.eg-btn-wrap .right {right: 0;}
+
+.eg-btn + .eg-btn {
+	margin-left: 5px;
+}
+
+/*------------------------------------------------------------------------------
+ * Only Text Button
+ *----------------------------------------------------------------------------*/
+.eg-btn {
+	position: relative;
+	display: inline-block;
+	padding: 0 20px;
+	height: 42px;
+	line-height: 40px;
+	min-width: 60px;
+	color: #102F50;
+	font-size: 18px;
+	font-weight: 700;
+	border: 1px solid transparent;
+	background-color: transparent;
+	border-radius: 8px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-btn.sm {
+	padding: 0 5px;
+	height: 20px;
+	line-height: 18px;
+	font-size: 10px;
+	border-radius: 4px;
+}
+
+.eg-btn.md {
+	padding: 0 15px;
+	height: 35px;
+	line-height: 33px;
+	font-size: 15px;
+	border-radius: 7px;
+}
+
+.eg-btn.basic {
+	border-color: #102F50;
+	background-color: #fff;
+}
+
+.eg-btn.basic:hover {
+	color: #fff;
+	border-color: #102F50;
+	background-color: #102F50;
+}
+
+.eg-btn.type01 {
+	color: #8296AB;
+	border-color: #8296AB;
+	background-color: #fff;
+}
+
+.eg-btn.type01:hover {
+	color: #fff;
+	border-color: #8296AB;
+	background-color: #8296AB;
+}
+
+.eg-btn.type02 {
+	color: #fff;
+	border-color: #fff;
+}
+
+.eg-btn.type02:hover {
+	color: #102F50;
+	background-color: #fff;
+}
+
+.eg-btn.type03 {
+	color: #8296AB;
+	border-color: #8296AB;
+	background-color: #fff;
+	font-size : 14px;
+	padding : 0 10px;
+}
+
+.eg-btn.type03:hover {
+	color: #fff;
+	border-color: #8296AB;
+	background-color: #8296AB;
+}
+
+/*------------------------------------------------------------------------------
+ * Icon + Text Button
+ *----------------------------------------------------------------------------*/
+a[class^="bi-"], a[class*="bi-"],
+button[class^="bi-"], button[class*="bi-"],
+input[class^="bi-"], input[class*="bi-"] { 
+	 min-width: 60px;
+	 padding: 0 10px;
+	 height: 35px;
+	 line-height: 33px;
+	 font-size: 15px;
+	 border-radius: 7px;
+}
+ 
+  
+a[class^="bi-"]::before, a[class*="bi-"]::before,
+button[class^="bi-"]::before, button[class*="bi-"]::before,
+input[class^="bi-"]::before, input[class*="bi-"]::before { 
+	 position: relative;
+	 display: inline-block;
+	 content: "";
+	 margin: -3px 5px 0 0;
+	 width: 15px;
+	 height: 15px;
+	 background-position: 50% 50%;	
+	 background-repeat: no-repeat;
+	 vertical-align: middle;
+	 cursor: pointer;
+	 -webkit-transition: background .2s;
+	 transition: background .2s;
+}
+
+.eg-btn.bi-detail::before {background-image: url(/assets/images/s-map/icon/bi-detail.png);}
+.eg-btn.bi-detail:hover::before, .btn.bi-graph.active::before {background-image: url(/assets/images/s-map/icon/bi-detail-on.png);}
+
+.eg-btn.bi-openLab::before {background-image: url(/assets/images/s-map/icon/bi-openlab.png);}
+.eg-btn.bi-openLab:hover::before, .btn.bi-graph.active::before {background-image: url(/assets/images/s-map/icon/bi-openlab-on.png);}
+
+.eg-btn.bi-gallery::before {background-image: url(/assets/images/s-map/icon/bi-gallery.png);}
+.eg-btn.bi-gallery:hover::before, .btn.bi-graph.active::before {background-image: url(/assets/images/s-map/icon/bi-gallery-on.png);}
+
+.eg-btn.bi-newWindow::before {background-image: url(/assets/images/s-map/icon/bi-newWindow.png);}
+.eg-btn.bi-newWindow:hover::before, .btn.bi-graph.active::before {background-image: url(/assets/images/s-map/icon/bi-newWindow-on.png);}

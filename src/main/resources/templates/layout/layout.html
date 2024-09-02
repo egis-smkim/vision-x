@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title>VISION-X</title>
+        <meta charset="uft-8">
+        <th:block th:replace="layout/fragments/config :: configFragment"></th:block>
+    </head>
+    <body id="page-top" style="overflow: hidden !important;">
+        <div id="wrapper">
+            <!-- 헤더 -->
+            <th:block th:replace="layout/fragments/header :: headerFragment"></th:block>
+            <!-- 사이드바 -->
+            <th:block th:replace="layout/fragments/sidebar :: sidebarFragment"></th:block>
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+                    <!-- 본문 -->
+                    <th:block layout:fragment="content"></th:block>
+                </div>
+                <!-- dashborad 모달 -->
+                <div id="myModal" class="modal-dashboard">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeDashboard()">&times;</span>
+                        <th:block th:replace="layout/fragments/modal-dashboard :: dashboardFragment"></th:block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{
+	
+	"settings":{
+		"building_exterior": "Building Exterior",
+		"building_interior": "Building Interior",
+		"lump_sum_deposit": "Lump-sum Deposit",
+		"monthly_rent": "Monthly Rent"
+	},
+	"etc":{
+		"building_name":"Seowon Kings Mill Office-tel",
+		"address15th": "15th Floor, 1149-1 Sinseo-dong, Dong-gu, Daegu",
+		"address13th": "13th Floor, 1149-1 Sinseo-dong, Dong-gu, Daegu",
+		"contract_date": "Contract Date",
+		"deposit": "Deposit"
+	}
+   
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+<head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/member.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/dtc-translation-i18n.js"></script>
+	<script src="assets/vendor/libs/sha512/sha512.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18n/1.1.1/jquery.i18n.min.js"></script>
+	<!-- <script src="../js/popup.js"></script> -->
+
+	<script>
+		$(function() {
+			const parentId = "#signUp_popup"
+			const openButtonClass = '.sign-up-btn'
+			initPopup(parentId, openButtonClass)
+		})
+	</script>
+
+  <title>Vision-X</title>
+</head>
+
+<body>
+  <!-- //sign up 팝업 -->
+	<div class="popup-bg sign-up-open popup">
+		<div class="sign-up-pop pop-contents">
+			<div class="send-hide ma-b30">
+				<h2>Sign up</h2>
+			</div>
+			<form class="contact-form">
+				<div class="form-group">
+					<label for="joinMemId">ID</label>
+					<input type="text" class="contact-input" name="joinMemId" id="joinMemId" required placeholder="Please, Enter ID.">
+				</div>
+				<div class="form-group">
+					<label for="joinMemName">Name</label>
+					<input type="text" class="contact-input" name="joinMemName" id="joinMemName" required placeholder="Please, Enter Name.">
+				</div>
+				<div class="form-group">
+					<label for="joinMemEmail">E-mail</label>
+					<input type="text" class="contact-input" name="joinMemEmail" id="joinMemEmail" required placeholder="Please, Enter Email.">
+				</div>
+				<div class="form-group">
+					<label for="joinMemPwd">Password</label>
+					<input type="text" class="contact-input" name="joinMemPwd" id="joinMemPwd" required placeholder="Please, Enter Password.">
+					<p class="password-text">We recommend using <span>a combination of numbers, letters, and
+							special characters for a password of at least 9 characters.</span></p>
+				</div>
+				<div class="form-group">
+					<label for="joinMemPwdCfm">Password Confimation</label>
+					<input type="text" class="contact-input" name="joinMemPwdCfm" id="joinMemPwdCfm" required
+						placeholder="Please, Enter your password again.">
+				</div>
+				<div class="form-check">
+					<label><input type="checkbox" id="memInfoAgr">I agree with Terms and Privacy Policy</label>
+				</div>
+				<div class="d-fl fl-c al-cen">
+					<a class="contact-submit" onClick="JavaScript:D_MEMBER.SIGNUP.executeSignUp();">SIGN UP</a>
+<!--					<button class="contact-submit sign-up-submit" onClick="JavaScript:D_MEMBER.SIGNUP.executeSignUp();">SIGN UP</button>-->
+				</div>
+			</form>
+			<div class="contact-suc-msg hide">
+				<i class="contact-suc-i"></i>
+				<h2>Confirmation required</h2>
+				<p>A Confirmation mail has been sent to your email address.
+					confirm your email address and active your account.
+				</p>
+				<button class="sign-close contact-submit sign-up-close-submit">CLOSE</button>
+			</div>
+		</div>
+		<div class="popup-close">X</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.page-heading {
+	padding-top: 13rem;
+	padding-bottom: 6rem;
+	background-size: cover;
+	position: relative;
+	.header-height + main & {
+		padding-top: 6rem;
+	}
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+	.breadcrumb {
+		border: none;
+		padding: 0;
+		&.light {
+			.breadcrumb-item {
+				color: rgba($px-white, 0.7);
+				font-weight: 400;
+				&:before {
+					color: rgba($px-white, 0.2);
+				}
+				a {
+					color: $px-white;
+				}
+			}
+		}
+	}
+}

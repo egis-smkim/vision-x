@@ -1,0 +1,480 @@
+@charset "UTF-8";
+
+@import "main.css";
+@import "contents.css";
+@import "popup.css";
+@import "btn.css";
+@import "form.css";
+@import "bbs.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+/*------------------------------------------------------------------------------
+ * skipNav
+ *----------------------------------------------------------------------------*/
+#accessibility-contents {
+	position: absolute;
+	width: 100%;
+	height: 0;
+}
+
+#skipNav {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+#skipNav a {
+	display: block;
+	width: 100%;
+	height: 0px;
+	background: #102F50;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+#skipNav a:focus {
+	height: 30px;
+}
+
+/*------------------------------------------------------------------------------
+ * common
+ *----------------------------------------------------------------------------*/
+html, body {
+	height: 100%;
+}
+
+#eg-wrap {
+	position: relative;
+	min-width: 1280px;
+	min-height: 700px;
+	height: 100%;
+	min-height: 750px;
+}
+
+/*------------------------------------------------------------------------------
+ * header seoul
+ *----------------------------------------------------------------------------*/
+#eg-header  {
+	position: relative;
+	z-index: 10;
+}
+
+#seoul-gnb-plugin {
+	height: 40px;
+	background-color: #258FFF;
+}
+
+#seoul-gnb-plugin .seoul-gnb-holder {
+	max-width: none;
+	min-width: 1280px;
+	height: 40px;	
+}
+
+#seoul-gnb-plugin .seoul-gnb-holder .seoul-gnb-news {
+	height: 40px;
+}
+
+#seoul-gnb-plugin .seoul-gnb-holder .seoul-gnb-news dd a {
+	height: 40px;
+	line-height: 40px;
+}
+
+.seoul-gnb-menu {
+	height: 40px;
+}
+
+#seoul-gnb-plugin .seoul-gnb-menu > dd > a {
+	height: 40px;
+	line-height: 40px;
+}
+
+#seoul-gnb-plugin .seoul-gnb-holder .seoul-gnb-link {
+	margin: 5px 0 0 13px;
+	width: auto;
+	height: auto;
+}
+
+#seoul-gnb-plugin .seoul-gnb-menu > dd .seoul-gnb-icon-menu4 {
+	height: 40px;
+	line-height: 40px;
+}
+
+#seoul-gnb-plugin .seoul-gnb-menu-section { 
+	right: 10px;
+}
+
+/*------------------------------------------------------------------------------
+ * header
+ *----------------------------------------------------------------------------*/
+#eg-header .eg-hd-top {
+	position: absolute;
+	top: 70px;
+	left: 0;
+	right: 0;
+}
+
+#eg-header .eg-logo {
+	position: absolute;
+	left: 36px;
+	bottom: 0;
+	z-index: 10;
+}
+
+#eg-header .eg-logo a {
+	display: block;
+}
+
+#eg-header .eg-hd-util {
+	display:flex;
+	top: 0;
+	position: absolute;
+	right: 40px;
+	z-index: 10;
+}
+
+#eg-header .eg-user-login {
+	display: flex;
+	align-items: center;
+}
+
+#eg-header .eg-btn {
+	display: block;
+	padding: 0 14px;
+	height: 35px;
+	line-height: 35px;
+	font-family: 'Chakra Petch';
+	font-size: 15px;
+	font-weight: 700;
+	color: #fff;
+	border: 1px solid #fff;
+	letter-spacing: 0;
+	-webkit-transition: none;
+    transition: none;
+}
+
+#eg-header .eg-btn:hover,
+#eg-header .eg-btn.active {
+	color: #102F50;
+	background-color: #fff;
+}
+
+#eg-header .bi-openLab {
+	margin-right: 15px;
+}
+
+#eg-header .eg-user-logout {
+	/*display: none;*/
+}
+
+#eg-header .eg-user-logout .eg-btn {
+	padding: 3px 14px 5px;
+	font-family: 'Noto Sans KR';
+	line-height: 1;
+}
+
+#eg-header .eg-user-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 5px;
+	padding: 0 7px;
+	height: 35px;
+	color: #fff;
+	font-size: 11px;
+	border: 1px solid #fff;
+	border-radius: 7px;
+}
+
+#eg-header .eg-user-box strong {
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+#eg-header .eg-user-box strong::before {
+	content: '';
+	display: inline-block;
+	margin: -3px 5px 0 0;
+	width: 18px;
+	height: 21px;
+	background: url(/assets/images/s-map/common/hd-user.png) no-repeat 50% 50%;
+	vertical-align: middle;
+}
+
+#eg-header .eg-logout-btn {
+	display: block;
+	margin-left: 5px;
+	padding: 0 10px;
+	height: 21px;
+	line-height: 21px;
+	font-family: 'Chakra Petch';
+	font-weight: 700;
+	color: #102F50;
+	font-size: 11px;
+	background-color: #fff;
+	border-radius: 3px;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+#eg-header .eg-logout-btn:hover {
+	color: #fff;
+	background-color: #102F50;
+}
+
+/* 로그인 시 */
+#eg-wrap.session .eg-user-logout {
+	display: flex;
+}
+
+#eg-wrap.session .eg-user-login {
+	display: none;
+}
+#eg-wrap.session .eg-mainType {
+	right: 444px
+}
+
+
+/*------------------------------------------------------------------------------
+ * gnb
+ *----------------------------------------------------------------------------*/
+#eg-gnb {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#eg-gnb li + li {
+	border-left: 1px solid #C9CFE5;
+}
+
+#eg-gnb li:first-child .gnb-tit {
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+
+#eg-gnb li:last-child .gnb-tit {
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+#eg-gnb a, #eg-gnb .gnb-tit {
+	display: block;
+	padding: 0 30px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #fff;
+	text-align: center;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+#eg-gnb .gnb-tit:hover, #eg-gnb .gnb-tit.active  {
+	color: #fff;
+	background-color: #102F50;
+}
+
+/*------------------------------------------------------------------------------
+ * container
+ *----------------------------------------------------------------------------*/
+#eg-container {
+	position: relative;
+	height: calc(100% - 110px);
+}
+
+#eg-container.regist-container {
+	padding: 100px 0 50px;
+	height: auto;
+}
+
+/*------------------------------------------------------------------------------
+ * footer
+ *----------------------------------------------------------------------------*/
+#eg-footer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 70px;
+	background-color: #2B2B2B;
+	text-align: center;
+}
+
+#eg-footer .eg-footerLogo {
+	position: absolute;
+	top: 22px;
+	left: 60px;	
+}
+
+#eg-footer .eg-footerNav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#eg-footer .eg-footerNav > li {
+	position: relative;
+	padding: 0 15px;
+	color: #fff;
+	font-size: 12px;
+}
+
+#eg-footer .eg-footerNav > li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: -1px;
+	margin-top: -4px;
+	width: 3px;
+	height: 13px;
+	background: linear-gradient(180deg, #FF70FF 0%, #47CAFF 100%);
+}
+
+#eg-footer .eg-footerNav > li:first-child {
+	padding-left: 0;
+}
+
+#eg-footer .eg-footerNav > li:first-child::before {
+	display: none;
+}
+
+#eg-footer .eg-footerUtil {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2px;
+	color: #BDBDBD;
+	font-size: 11px;
+	letter-spacing: 0;
+}
+
+#eg-footer .eg-footerUtil .eg-copyright {
+	margin-left: 15px;
+}
+
+#eg-footer a[href^="tel:"] {
+	color: #BDBDBD;
+	text-decoration: none;
+}
+
+/*------------------------------------------------------------------------------
+ * mCustomScrollbar
+ *----------------------------------------------------------------------------*/
+.mCustomScrollbar-y {
+	height: 100%;
+	max-height: 100%;
+}
+
+.mCSB_scrollTools {
+	opacity: 1;
+}
+
+.mCSB_outside + .mCSB_scrollTools {
+	right: -55px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+	width: 5px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background-color: #BFCAD9; background-color: rgba(191, 202, 217, 1);
+	/* filter: "alpha(opacity=1)"; -ms-filter: "alpha(opacity=1)";  */
+}
+
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{
+	background-color: #BFCAD9; background-color: rgba(191, 202, 217, 1);
+	/* filter: "alpha(opacity=1)"; -ms-filter: "alpha(opacity=1)";  */
+}
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar{
+	background-color: #BFCAD9; background-color: rgba(191, 202, 217, 1);
+	/* filter: "alpha(opacity=1)"; -ms-filter: "alpha(opacity=1)"; */
+}
+
+.mCSB_scrollTools .mCSB_draggerRail{
+	background-color: transparent; background-color: rgba(0,0,0,0);
+	/* filter: "alpha(opacity=0)"; -ms-filter: "alpha(opacity=0)";  */
+}
+
+
+@media screen and (max-width: 1850px){
+
+	.eg-mainType {
+		right: 387px;
+	}
+
+	#eg-wrap.session .eg-mainType {
+		right: 316px
+	}
+
+	#eg-header .eg-btn.bi-openLab {
+		padding: 0;
+		width: 35px;
+		min-width: auto;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		text-indent: -9999px;
+	}
+
+	#eg-header .eg-logout-btn {
+		padding: 0;
+		width: 21px;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		text-indent: -9999px;
+	}
+
+	#eg-header .eg-logout-btn {background-image: url(/assets/images/s-map/common/hd-icon-logout.png);}
+	#eg-header .eg-logout-btn:hover {background-image: url(/assets/images/s-map/common/hd-icon-logout-on.png);}
+	#eg-header .eg-btn.bi-openLab {background-image: url(/assets/images/s-map/icon/bi-openlab.png);}
+	#eg-header .eg-btn.bi-openLab:hover {background-image: url(/assets/images/s-map/icon/bi-openlab-on.png);}
+
+}
+
+
+@media screen and (max-width: 1580px){
+
+	#eg-header .eg-btn.eg-login-btn,
+	#eg-header .eg-btn.eg-join-btn {
+		padding: 0;
+		width: 35px;
+		min-width: auto;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		text-indent: -9999px;
+	}
+
+	#eg-header .eg-btn.eg-login-btn {background-image: url(/assets/images/s-map/common/hd-icon-login.png);}
+	#eg-header .eg-btn.eg-login-btn:hover {background-image: url(/assets/images/s-map/common/hd-icon-login-on.png);}
+	#eg-header .eg-btn.eg-join-btn {background-image: url(/assets/images/s-map/common/hd-icon-join.png);}
+	#eg-header .eg-btn.eg-join-btn:hover {background-image: url(/assets/images/s-map/common/hd-icon-join-on.png);}
+
+	#eg-gnb a, #eg-gnb .gnb-tit {
+		padding: 0 20px;
+	}
+
+	.mCSB_outside + .mCSB_scrollTools {
+		right: -35px;
+	}
+
+	.eg-mainType {
+		right: 387px;
+	}
+
+
+}
+
+@media screen and (max-width: 1480px){
+	.eg-mainType {
+		display: none;
+	}
+}

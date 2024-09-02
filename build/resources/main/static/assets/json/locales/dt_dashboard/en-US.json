@@ -1,0 +1,201 @@
+{
+	"DASHBOARD": {
+		"nav": {
+			"service": "Service <i class=\"fas fa-caret-down\" id=\"panelIcon\"></i>",
+			"support": "Support Center",
+			"notification": {
+				"unchecked_message": " unchecked notifications",
+				"whole_message": "Show Whole notifications",
+				"group_invitation_message": "Group Invitation notifications",
+				"group_message1": " invited you to",
+				"group_message2": ""
+			}
+		},
+		"side_nav": {
+			"dash_board": "<i class=\"sidenav-icon fas fa-chalkboard\"></i> Dash Board",
+			"maps": "<i class=\"sidenav-icon fas fa-map\"></i>MAPS",
+			"store": "<i class=\"sidenav-icon fas fa-store\"></i>STORE",
+			"app_list": {
+				"title": "<i class=\"sidenav-icon pe-7s-plugin\"></i> App List",
+				"myapp_manage": "<i class=\"fas fa-angle-right m-r-5\"></i> My App Management"
+			},
+			"developer": {
+				"title": "<i class=\"sidenav-icon far fa-keyboard\"></i> Developer",
+				"dev_guide": "<i class=\"fas fa-angle-right m-r-5\"></i> Developer's guide",
+				"dev_info": "<i class=\"fas fa-angle-right m-r-5\"></i> Developer's Information",
+				"dev_module_manage": "<i class=\"fas fa-angle-right m-r-5\"></i> Module Management",
+				"dev_app_manage": "<i class=\"fas fa-angle-right m-r-5\"></i> Applications Management",
+				"dev_app_develope": "<i class=\"fas fa-angle-right m-r-5\"></i> Go Module Development",
+				"dev_qna": "<i class=\"fas fa-angle-right m-r-5\"></i> Developer's Q&A"
+			},
+			"meta_service": {
+				"title": "<i class=\"sidenav-icon fas fa-database\"></i> META SERVICE",
+				"meta_assets": "<i class=\"fas fa-angle-right m-r-5\"></i> META ASSETS",
+				"qgis_plugin": "<i class=\"fas fa-angle-right m-r-5\"></i> QGIS-Plugin API Key"
+			},
+			"group_member": "<i class=\"sidenav-icon fas fa-people-arrows\"></i>Group Member",
+			"usage": "<i class=\"sidenav-icon fas fa-prescription-bottle\"></i> Usage Rate",
+			"payment_history": "<i class=\"sidenav-icon fas fa-file-invoice-dollar\"></i> Payment History",
+			"purchase": "<i class=\"sidenav-icon fas fa-file-invoice-dollar\"></i> Membership Purchase",
+			"group": {
+				"title": "<i class=\"sidenav-icon fas fa-users\"></i> Group",
+				"my_group": "<i class=\"fas fa-angle-right m-r-5\"></i> My Group",
+				"whole_group": "<i class=\"fas fa-angle-right m-r-5\"></i> All Group"
+			},
+			"gallery": {
+				"title": "<i class=\"sidenav-icon fas fa-images\"></i> Gallery",
+				"my_gallery": "<i class=\"fas fa-angle-right m-r-5\"></i> My Gallery",
+				"register": "<i class=\"fas fa-angle-right m-r-5\"></i> Register"
+			},
+			"bulletin": {
+				"title": "<i class=\"sidenav-icon pe-7s-plugin\"></i> Bulletin",
+				"updated_news": "<i class=\"fas fa-angle-right m-r-5\"></i> Updated News",
+				"qna": "<i class=\"fas fa-angle-right m-r-5\"></i> Q&A"
+			}
+		},
+		"footer": {
+			"Egis": {
+				"row": {
+					"business_num": {
+						"title": "Company Registration Number",
+						"number": "503-81-49156"
+					},
+					"addr_detail_daegu": "31, Alphacity 1-ro 31-gil, Suseong-gu, Daegu, Republic of Korea (2nd,4rd floor)",
+					"addr_detail_seoul": "111, Digital-ro 26-gil, Guro-gu, Seoul, Republic of Korea(guro-dong,J&K Digital Tower)",
+					"addr_detail_daejeon":"28, Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea, 1602-ho",
+					"tele_business_num": {
+						"title": "Mail-order-sales registration number",
+						"number": "No. 2016-DeaguNamgu-0324 Ho"
+					},
+					"tel_num_daegu": "Tell +82)053.476.2395 Fax +82)053.474.2396",
+					"tel_num_seoul": "1501(Room number) Tell +82)02.576.2395 Fax +82)02.576.2396",
+					"ceo": {
+						"title": "CEO",
+						"ceo_name": "SUNGHO KIM"
+					},
+					"email": "E-mail"
+				},
+				"column": {
+					"egis": "EGIS",
+					"addr": "Daegu",
+					"addr2": "Seoul",
+					"addr3": "Daejeon"
+				}
+			},
+			"NewLayer":{
+				"row": {
+					"business_num": {
+						"title": "Company Registration Number",
+						"number": "233-81-10238"
+					},
+					"addr_detail_daegu": "31, Alphacity 1-ro 31-gil, Suseong-gu, Daegu, Republic of Korea (2nd,4rd floor 405-ho)",
+					"tele_business_num": {
+						"title": "Mail-order-sales registration number",
+						"number": "제 2023-대구수성구-0373 호"
+					},
+					"tel_num_daegu": "Tell +82)053.710.8864 Fax +82)0502.377.8864",
+					"ceo": {
+						"title": "CEO",
+						"ceo_name": "SUNGHO KIM"
+					},
+					"email": "E-mail"
+				},
+				"column": {
+					"egis": "EGIS",
+					"addr": "Daegu",
+					"addr2": "Seoul",
+					"addr3": "Daejeon"
+				}
+			}
+		},
+		"pages": {
+			"dash_board": {},
+			"maps": {},
+			"store": {},
+			"app_list": {},
+			"developer": {},
+			"meta_service": {},
+			"usage": {},
+			"payment_history": {},
+			"purchase": {},
+			"group": {},
+			"gallery": {},
+			"bulletin": {}
+		},
+		"common": {
+			"input":{
+				"id":"ID",
+				"password":"Password",
+				"passowrd_confirm":"Confirm Password",
+				"address":"Address",
+				"e-mail":"E-mail",
+				"nick_name":"Nickname",
+				"name":"Name"	,
+				"share_all":"Share All",
+				"share_group":"Share Group"
+			},
+			"button":{
+				"confirm":"Confirm",
+				"okay":"Okay",
+				"open":"Open",
+				"close":"Close",
+				"attribute":"Attribute",
+				"show":"Show",
+				"delete":"Delete",
+				"info":"Info",
+				"export":"Export",
+				"edit":"Edit",
+				"modify":"Modify",
+				"cancel":"Cancel",
+				"search":"Search",
+				"next":"Next",
+				"previous":"Previous",
+				"register":"Register",
+				"save":"Save",
+				"load":"Load",
+				"title":"Title",
+				"list":"List",
+				"del_all":"Delete All",
+				"success":"Success",
+				"fail":"Fail",
+				"error":"Error",
+				"pay":"Payment",
+				"submit":"Submit",
+				"permit":"Permit",
+				"reject":"Reject",
+				"quit":"Quit",
+				"reset":"Reset",
+				"login":"Login",
+				"logout":"Logout",
+				"upload":"Upload",
+				"purchase":"Purchase",
+				"brochure":"Open Brochure"
+			},
+			"tab":{
+				"apps":"APPS",
+				"thematic_map":"Thematic Map",
+				"dataset":"Datasets",
+				"product_summary":"Product Summary",
+				"main_job":"Main function",
+				"pakage_product":"Pakaged Product",
+				"screenshot":"Screenshot"
+			},
+			"table":{
+				"header":{
+					"group_name":"Group name",
+					"group_admin":"Group Manager",
+					"category":"Category",
+					"my_class":"My Class",
+					"management":"Management",
+					"title":"Title",
+					"date":"Date",
+					"product":"Product",
+					"price":"Price"
+				},
+				"body":{
+					
+				}
+			}
+		}
+	}
+}

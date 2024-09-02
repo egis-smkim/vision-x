@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+    <link href="/assets_dashboard/css/vendor.min.css" rel="stylesheet">
+    <link href="/assets_dashboard/css/app.min.css" rel="stylesheet">
+    <!-- [SIDEBAR+DASHBOARD] style end -->
+    <!-- [SIDEBAR+DASHBOARD] js start -->
+    <script src="/assets_dashboard/js/vendor.min.js"></script>
+    <script src="/assets_dashboard/js/app.min.js"></script>
+    <!-- [SIDEBAR+DASHBOARD] js end -->
+
+    <!-- [DASHBOARD] style start -->
+    <link href="/assets_dashboard/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet">
+    <!-- [DASHBOARD] style end -->
+    <!-- [DASHBOARD] js start -->
+    <script src="/assets_dashboard/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+    <script src="/assets_dashboard/plugins/jvectormap-content/world-mill.js"></script>
+    <script src="/assets_dashboard/plugins/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="/assets_dashboard/js/demo/dashboard.demo.js"></script>
+    <!-- [DASHBOARD] js end -->
+
+    <!-- [INDEX] style start -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.18/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900">
+    <link rel="stylesheet" href="/assets/vendor/fonts/fontawesome.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/ionicons.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/linearicons.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/open-iconic.css">
+    <link rel="stylesheet" href="/assets/vendor/fonts/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/assets/vendor/css/rtl/bootstrap-dark.css" class="theme-settings-bootstrap-css">
+    <link rel="stylesheet" href="/assets/vendor/css/rtl/appwork-dark.css" class="theme-settings-appwork-css">
+    <link rel="stylesheet" href="/assets/vendor/css/rtl/theme-corporate-dark.css" class="theme-settings-theme-css">
+    <link rel="stylesheet" href="/assets/vendor/css/rtl/colors-dark.css" class="theme-settings-colors-css">
+    <link rel="stylesheet" href="/assets/vendor/css/rtl/uikit.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/spinkit/spinkit.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/flatpickr/flatpickr.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/nouislider/nouislider.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/ladda/ladda.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/sweetalert2/sweetalert2.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/bootstrap-select/bootstrap-select.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/typeahead-js/typeahead.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/tagify/tagify.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/vendor/libs/jstree/themes/default-dark/style.css"/>
+    <link rel="stylesheet" href="/assets/vendor/libs/smartwizard/smartwizard.css"/>
+    <link rel="stylesheet" href="/assets/vendor/libs/dropzone/dropzone.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/swiper/swiper.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/c3/c3.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/blueimp-gallery/gallery.css">
+    <link rel="stylesheet" href="/assets/vendor/libs/blueimp-gallery/gallery-indicator.css">
+    <link rel="stylesheet" href="/assets/css/demo.css?ts=<c:out value="/>
+    <link rel="stylesheet" href="/assets/css/generics.css?ts=<c:out value="/>
+    <link rel="stylesheet" href="/assets/css/IDE.css?ts=<c:out value="/>
+    <link rel="stylesheet" href="/assets/css/new_main/dtc-layer-styler.css" />
+    <link rel="stylesheet" href="/css/modal.css">
+    <!-- [INDEX] style end -->
+    <!-- [INDEX] js start -->
+    <script>document['documentMode']===10&&document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=Intl.~locale.en"><\/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="/assets/vendor/js/bootstrap.js"></script>
+    <script src="/assets/vendor/js/polyfills.js"></script>
+    <script src="/assets/vendor/js/material-ripple.js"></script>
+    <script src="/assets/vendor/js/layout-helpers.js"></script>
+    <script src="/assets/vendor/js/i18next.min.js"></script>
+    <script src="/assets/vendor/js/layout-helpers.js"></script>
+    <script src="/assets/vendor/js/dropdown-hover.js"></script>
+    <script src="/assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+    <script src="/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="/assets/vendor/libs/tagify/tagify.polyfills.min.js"></script>
+    <script src="/assets/vendor/libs/three/three.js"></script>
+    <script src="/assets/vendor/libs/three/TDSLoader.js"></script>
+    <script src="/assets/vendor/libs/dropzone/dropzone.js"></script>
+    <script src="/assets/vendor/libs/smartwizard/smartwizard.js"></script>
+    <script src="/assets/vendor/libs/geotiff/geotiff.js"></script>
+    <script src="/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/assets/vendor/libs/swiper/swiper.js"></script>
+    <script src="/assets/vendor/libs/swiper/js/swiper.js" type="text/javascript"></script>
+    <script src="/assets/vendor/libs/jquery-ui.js"></script>
+    <script src="/assets/js/global/cluster.js"></script>
+    <script src="/assets/js/global/dtc-cluster.js"></script>
+    <script src="/assets/js/global/dtc-translation-i18n.js"></script>
+    <script src="/assets/js/global/dtc-log-tracker.js?ts=<c:out value="${ts}"/>"></script>
+    <script src="/assets/js/global/dtc-common.js?ts=<c:out value="${ts}"/>"></script>
+    <script src="/assets/js/global/dtc-global-init.js?ts=<c:out value="${ts}"/>"></script>
+    <script src="/assets/js/global/dtc-fileupload-wizard.js?ts=<c:out value="${ts}"/>"></script>
+    <script src="/assets/js/IDE_maplv16_2048_L2.js"></script>
+    <script src="/assets/js/ui.js"></script>
+    <script src="/assets/js/ui_tooltips.js"></script>
+    <script src="/js/init_maplv16_2048_L2.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/engine/XDWorldEM.js"></script>
+    <style>
+        #map {
+            position: absolute;
+            width: calc(100%);
+            height: calc(100%);
+            right: 0px;
+            bottom: 0px;
+        }
+        #interface {
+            display: block;
+            position: absolute;
+            z-index: 9;
+            background-color: #FFFFFF;
+            padding: 10px 10px 10px 15px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            opacity: 0.9;
+            margin: 8px;
+        }
+        .tooltip-inner {
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id='map'>
+    <!-- 툴바 버튼 시작 -->
+    <div class="pt-1 pb-1 pr-1 pl-1 noScroll" id="toolAre2" style="position:absolute;right:0;top:50%;z-index:102;width: 50px;transform: translate(0%, -50%);">
+        <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;display:none">
+            <a href="javaScript:IDE.MAPTOOL.initCompass();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left" title="방향 초기화">
+                <img id="geoCompass" src="/assets/img/dt/compass.png">
+            </a>
+        </div>
+        <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+            <a id="gohome" href="javaScript:IDE.MAPTOOL.goHome();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-01.png' width='285'><br><div class='tooltipName'>위치 초기화</div><div class='tooltipInfo'>초기화면인 지구본으로 이동할 수 있습니다.</div>" data-html="true"><span class="fas fa-globe"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.resetMouse();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left" title="선택 초기화" data-html="true"><span class="fas fa-mouse-pointer"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.setNorth();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-04.png' width='285'><br><div class='tooltipName'>정북방향</div><div class='tooltipInfo'>지도의 방향을 정북으로 회전합니다.</div>" data-html="true"><span class="far fa-compass"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.currentLocation();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-05.png' width='285'><br><div class='tooltipName'>현재 위치로</div><div class='tooltipInfo'>크롬에서 제공하는 GPS 정보를 사용하며 지도에서 위성에서 제공하는 정보를 바탕으로 내 위치로 이동합니다.<br>오차 범위 20미터 내로 추정하며 건물 안이나 지하에서는 GPS가 부정확할 수 있습니다.</div>" data-html="true"><span class="fas fa-thumbtack"></span></a>
+        </div>
+        <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+            <a href="javaScript:IDE.MAPTOOL.resetAll();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-06.png' width='285'><br><div class='tooltipName'>모든 앱 종료</div><div class='tooltipInfo'>실행되고있는 모든 앱을 종료할 수 있습니다.</div>" data-html="true"><span class="fas fa-redo-alt"></span></a>
+        </div>
+        <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+            <a id="areaTransparencyBtn" href="javaScript:IDE.MAPTOOL.areaTransparency();" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-14.png' width='285'><br><div class='tooltipName'>지형 투명도 설정</div><div class='tooltipInfo'>지형 투명도를 조절 할 수 있습니다.</div>" data-html="true"><span class="fas fa-map"></span></a>
+            <a id="buildingOnOffBtn" href="javaScript:IDE.MAPTOOL.buildingOnOff();" class="btn icon-btn btn-dark" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-15.png' width='285'><br><div class='tooltipName'>건물  ON/OFF</div><div class='tooltipInfo'>건물을 키고 끌 수 있습니다.</div>" data-html="true"><span class="far fa-building"></span></a>
+        </div>
+        <div class="btn-group-vertical mt-2 bg-dark" style="width: 37px;border-radius:4px;">
+            <a href="javaScript:IDE.MAPTOOL.execute(1);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-07.png' width='285'><br><div class='tooltipName'>거리측정</div><div class='tooltipInfo'>지도를 클릭하여 시작점과 도착점을 지정하여 거리를 측정할 수 있습니다.<br>더블클릭하거나  esc 키를 입력하여 거리 측정을 완료할 수 있고 버튼을 한 번 더 누를 경우 거리 측정이 종료됩니다. </div>" id="distMeaBtn" data-html="true"><span class="fas fa-ruler-horizontal"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.execute(2);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-08.png' width='285'><br><div class='tooltipName'>면적측정</div><div class='tooltipInfo'>지도에서 면적을 측정할 지점을 클릭하면 해당 면적을 측정할 수 있습니다.<br>더블클릭하거나  esc 키를 입력하여 면적 측정을 완료할 수 있고 버튼을 한 번 더 누를 경우 면적 측정이 종료됩니다. </div>" id="areaMeaBtn" data-html="true"><span class="fas fa-draw-polygon"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.execute(3);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-09.png' width='285'><br><div class='tooltipName'>고도측정</div><div class='tooltipInfo'>지도에서 면적을 측정할 지점을 클릭하면 해당 면적을 측정할 수 있습니다.<br>더블클릭하거나  esc 키를 입력하여 면적 측정을 완료할 수 있고 버튼을 한 번 더 누를 경우 면적 측정이 종료됩니다. </div>" id="heightMeaBtn" data-html="true"><span class="fas fa-ruler-vertical"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.execute(9);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-10.png' width='285'><br><div class='tooltipName'>경관보기</div><div class='tooltipInfo'>지도에서 시점을 변경할 지점을 클릭하면 해당 위치에서 바라보는 시야로 변경할 수 있습니다.<br>우측 마우스를 클릭할 경우 시점을 변경할 수 있고 버튼을 한 번 더 누를 경우 경관 보기가 종료됩니다. </div>" id="heightFixBtn" data-html="true"><span class="fas fa-mountain"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.execute(11);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="휴먼모드" id="humanBtn" data-html="true"><span class="far fa-user"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.execute(4);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="<img src='https://egiscloud.com/siteData/manual/manual-11.png' width='285'><br><div class='tooltipName'>가시권 분석</div><div class='tooltipInfo'>지도에서 가시권을 분석을 지점을 클릭하고 드래그하여 해당 위치에서의 가시권을 확인할 수 있습니다.</div>" id="viewshed3dBtn" data-html="true"><span class="ion ion-md-funnel"></span></a>
+        </div>
+        <div class="btn-group-vertical bg-dark mt-2" style="width: 37px;border-radius:4px;">
+            <a href="javaScript:IDE.MAPTOOL.execute(5);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="스크린샷" data-html="true"><span class="fas fa-camera"></span></a>
+            <a href="javaScript:IDE.MAPTOOL.execute(6);" class="btn icon-btn btn-outline-dark-menu" data-toggle="tooltip" data-placement="left"
+               title="메모" id="memoToobarBtn" data-html="true"><span class="fas fa-edit"></span></a>
+        </div>
+    </div>
+    <!-- 툴바 버튼 끝 -->
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{
+	
+	"settings":{
+		"settings":"settings",
+		"date":"Date",
+		"set_date":"Please set the date.",
+		"start_time":"Start Time",
+		"end_time":"End Time",
+		"shadow":"Shadow",
+		"line":"Line",
+		"surface":"Surface",
+		"color":"Color",
+		"contact_app_developer":"Contact App Developer",
+		"close":"Close",
+		
+		"photo_download":"Download photo",
+		"shadow_interval":"Shadow Interval",
+		"shadow_accumulation_area":"Download Shadow Accumulation Area by Time",
+		"shadow_area":"Download Shadow Area by Time",
+		"current_shadow_area":"Download Current Shadow Area"
+	},
+	"play":{
+		"backward":"Backward",
+		"forward":"Forward",
+		"pause":"Pause",
+		"play":"Play",
+		"stop":"Stop",
+		"start":"Start",
+		"reset":"Reset",
+		"exit":"Exit"
+	},
+	"alert":{
+		"progress":"Shadow analysis image compression is in progress. Please try again later.",
+		"download":"The file will be downloaded shortly.",
+		"compressing":"Compressing the analysis file.",
+		"download_complete":"Analysis file download is complete."
+	},
+	"etc":{
+		"analysis":"ShadowAnalysis_",
+		"saving":"Saving...",
+		"daymin":["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+		"months_short":["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		"months":["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+		"hour":"H",
+		"min":"M"
+	}
+   
+}

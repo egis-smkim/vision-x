@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/member.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/dtc-translation-i18n.js"></script>
+	<script src="assets/vendor/libs/sha512/sha512.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18n/1.1.1/jquery.i18n.min.js"></script>
+	<!-- <script src="../js/popup.js"></script> -->
+	/home/hadoop/vision-x/vision-x/src/main/resources/static/
+	<script>
+		$(function() {
+			const parentId = "#signIn_popup"
+			const openButtonClass = '.sign-in-btn'
+			initPopup(parentId, openButtonClass)
+		})
+	</script>
+
+  <title>Vision-X</title>
+</head>
+
+<body>
+
+  <!-- //sign in 팝업 -->
+	<div class="popup-bg sign-in-open popup">
+		<div class="sign-in-pop pop-contents">
+			<div class=" ma-b30">
+				<h2>Sign in</h2>
+			</div>
+			<form class="contact-form">
+				<div class="form-group">
+					<label for="memId">ID</label>
+					<input type="text" class="contact-input" name="memId" id="memId" required placeholder="USER ID.">
+				</div>
+				<div class="form-group">
+					<label for="memPwd">password</label>
+					<input type="text" class="contact-input" name="memPwd" id="memPwd" required placeholder="USER PASSWORD.">
+				</div>
+				<div class="form-check fl-btw">
+					<div class="sign-re">
+						<label><input type="checkbox">Remember me</label>
+					</div>
+					<div><a href="#" class="sign-forgot">Forgot your password?</a></div>
+				</div>
+				<div class="d-fl fl-c al-cen">
+					<a class="contact-submit sign-in-submit" onclick="JavaScript:D_MEMBER.LOGIN.executeLogin();">SIGN IN</a>
+				</div>
+			</form>			
+		</div>
+
+		<div class="sign-in-pop pop-contents reset-pop hide">
+			<div class="ma-b30">
+				<h2>Reset Password</h2>
+			</div>
+			<form class="contact-form">
+				<div class="form-group">
+					<label for="name">ID</label>
+					<input type="text" class="contact-input" name="name" required placeholder="Please, Enter ID.">
+				</div>
+				<div class="form-group">
+					<label for="address">Name</label>
+					<input type="text" class="contact-input" name="address" required placeholder="Please, Enter Name.">
+				</div>
+				<div class="form-group">
+					<label for="address">E-mail</label>
+					<input type="text" class="contact-input" name="address" required placeholder="Please, Enter E-mail.">
+					<p class="password-text">Please contact us at <span>Khaia@egiskorea.com</span> if your are having
+						trouble finding your password.</p>
+				</div>
+				<div class="d-fl fl-c al-cen">
+					<button class="contact-submit reset-submit">CONTINUE</button>
+				</div>
+			</form>
+		</div>
+		<div class="popup-close">X</div>
+	</div>
+</body>
+
+</html>

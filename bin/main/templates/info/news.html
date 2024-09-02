@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    $(document).ready(function () {
+      // 클릭 시 news_page.html에서 돌아올 때
+      $(document).on('click', '.news-list-back.news', function (e) {
+        e.preventDefault();
+        $('#content-area').load('news.html', function (response, status, xhr) {
+          if (status === 'error') {
+            console.error('Failed to load news.html: ' + xhr.status + ' ' + xhr.statusText);
+          } else {
+            console.log('news.html loaded successfully');
+          }
+          $('.footer').addClass('disable-menu');
+          $('.top-nav').addClass('disable-menu');
+        });
+      });
+    });
+  </script>
+  <title>Vision-X</title>
+</head>
+
+<body>
+  <!-- // News 페이지 -->
+  <div class="news-content">
+    <div class="news-area ">
+      <ul class="news-list-ul">
+        <li class="news-list">
+          <div class="news-img"></div>
+          <div class="news-text">
+            <a href="news_page.html" class="news-more">
+              <h1>News from Gaia-X 4 Future Mobility</h1>
+              <p class="news-date">29.04.2024</p>
+              <h3>Innovative Mobility solutions from the GX4FM project family impress
+                visitors at Hannover Messe</h3>
+              <p class="news-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <button class="news-more-btn">More</button>
+            </a>
+          </div>
+        </li>
+        <li class="news-list">
+          <div class="news-img"></div>
+          <div class="news-text">
+            <a href="news_page.html" class="news-more">
+              <h1>News from Gaia-X 4 Future Mobility</h1>
+              <p class="news-date">29.04.2024</p>
+              <h3>Innovative Mobility solutions from the GX4FM project family impress
+                visitors at Hannover Messe</h3>
+              <p class="news-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <button class="news-more-btn">More</button>
+            </a>
+          </div>
+        </li>
+        <li class="news-list">
+          <div class="news-img"></div>
+          <div class="news-text">
+            <a href="news_page.html" class="news-more">
+              <h1>News from Gaia-X 4 Future Mobility</h1>
+              <p class="news-date">29.04.2024</p>
+              <h3>Innovative Mobility solutions from the GX4FM project family impress
+                visitors at Hannover Messe</h3>
+              <p class="news-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <button class="news-more-btn">More</button>
+            </a>
+          </div>
+        </li>
+        <li class="news-list">
+          <div class="news-img"></div>
+          <div class="news-text">
+            <a href="news_page.html" class="news-more">
+              <h1>News from Gaia-X 4 Future Mobility</h1>
+              <p class="news-date">29.04.2024</p>
+              <h3>Innovative Mobility solutions from the GX4FM project family impress
+                visitors at Hannover Messe</h3>
+              <p class="news-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <button class="news-more-btn">More</button>
+            </a>
+          </div>
+        </li>
+        <li class="news-list">
+          <div class="news-img"></div>
+          <div class="news-text">
+            <a href="news_page.html" class="news-more">
+              <h1>News from Gaia-X 4 Future Mobility</h1>
+              <p class="news-date">29.04.2024</p>
+              <h3>Innovative Mobility solutions from the GX4FM project family impress
+                visitors at Hannover Messe</h3>
+              <p class="news-con">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book.
+              </p>
+              <button class="news-more-btn">More</button>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <div class="news-pagenation">
+        <div class="news-num-left"></div>
+        <ul class="news-num">
+          <li class="active">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+        <div class="news-num-right"></div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+</body>
+
+</html>

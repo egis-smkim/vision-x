@@ -1,0 +1,206 @@
+{
+	"DASHBOARD": {
+		"nav": {
+			"service": "서비스 <i class=\"fas fa-caret-down\" id=\"panelIcon\"></i>",
+			"support": "지원센터",
+			"notification": {
+				"unchecked_message": "개의 미확인 알림",
+				"whole_message": "전체 알림 보러가기",
+				"group_invitation_message": "그릅 초대 알림",
+				"group_message1": "님이 회원님을 그룹 '",
+				"group_message2": "'에 초대하였습니다."
+			}
+		},
+		"side_nav": {
+			"dash_board": "<i class=\"sidenav-icon fas fa-chalkboard\"></i> 대시보드",
+			"maps": "<i class=\"sidenav-icon fas fa-map\"></i>MAPS",
+			"store": "<i class=\"sidenav-icon fas fa-store\"></i>STORE",
+			"app_list": {
+				"title": "<i class=\"sidenav-icon pe-7s-plugin\"></i> 앱 리스트",
+				"myapp_manage": "<i class=\"fas fa-angle-right m-r-5\"></i> 내 앱 관리"
+			},
+			"developer": {
+				"title": "<i class=\"sidenav-icon far fa-keyboard\"></i> DEVELOPER",
+				"dev_guide": "<i class=\"fas fa-angle-right m-r-5\"></i> 개발자 가이드",
+				"dev_info": "<i class=\"fas fa-angle-right m-r-5\"></i> 개발자 정보",
+				"dev_module_manage": "<i class=\"fas fa-angle-right m-r-5\"></i> 모듈 관리",
+				"dev_app_manage": "<i class=\"fas fa-angle-right m-r-5\"></i> 앱 관리",
+				"dev_app_develope": "<i class=\"fas fa-angle-right m-r-5\"></i> 모듈 개발 바로가기",
+				"dev_qna": "<i class=\"fas fa-angle-right m-r-5\"></i> 개발자 Q&A"
+			},
+			"meta_service": {
+				"title": "<i class=\"sidenav-icon fas fa-database\"></i> META SERVICE",
+				"meta_assets": "<i class=\"fas fa-angle-right m-r-5\"></i> META ASSETS",
+				"qgis_plugin": "<i class=\"fas fa-angle-right m-r-5\"></i> QGIS-plugin인증키"
+			},
+			"group_member": "<i class=\"sidenav-icon fas fa-people-arrows\"></i>그룹원",
+			"usage": "<i class=\"sidenav-icon fas fa-prescription-bottle\"></i> 사용량",
+			"payment_history": "<i class=\"sidenav-icon fas fa-file-invoice-dollar\"></i> 결제내역",
+			"purchase": "<i class=\"sidenav-icon fas fa-file-invoice-dollar\"></i> 이용권 구매",
+			"group": {
+				"title": "<i class=\"sidenav-icon fas fa-users\"></i> 그룹",
+				"my_group": "<i class=\"fas fa-angle-right m-r-5\"></i> 내 그룹",
+				"whole_group": "<i class=\"fas fa-angle-right m-r-5\"></i> 전체 그룹"
+			},
+			"gallery": {
+				"title": "<i class=\"sidenav-icon fas fa-images\"></i> 갤러리",
+				"my_gallery": "<i class=\"fas fa-angle-right m-r-5\"></i> 내 갤러리",
+				"register": "<i class=\"fas fa-angle-right m-r-5\"></i> 등록하기"
+			},
+			"bulletin": {
+				"title": "<i class=\"sidenav-icon pe-7s-plugin\"></i> 게시판",
+				"updated_news": "<i class=\"fas fa-angle-right m-r-5\"></i> 업데이트 뉴스",
+				"qna": "<i class=\"fas fa-angle-right m-r-5\"></i> 문의게시판"
+			}
+		},
+		"footer": {
+			"Egis": {
+				"row": {
+					"business_num": {
+						"title": "사업자등록번호",
+						"number": "503-81-49156"
+					},
+					"addr_detail_daegu": "대구광역시 수성구 알파시티1로 31길 2,4층",
+					"addr_detail_seoul": "서울특별시 구로구 디지털로26길 111(구로동,제이엔케이디지털타워)",
+					"addr_detail_daejeon":"대전광역시 유성구 대학로28, 1602호",
+					"tele_business_num": {
+						"title": "통신판매업신고번호",
+						"number": "제 2016-대구남구-0324 호"
+					},
+					"tel_num_daegu": "Tell 053.476.2395 Fax 053.474.2396",
+					"tel_num_seoul": "1501호 Tell 02.576.2395 Fax 02.576.2396",
+					"ceo": {
+						"title": "대표이사",
+						"ceo_name": "김성호"
+					},
+					"email": "이메일"
+				},
+				"column": {
+					"egis": "EGIS",
+					"addr": "대구",
+					"addr2": "서울",
+					"addr3": "대전"
+				}
+			},
+			"NewLayer": {
+				"row": {
+					"business_num": {
+						"title": "사업자등록번호",
+						"number": "233-81-10238"
+					},
+					"addr_detail_daegu": "대구광역시 수성구 알파시티1로 31길 2, 4F 405호",
+					"tele_business_num": {
+						"title": "통신판매업신고번호",
+						"number": "제 2023-대구수성구-0373 호"
+					},
+					"tel_num_daegu": "Tell 053.710.8864 Fax 0502.377.8864",
+					"ceo": {
+						"title": "대표이사",
+						"ceo_name": "박광목"
+					},
+					"email": "이메일"
+				},
+				"column": {
+					"egis": "뉴레이어㈜",
+					"addr": "대구",
+					"addr2": "서울",
+					"addr3": "대전"
+				}
+			}
+		},
+		"pages": {
+			"dash_board": {},
+			"maps": {},
+			"store": {},
+			"app_list": {},
+			"developer": {},
+			"meta_service": {},
+			"usage": {},
+			"payment_history": {},
+			"purchase": {},
+			"group": {},
+			"gallery": {},
+			"bulletin": {}
+		},
+		"common": {
+			"input":{
+				"id":"아이디",
+				"password":"비밀번호",
+				"passowrd_confirm":"비밀번호 재확인",
+				"address":"주소",
+				"e-mail":"이메일",
+				"nick_name":"닉네임",
+				"name":"성명"	,
+				"share_all":"전체공개",
+				"share_group":"그룹공개"
+			},
+			"button":{
+				"confirm":"확인",
+				"okay":"확인",
+				"open":"열기",
+				"close":"닫기",
+				"attribute":"속성",
+				"show":"보기",
+				"delete":"삭제",
+				"info":"정보",
+				"export":"내보내기",
+				"edit":"편집",
+				"modify":"수정",
+				"cancel":"취소",
+				"search":"검색",
+				"next":"다음",
+				"previous":"이전",
+				"register":"등록",
+				"save":"저장",
+				"load":"불러오기",
+				"title":"제목",
+				"list":"목록",
+				"del_all":"전체 삭제",
+				"success":"성공",
+				"fail":"실패",
+				"error":"에러",
+				"pay":"결제",
+				"submit":"전송",
+				"permit":"승인",
+				"reject":"거부",
+				"quit":"종료",
+				"reset":"초기화",
+				"login":"로그인",
+				"logout":"로그아웃",
+				"upload":"업로드",
+				"purchase":"구매",
+				"brochure":"브로슈어 열기"
+			},
+			"tab":{
+				"apps":"APPS",
+				"thematic_map":"주제도",
+				"dataset":"데이터셋",
+				"product_summary":"제품 개요",
+				"main_job":"주요 기능",
+				"pakage_product":"패키지 제품",
+				"screenshot":"스크린샷"
+			},
+			"table":{
+				"header":{
+					"group_name":"그룹명",
+					"group_admin":"그룹 관리자",
+					"category":"구분",
+					"my_class":"내 등급",
+					"management":"관리",
+					"title":"제목",
+					"date":"날짜",
+					"product":"상품",
+					"price":"금액"
+				},
+				"body":{
+					
+				}
+			},
+			"alert_message":{
+				"no_password":"비밀번호를 입력하세요.",
+				"mail_sent":"메일이 전송되었습니다."
+				
+			}
+		}
+	}
+}

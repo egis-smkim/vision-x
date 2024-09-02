@@ -1,0 +1,652 @@
+@charset "utf-8";
+
+/* Noto Sans */
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.woff2) format('woff2'); /* WOFF2 지원 브라우저 */
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: bold;
+	font-weight: 700;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.woff2) format('woff2'); /* WOFF2 지원 브라우저 */
+}
+
+/* reset */
+*, :before, :after {box-sizing: border-box;}
+body {background-color: #fff;-webkit-text-size-adjust: none;}/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin: 0;padding: 0;}
+fieldset,img {border: 0 none;}
+dl,ul,ol,menu,li {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
+input,select,textarea,button {font-size: 100%;vertical-align: middle;outline: none;}
+button {border: 0 none;background-color: transparent;cursor: pointer;}
+table {border-collapse: collapse;border-spacing: 0;}
+input[type='text'],input[type='password'],input[type='submit'],input[type='search'] {-webkit-appearance: none; /* border-radius:0; */}
+input:checked[type='checkbox'] {background-color: #666; -webkit-appearance: checkbox;}
+button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file'] {-webkit-appearance: button; /* border-radius:0; */}
+input[type='search']::-webkit-search-cancel-button {-webkit-appearance:none;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0 1000px #fff inset; }
+body,th,td,input,select,textarea,button {color: #000;font-size: 13px;font-family:'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;letter-spacing: -0.03em;} /* color값은 디자인가이드에 맞게사용 */
+a {color: inherit;text-decoration: none;outline: none;vertical-align: middle;}
+a:active, a:hover {text-decoration: none;}
+address,caption,cite,code,dfn,em,var {font-style: normal;font-weight: normal;}
+img {max-width: 100%;vertical-align: middle;}
+
+html, body {
+    height: 100%;
+}
+
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 280px;
+    min-height: 700px;
+    padding: 30px;
+    background-image: url(/assets/images/login-bg-terrasense.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+#header .t-logo {
+    display: inline-block;
+    width: 327px;
+    height: 111px;
+}
+
+#header .t-logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#header .join-btn {
+    display: inline-block;
+    padding: 0 15px;
+    line-height: 42px;
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 4px 2px 2px #000;
+}
+
+#login {
+    width: 100%;
+    height: 100%;
+    padding: 120px 0 80px;
+}
+
+
+#login .container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#login .login-txt-box {
+    padding-top: 6%;
+    padding-left: 35px;
+}
+
+#login .login-txt-box .login-txt-kr {
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+#login .login-txt-box .login-txt-en {
+    font-size: 54px;
+    color: #fff;
+    text-shadow: 2px 2px 2px #000;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+#login .login-form-box {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    margin-left: -670px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1340px;
+    padding: 22px 65px;
+    background-color: rgba(114, 114, 114, 0.52);
+    border-radius: 12px;
+}
+
+#login .login-form-box .form-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 0 0;
+}
+
+#login .login-form-box .form-box label {
+    margin-right: 25px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: -0.05em;
+}
+
+#login .login-form-box .form-box .form-inp {
+    width: 310px;
+    height: 40px;
+    padding: 0 5px;
+    font-size: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#login .login-form-box .btn-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 280px;
+}
+
+#login .login-form-box .btn-box .login-chk-box input[type="checkbox"] {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 0;
+    height: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+#login .login-form-box .btn-box .login-chk-box input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+    margin-top: -2px;
+    margin-right: 3px;
+    background-image:url(/assets/images/login-chk-w-off-terrasense.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#login .login-form-box .btn-box .login-chk-box input[type="checkbox"]:checked + label:before {
+    background-image: url(/assets/images/login-chk-w-on-terrasense.png);
+}
+
+#login .login-form-box .btn-box .login-chk-box {
+    margin-right: 25px;
+}
+
+#login .login-form-box .btn-box .login-chk-box label {
+    vertical-align: middle;
+    margin-right: 0;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+    color: #fff;
+    cursor: pointer;
+}
+
+#login .login-form-box .btn-box .submit-btn {
+    display: inline-block;
+    width: 50%;
+    min-width: 100px;
+    max-width: 160px;
+    line-height: 40px;
+    letter-spacing: -0.05em;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #21395f;
+    border-radius: 5px;
+}
+/* ------------------------------------------------------------------------------------------------------------------------
+join-popup-panel
+------------------------------------------------------------------------------------------------------------------------ */
+#join {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#join.hide {
+    display: none;
+}
+
+#join .join-popup {
+    position: relative;
+    z-index: 100;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+#join .join-popup .tit {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #000;
+}
+
+#join .join-popup .join-form-box {
+    margin: 20px 0;
+}
+
+#join .join-popup .join-form-box .form-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#join .join-popup .join-form-box .form-box label {
+    flex: 0 0 auto;
+    width: 130px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#join .join-popup .join-form-box .form-box .form-inp {
+    flex: 1 0 0;
+    line-height: 32px;
+    padding: 0 5px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#join .join-popup .chk-box {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: #f3f4f5;
+    border-radius: 5px;
+}
+
+#join .join-popup .chk-box .join-chk-box {
+    margin: 5px 0;
+}
+
+#join .join-popup .chk-box .join-chk-box input[type="checkbox"] {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 0;
+    height: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+#join .join-popup .chk-box .join-chk-box input[type="checkbox"] + label {
+    vertical-align: middle;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#join .join-popup .chk-box .join-chk-box input[type="checkbox"] + label > strong {
+    color: #21395f;
+}
+
+#join .join-popup .chk-box .join-chk-box input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+    margin-top: -2px;
+    margin-right: 3px;
+    background-image: url(/assets/images/login-chk-off-terrasense.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#join .join-popup .chk-box .join-chk-box input[type="checkbox"]:checked + label:before {
+    background-image: url(/assets/images/login-chk-on-terrasense.png);
+}
+
+#join .join-popup .popup-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url(/assets/images/popup-close-terrasense.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#join .join-popup-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+#join .join-popup .submit-btn {
+    display: block;
+    min-width: 150px;
+    line-height: 40px;
+    padding: 0 30px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #21395f;
+    border-radius: 5px;
+}
+/* ------------------------------------------------------------------------------------------------------------------------
+popup-panel
+------------------------------------------------------------------------------------------------------------------------ */
+.popup-bg {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 100;
+}
+
+.popup-panel {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 0 30px;
+	width: 600px;
+	background-color: #fff;
+	border-radius: 10px;
+	z-index: 150;
+}
+
+.popup-panel.opened {
+	display: block;
+}
+
+.popup-panel .popup-header {
+	padding: 35px 0 25px;
+	border: 0;
+	border-bottom: 2px solid #000;
+	background: #fff;
+	border-radius: 0;
+}
+
+.popup-panel .popup-header .tit {
+	color: #353535;
+	font-size: 23px;
+	font-weight: bold;
+	letter-spacing: -0.05em;
+}
+
+.popup-panel .popup-body {
+	position: relative;
+	border: 0;
+	padding: 30px 0;
+	overflow: auto;
+}
+
+.popup-panel .popup-close {
+	position: absolute;
+	top: 40px;
+	right: 30px;
+	width: 26px;
+	height: 26px;
+	background: url(/assets/images/popup-close.png) no-repeat 50% 50%;
+}
+
+.popup-panel .btn {
+	padding: 0 30px;
+	font-size: 20px;
+}
+/* 비밀번호 변경 */
+.info-btn {
+	color:#fff;
+	font-size:16px;
+	text-decoration : underline;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------------
+btn
+------------------------------------------------------------------------------------------------------------------------ */
+.btn {
+	display: inline-block;
+	padding: 0 40px;
+	height: 45px;
+	line-height: 45px;
+	font-family: 'play';
+	color: #fff;
+	font-size: 25px;
+	font-weight: bold;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.btn.type01 {
+	background-color: #0431C9;
+}
+
+.info-btn:hover{
+	color:cyan;
+	cursor:pointer;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------
+form
+------------------------------------------------------------------------------------------------------------------------ */
+.form-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.form-row .form-label {
+	color: #353535;
+	font-weight: bold;
+}
+
+.form-row .form-control {	
+	padding: 0 10px;
+	width: 400px;
+	height: 35px;
+	font-family: 'play';
+	color: #454545;
+	border: 1px solid #D5D5D5;
+	background-color: #EFEFEF;
+	border-radius: 7px;
+	letter-spacing: -0.02em;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+#footer .f-logo {
+    display: block;
+    width: 312px;
+    height: 36px;
+}
+
+#footer .f-logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1400px) {
+
+    #login .login-form-box {
+        padding: 20px 30px;
+        left: 0;
+        margin-left: 0;
+    }
+
+    #login .login-form-box .form-box .form-inp {
+        width: 60%;
+    }
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    #login .login-txt-box {
+        padding-left: 0;
+    }
+
+    #login .login-txt-box .login-txt-ko {
+        font-size: 26px;
+    }
+
+    #login .login-txt-box .login-txt-en {
+        font-size: 40px;
+    }
+
+    #login .login-form-box {
+        padding: 20px;
+    }
+
+    #login .login-form-box .form-box {
+        flex: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #login .login-form-box .form-box + .form-box {
+        margin-top: 10px;
+    }
+
+    #login .login-form-box .form-box label {
+        width: 100px;
+        margin-right: 0;
+        font-size: 13px;
+    }
+
+    #login .login-form-box .form-box .form-inp {
+        flex: 1 0 0;
+        width: 100%;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    #login .login-form-box .btn-box {
+        flex: 1 0 auto;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #login .login-form-box .btn-box .submit-btn {
+        line-height: 30px;
+        font-size: 13px;
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+
+    #wrap {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    #header {
+        padding: 20px;
+    }
+
+    #header .t-logo {
+        width: 240px;
+        height: 81px;
+    }
+
+    #header .join-btn {
+        line-height: 36px;
+        font-size: 13px;
+    }
+
+    #login .login-txt-box .login-txt-kr {
+        font-size: 15px;
+    }
+    
+    #login .login-txt-box .login-txt-en {
+        font-size: 22px;
+    }
+
+    #login .login-form-box .btn-box .login-chk-box {
+        margin-right: 0;
+    }
+
+    #join .join-popup .join-form-box .form-box label {
+        width: 100%;
+        margin-bottom: 3px;
+        font-size: 13px;
+    }
+
+    #footer {
+        padding: 20px;
+    }
+
+    #footer .f-logo {
+        width: 240px;
+        height: 28px;
+    }
+
+}

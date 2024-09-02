@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* ------------------------------------------------------------------------------------------------------------------------
+play
+------------------------------------------------------------------------------------------------------------------------ */
+@font-face {
+    font-family: 'play';
+	font-style: normal;
+	font-weight: 400;
+    src: url(/assets/css/com/font/play/Play-Regular.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/play/Play-Regular.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/play/Play-Regular.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/play/Play-Regular.woff2) format('woff2'); /* WOFF2 지원 브라우저 */
+}
+
+@font-face {
+    font-family: 'play';
+	font-style: normal;
+	font-weight: 700;
+    src: url(/assets/css/com/font/play/Play-Bold.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/play/Play-Bold.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/play/Play-Bold.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/play/Play-Bold.woff2) format('woff2'); /* WOFF2 지원 브라우저 */
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------
+Noto Sans KR
+------------------------------------------------------------------------------------------------------------------------ */
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 100;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Thin.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Thin.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Thin.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Thin.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Light.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Light.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Light.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Light.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 350;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-DemiLight.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-DemiLight.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-DemiLight.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-DemiLight.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-DemiLight.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Medium.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Medium.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Medium.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Medium.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 900;
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Black.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSansKR/NotoSansKR-Black.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSansKR/NotoSansKR-Black.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Black.woff2) format('woff2'), /* WOFF2 지원 브라우저 */
+		 url(/assets/css/com/font/NotoSansKR/NotoSansKR-Black.otf) format('opentype');
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------
+Noto Sans
+------------------------------------------------------------------------------------------------------------------------ */
+@font-face {
+    font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 400;
+    src: url(/assets/css/com/font/NotoSans/NotoSans-Regular.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSans/NotoSans-Regular.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSans/NotoSans-Regular.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSans/NotoSans-Regular.woff2) format('woff2'); /* WOFF2 지원 브라우저 */
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+	font-style: normal;
+	font-weight: 700;
+    src: url(/assets/css/com/font/NotoSans/NotoSans-Bold.eot); /*IE9 호환성 보기*/
+    src: url(/assets/css/com/font/NotoSans/NotoSans-Bold.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
+         url(/assets/css/com/font/NotoSans/NotoSans-Bold.woff) format('woff'), /*표준 브라우저*/
+		 url(/assets/css/com/font/NotoSans/NotoSans-Bold.woff2) format('woff2'); /* WOFF2 지원 브라우저 */
+}

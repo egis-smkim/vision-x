@@ -1,0 +1,1385 @@
+<div class="modal noScroll" id="dtcFileUploadModal">
+	<div class="modal-dialog modal-dialog-centered modal-xl noScroll">
+		<div class="modal-content noScroll bg-dark">
+			<div class="modal-body noScroll">
+				  <div id="smartwizard-2">
+				  <ul class="card px-4 pt-3 mb-3"">
+					<li>
+						<a href="#smartwizard-2-step-1" class="mb-3">
+							<span class="sw-number">1</span>
+							   File upload
+							<div class="text-muted small">파일 업로드</div>
+						 </a>
+					</li>
+					<li>
+						<a href="#smartwizard-2-step-2" class="mb-2">
+							<span class="sw-number">2</span>
+							Settings
+							<div class="text-muted small">설정</div>
+						  </a>
+					</li>
+					<li>
+						<a href="#smartwizard-2-step-3" class="mb-3">
+							<span class="sw-number">3</span>
+							Cloud
+							<div class="text-muted small">클라우드 변환</div>
+						  </a>
+					</li>
+				  </ul>
+				  <div class="mb-2 mt-3" >
+					<div id="smartwizard-2-step-1" class="card animated fadeIn" style="border:1px dashed;max-height:375px;">
+					  <div class="card-body noScroll">
+						<form class="dropzone needsclick" id="dropzone-file" enctype="multipart/form-data" method="POST">
+							<div class="dz-message needsclick">
+							  클릭 또는 드래그&드랍 업로드
+							  <span class="note needsclick">ESRI shape(shp,shx,dbf,prj,cpg), CSV, 정사영상(tif,img) DEM(dem), Lidar(las) 파일만 가능합니다</span>
+							</div>
+							<div class="fallback">
+							  <input name="file" type="file" multiple>
+							</div>
+						</form>
+					  </div>
+					  <div class="col-12 text-right mb-2" id="shpFileUploadInfo" style="display:none;">
+						
+					  </div>
+					</div>
+					<div id="smartwizard-2-step-2" class="card animated fadeIn" style="">
+						<div class="card-body noScroll" id="secondWizardDiv">
+							<div class="row no-gutters row-bordered row-border-light" id="shpUploadLayerSetting" style="display:none;min-height:40vh;">
+								<div class="col-md-5">
+									<div class="card-body">
+										<div class="form-group">
+										<label class="form-label">데이터명</label>
+										<input type="text" class="form-control form-control-sm mb-1 col-9" value="" id="shpDataName">
+									  </div>
+									  <div class="form-group">
+										<label class="form-label">Geometry Type</label>
+										<div class="input-group col-9 ml-0 pl-0">
+											<span class="input-group-append" id="shpGeometryType">
+											  
+											</span>
+										</div>
+									  </div>
+									  <div class="form-group">
+										<label class="form-label">좌표계</label>
+										<div class="input-group col-9 ml-0 pl-0">
+											<input type="text" class="form-control form-control-sm" id="dtcFilePrjInfo" style="opacity: 1;" disabled>
+											<span class="input-group-append">
+											  <button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+											</span>
+										</div>
+									  </div>
+									  <div class="form-group">
+										<label class="form-label">속성 인코딩</label>
+										<div class="input-group col-5 ml-0 pl-0">
+											<select id="dbfEncodinSelc" class="form-control form-control-sm">
+												<option value="euc-kr">EUC-KR</option>												
+												<option value="cp949">CP949</option>												
+												<option value="utf-8">UTF-8</option>
+											</select>
+										</div>  
+									  </div>
+									  <!--<div class="form-group">
+										<label class="form-label">3D 속성 높이값</label>
+										  <label class="form-check">
+											<input class="form-check-input" type="checkbox" value="Y" id="shpCheckHeight">
+											<div class="form-check-label">
+												  높이 값이 있는 경우 체크해주세요
+											</div>
+										  </label>
+									  </div>-->
+									  <div class="form-group">
+										<label class="form-label">설명</label>
+										<div class="col-10 pl-0">
+											<textarea class="form-control" row="3" id="shpDescText"></textarea>
+										</div>
+									  </div>
+									  <div class="form-group" id="geoTypePointLabels" style="display:none;">
+										  <label class="form-label">Point 라벨 설정</label>
+										  <select class="form-control mb-1" id="selectPointLabels">
+											  
+										  </select>
+										</div>
+									 
+									</div>
+								</div>
+								<div class="col-md-7 pt-3 pb-3 pl-3 pr-3">
+									<div class="form-group" style="max-width:150vh;" id="shpDbfTblediv">
+										<label class="form-label">총 레코드 수:<span class="ts-10" id="totaldbfRecods"></span></label>
+										<table class="table table-bordered text-center ts-9 mt-2" id="dbfTableList">
+											
+										</table>
+									</div>
+								</div>
+								<div class="no-gutters mt-2" id="shpSampleLists" style="display:none;">
+									<div class="card-header ts-9 pl-0" id="shpSampleFileName"></div>
+									  <table class="table table-bordered ts-9" style="max-width:350vh;">
+											<thead id="shpSampleHeader"></thead>
+											<tbody id="shpSampleBody"></tbody>
+									</table>
+								  </div>
+							</div>
+							<div class="flex-column" id="csvUploadLayerSetting" style="display:none;">
+								<div class="row no-gutters row-border-light"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+										<!--<div class="col-md-5 pt-1 pb-1 pl-1 pr-1 text-center" id="csvFilePreview" style="height:35vh;border:1px dashed;display: table;">
+											<div id="previewCsvBtn" style="display:table-cell;vertical-align:middle;" class="col-md-12 pt-0 pb-0 pl-0 pr-0">
+												<p class="ts-10" >경도,위도 컬럼 선택 시 확인 할 수 있습니다.</p>
+												<button class="btn btn-primary btn-sm" >미리보기</button>
+											</div>
+											<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 bg-white rounded-lg" style="height:100%;display:none;" id="fileCsvThumNailImg">
+												<img src="#" style="width:100%;height:100%;">
+											</div>	
+										</div>-->
+										<div class="card-body col-6" style="max-height:60vh;" id="csvInputDataset">
+												<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right">레이어명</label>
+												<div class="col-sm-7">
+													<input type="text" class="form-control form-control-sm m-t-5 mb-1" value="" id="csvDataName">
+												</div>
+											  </div>
+											 <div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right">가시화 타입</label>
+												<div class="col-sm-8 mt-2 ts-10">
+													<label class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="csvCheckType" value="L" checked>
+														<span class="form-check-label">경,위도 </span>
+													</label>
+											  		<label class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="csvCheckType" value="G">
+														<span class="form-check-label">지오코딩</span>
+												  	</label> 
+											  		<label class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="csvCheckType" value="N">
+														<span class="form-check-label">없음</span>
+												  	</label> 
+												</div>
+											 </div>
+											 <div class="form-group row mb-2 chcekPosCsv">
+												<label class="col-form-label col-sm-3 text-sm-right">경도</label>
+												<div class="col-sm-3">
+													<select class="form-control form-control-sm m-t-5 mb-1" id="coordsXCsvList">
+													
+													</select>
+												</div>
+												<label class="col-form-label ml-2 text-sm-right">위도</label>
+												<div class="col-sm-3">
+													<select class="form-control form-control-sm m-t-5  mb-1" id="coordsYCsvList">
+													
+													</select>
+												</div>
+											  </div>
+											  <div class="form-group row mb-2 chcekAddrCsv" style="display:none;">
+												  <label class="col-form-label col-sm-3 text-sm-right">주소 컬럼</label>
+												  <div class="col-sm-4">
+														<select class="form-control form-control-sm m-t-5 mb-1" id="addrCsvList">
+														
+														</select>
+												  </div>
+											  </div>
+											  <div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right">마커 타이틀</label>
+												<div class="col-sm-4">
+													<select class="form-control form-control-sm m-t-5 mb-1" id="markerCsvList">
+													
+													</select>
+												</div>
+											  </div>
+											  <div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right">인코딩</label>
+												<div class="col-sm-4">
+													<select class="form-control form-control-sm m-t-5 mb-1" id="csvCharsetList">
+														<option value="euc-kr">EUC-KR</option>
+														<option value="utf-8">UTF-8</option>
+														<!--<option value="utf8bom">UTF-8(BOM)</option>-->
+														<option value="cp949">CP949</option>
+													</select>
+												</div>
+											  </div>
+											  <div class="form-group row mb-2 csvPrjInfo">
+												<label class="col-form-label col-sm-3 text-sm-right">좌표계</label>
+												<div class="col-sm-8 mt-2 ts-10">
+													<div class="input-group col-9 ml-0 pl-0">
+														<input type="text" class="form-control form-control-sm" id="dtcFileCsvPrjInfo" style="opacity: 1;" disabled="">
+														<span class="input-group-append">
+														  <button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+														</span>
+													</div>
+												</div>
+											  </div>
+											  <div class="form-group row mb-2">
+												  <label class="col-form-label col-sm-3 text-sm-right">그룹핑 여부</label>
+												  <div class="col-sm-8 mt-2 ts-10">
+													  <label class="form-check form-check-inline">
+														  <input class="form-check-input" type="checkbox" name="csvGroupType" id="csvGroupType"value="1" checked>
+														  <span class="form-check-label">
+																클러스터링
+														  </span>
+													  </label>
+												  </div>
+												</div>
+											  <div class="form-group row mb-2">
+												  <label class="col-form-label col-sm-3 text-sm-right">마커 타입</label>
+												  <div class="col-sm-8 mt-2 ts-10">
+													  <label class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="csvMarkerType" value="0" checked>
+														<span class="form-check-label">
+															  포인트
+														</span>
+													  </label>
+													  <label class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="csvMarkerType" value="1">
+														<span class="form-check-label">
+																 이미지
+														</span>
+													  </label>
+													  <label class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="csvMarkerType" value="2">
+														<span class="form-check-label">
+																 3DS
+														</span>
+													  </label>  
+													  </div>
+											  </div>
+											  <div class="form-group row mb-2 csvMarkerPointStyle">
+												<label class="col-form-label col-sm-3 text-sm-right">마커 색상</label>
+												<div class="m-l-10" style="width:75px;">
+													<input type="color" class="form-control form-control-sm m-t-5 mb-1" id="makerColorRGB"/>
+												</div>
+											  </div>
+											  <div class="form-group row mb-2 csvMarkerImgStyle" style="display:none;">
+												<label class="col-form-label col-sm-3 text-sm-right">마커 이미지</label>
+												<div class="col-7">
+													  <div class="row no-gutters align-items-start pt-1 pl-1" id="csvSamplePoiImg">
+													  </div>
+												  </div>
+											  </div>
+											  <div class="form-group row mb-2 csvMarkerModelStyle" style="display:none;">
+												<label class="col-form-label col-sm-3 text-sm-right">마커 3DS</label>
+												<div class="col-9 row ml-1" style="display:table;">
+												  <div class="col-3 text-center pl-1 pr-1 pb-1 pt-1" style="display:table-cell;vertical-align:middle;border: 1px dashed #8897aa;height:9vh;" id="poiPriView">
+													  <p class="ts-9 text-light mb-0" id="poiPriveIconText">PREVIEW</p>
+													  <img src="#" id="poiPrviewIcon" style="display:none;width:100%;height:auto;" class="bg-white"/>
+												  </div>
+												  <div class="col-9">
+													  <div class="row no-gutters align-items-start pt-1 pl-1" id="csvSamplePoiModel">
+														  
+													  </div>
+													  <div class="row no-gutters align-items-start pt-3 pl-1">
+														<input type="file" class="form-control form-control-sm" id="csv3dsFileUpload" multiple>
+														<small class="form-text text-muted">3ds,텍스처가 필요합니다</small>
+													  </div>
+												  </div> 
+												</div>
+											  </div>
+											  <div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right">설명</label>
+												<div class="col-sm-8 mt-2 ts-10">
+													<textarea class="form-control" row="3" id="csvDescText"></textarea>
+												</div>
+											  </div>
+										</div>
+										<div class="card-body col-6 pl-3" style="max-height:60vh;" id="csvSampleData">
+											<div class="col-md-7 pt-2 pl-0 pr-3">
+												<div class="form-group" style="max-width:450vh;" id="csvTblediv">
+													<label class="form-label">총 <span class="ts-11 text-info" id="totalCsvRecods"></span>개 중 5개 샘플</label>
+													
+												</div>
+											</div>
+											<div class="no-gutters mt-2 table-responsive" id="csvSampleLists">
+												<table class="table table-bordered ts-9 ">
+														<thead id="csvSampleHeader"></thead>
+														<tbody id="csvSampleBody"></tbody>
+												</table>
+											</div>
+										</div>
+								</div>
+							  <!--<div class="no-gutters mt-4" id="csvSampleLists" style="display:none;border-top:1px solid gray;">
+								  <div class="card-header ts-9 pl-0" id="csvSampleFileName"></div>
+									<table class="table table-bordered ts-9" style="max-width:350vh;">
+										  <thead id="csvSampleHeader"></thead>
+										  <tbody id="csvSampleBody"></tbody>
+								  </table>
+								</div>-->
+							</div>
+							<div class="flex-column" id="imgUploadLayerSetting" style="display:none;">
+								<div class="row no-gutters row-bordered row-border-light"  style="border-bottom: 0px solid rgba(24,28,33,0.06);max-height:30vh;">
+									<div class="card-body col-md-6 pt-3" id="imgInputDataset">
+									  <div class="form-group row mb-1">
+										<label class="col-form-label col-4 text-sm-right">레이어명</label>
+										<div class="col-sm-5">
+											<input type="text" class="form-control form-control-sm m-t-5 mb-1" value="" id="imgDataName">
+										</div>
+									  </div>
+									  <div class="form-group row mb-2">
+										<label class="col-form-label col-4 text-sm-right">좌표계</label>
+										<div class="col-6">
+											<div class="input-group col-9 ml-0 pl-0 pt-2">
+												<input type="text" class="form-control form-control-sm" id="dtcFileImgPrjInfo" style="opacity: 1;" disabled>
+												<span class="input-group-append">
+												  <button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+												</span>
+											</div>
+										</div>
+									  </div>
+									  <div class="form-group row mb-2">
+											<label class="col-form-label col-4 text-sm-right">가시화 타입</label>
+											<!--<div class="col-5 mt-2 ts-10">
+												<label class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="imgCheckType" value="I" checked>
+													<span class="form-check-label">타일 이미지</span>
+												</label>
+												<label class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="imgCheckType" value="T">
+													<span class="form-check-label">DEM 지형</span>
+												</label> 
+											</div>-->
+											<div class="col-4 mt-2 ts-10">
+												<select class="form-control form-control-sm" id="imgCheckList">
+													<option value="N/A">선택</option>
+													<option value="I">타일 이미지</option>
+													<option value="T">DEM 지형</option>
+													<option value="I#S">단일 밴드 유사 색상</option>
+													<!--<option value="I#P">팔레트/고유값</option>-->
+												</select>
+											</div>
+											<div class="col-3 mt-2 ts-10 pl-1" style="display: none;" id="settingImgDis">
+												<button class="btn btn-sm btn-outline-dark" id="imgSettingBtn">설정</button>
+											</div>
+									  </div>
+									  <div class="form-group row">
+										<label class="col-form-label col-4 text-sm-right">설명</label>
+										<div class="col-6 mt-2">
+											<textarea class="form-control" row="3" id="imgDemDescText"></textarea>
+										</div>
+									  </div>
+									 
+									</div>
+									<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" style="height:60vh;" id="imgMetadataInfo">
+										<div class="form-group row mb-1" id="imgMaxView">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">BAND 수</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgBandNum"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="imgMinView">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">MIN</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgBoundaryMin"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="imgMaxView">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">MAX</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgBoundaryMax"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="imgWidth">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">가로</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgRasterWidth"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="imgHeight">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">세로</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgRasterHeight"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="imgPixel">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">픽셀 크기</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgPixelSize"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="imgCompress" style="display: none;">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">압축 방식</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="imgCompressType"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="flex-column" id="pclUploadLayerSetting" style="display:none;">
+								<div class="row no-gutters row-bordered row-border-light"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-6 mt-2" id="pclInputDataset">
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-3 text-sm-right">레이어명</label>
+											<div class="col-6">
+												<input type="text" class="form-control form-control-sm m-t-5 mb-1" value="" id="pclDataName">
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-3 text-sm-right">좌표계</label>
+											<div class="col-5 mt-2">
+												<div class="input-group ml-0 pl-0">
+													<input type="text" class="form-control form-control-sm" id="dtcFilePclPrjInfo" style="opacity: 1;" disabled="">
+													<span class="input-group-append">
+														<button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-group row mb-1 text-center">
+											<label class="col-form-label col-3 text-sm-right">포인트 밀도</label>
+											<div class="col-4 mt-2">
+												<select id="pclDensity" class="form-control form-control-sm">
+													<option value="8">낮음</option>
+													<option value="4" selected>보통</option>
+													<option value="2">높음</option>
+													<option value="1">아주 높음</option>
+												</select>
+											</div>
+											<div class="col-11">
+												<p class="ts-8 pl-2 mt-1 ml-3">* 높음 선택 시 사양에 따라 느릴 수가 있습니다.</p>
+											</div>  		
+										</div>
+										<div class="form-group row mb-1 text-center mt-1">
+											<label class="col-form-label col-3 text-sm-right">설명</label>
+											<div class="col-8 mt-2">
+												<textarea class="form-control" row="3" id="pclDescText"></textarea>
+											</div>
+										</div>
+										<div class="form-group row mb-1 text-center mt-2">
+											<label class="col-form-label col-3 text-sm-right">z축 회전</label>
+											<div class="col-2 mt-2 pl-0 ml-0">
+												<label class="form-check form-check-inline" for="pclZrevChck">
+                    								<input class="form-check-input" type="checkbox" value="0" id="pclZrevChck">
+                    								<span class="form-check-label ts-9"> 사용</span>
+                  								</label>	
+											</div>
+										</div>
+									</div>
+									<div class="card-body col-6 mt-2">
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">총개수</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="pclCnt"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">MINX</label>
+											<div class="mt-2 pt-1 ts-10">
+												<span class="text-white" id="pclMinX"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">MINY</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="pclMinY"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">MINZ</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="pclMinZ"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">MAXX</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="pclMaxX"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">MAXY</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="pclMaxY"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">MAXZ</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="pclMaxZ"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							  </div>
+							  <div class="flex-column" id="zipUploadLayerSetting" style="display:none;">
+								<div class="row no-gutters row-bordered row-border-light"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-12 mt-2" id="zipFileTypeInfo">
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-3 text-right">데이터 타입</label>
+											<div class="col-8 mt-2">
+													<label class="form-check">
+	  													<input class="form-check-input" type="radio" value="0" name="zipFileType">
+	  													<div class="form-check-label">3DS 데이터</div>
+													</label>
+													<label class="form-check">
+														<input class="form-check-input" type="radio" value="1" name="zipFileType">
+														<div class="form-check-label">Drone collada 데이터</div>
+													</label>
+											</div>
+										</div>
+									</div>
+									<div class="card-body col-6 mt-2" style="display:none;" id="zip3dsSetting">
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">레이어명</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="layer3dsName">
+											</div>  
+										</div>
+										<!--<div class="form-group pl-4 pr-4">
+											<label class="form-label">주요키 컬럼</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<select id="dbf3dsHeaderIndx" class="form-control form-control-sm">
+													
+												</select>
+											</div>  
+										</div>-->
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">텍스처 컬럼</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<select id="dbf3dsHeaderTexture" class="form-control form-control-sm">
+												
+												</select>
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">좌표계</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="zip3dsPrjInfo" style="opacity: 1;" disabled="">
+												<span class="input-group-append">
+													<button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+												</span>
+											</div>
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">인코딩</label>
+											<div class="input-group col-4 ml-0 pl-0">
+												<select id="dbf3dsEncoding" class="form-control form-control-sm">
+													<option value="euc-kr">EUC-KR</option>												
+													<option value="cp949">CP949</option>												
+													<option value="utf-8">UTF-8</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">설명</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<textarea class="form-control" row="3" id="model3dsDescText"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="card-body col-6 mt-2" style="display:none;" id="zipdroneSetting">
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">레이어명</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="layerDroneName">
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">좌표계</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="zipDronePrjInfo" style="opacity: 1;" disabled="">
+												<span class="input-group-append">
+													<button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+												</span>
+											</div>
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">설명</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<textarea class="form-control" row="3" id="daeDescText"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group pl-4 pr-4 col-12 mt-2" id="shp3dsAttrTble" style="display:none;width:200vh;">
+									<label class="form-label">속성 샘플</label>
+									<div class="input-group col-12 ml-0 pl-0">
+										<table class="table ts-9 text-center">
+											<thead id="dbf3dsSampleHeader">
+											
+											</thead>
+											<tbody id="dbf3dsSampleBody">
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							  </div>
+							  <div class="flex-column" id="gpxLayerSetting" style="display:none;">
+								<div class="row no-gutters row-bordered row-border-light"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-6 mt-2" id="gpxInputDataset">
+										<div class="form-group row mb-1">
+											<label class="col-form-label col-3 text-sm-right">레이어명</label>
+											<div class="col-6">
+												<input type="text" class="form-control form-control-sm m-t-5 mb-1" value="" id="gpxDataName">
+											</div>
+										</div>
+										<div class="form-group row mb-1 text-center mt-2" style="display:none;" id="gpxRteColorDiv">
+											<label class="col-form-label col-3 text-sm-right">ROUTE COLOR</label>
+											<div class="m-l-10" style="width:75px;">
+												<input type="color" class="form-control form-control-sm m-t-5 mb-1" id="gpxRteColorRGB"/>
+											</div>
+										</div>
+										<div class="form-group row mb-1 text-center mt-2" style="display:none;" id="trkRteColorDiv">
+											<label class="col-form-label col-3 text-sm-right">TRACK COLOR</label>
+											<div class="m-l-10" style="width:75px;">
+												<input type="color" class="form-control form-control-sm m-t-5 mb-1" id="gpxTrkColorRGB"/>
+											</div>
+										</div>
+										<div class="form-group row mb-1 mt-2">
+											<label class="col-form-label col-3 text-sm-right">설명</label>
+											<div class="col-6">
+												<textarea class="form-control" row="3" id="gpxDescText"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="card-body col-6 mt-2">
+										<div class="form-group mb-1 text-center mt-2" id="gpxNoneInfo" style="display:none;">
+											<span class="text-white" id="gpxNoneTxt"></span>
+										</div>
+										<div class="form-group row mb-1" id="gpxNameInfo" style="display:none;">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">NAME</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="gpxNameTxt"></span>
+											</div>
+										</div>
+										
+										<div class="form-group row mb-1" id="gpxKeywordsInfo" style="display:none;">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">KEYWORDS</label>
+											<div class="mt-2 pt-1 ts-10">
+												<span class="text-white" id="gpxKeywordsTxt"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="gpxDescInfo" style="display:none;">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">DESC</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="gpxDescTxt"></span>
+											</div>
+										</div>
+										
+										<div class="form-group row mb-1" id="gpxTimeInfo" style="display:none;">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">TIME</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="gpxTimeTxt"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="gpxBoundsInfo" style="display:none;">
+											<label class="col-form-label col-sm-3 text-sm-right mt-1">BOUNDS</label>
+											<div class="mt-2 ts-10 pt-1">
+												<span class="text-white" id="gpxBoundsTxt"></span>
+											</div>
+										</div>
+										<div class="form-group row mb-1" id="gpxAuthorInfo" style="display:none;">
+											<label class="col-form-label col-sm-3 text-sm-right p-t-10">AUTHOR</label>
+											<div class="mt-2 ts-10 pt-1">
+												<p class="text-white mb-1" id="gpxAuthorTxt"></p>
+												<p class="text-white mb-1" id="gpxAuthorEmail"></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							  </div>
+							  <div class="flex-column" id="bimUploadLayerSetting" style="display:none;">
+								<div class="d-flex justify-content-center"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-7 mt-2" id="bimIfwSetting">
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">레이어명</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="layerBimName">
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">좌표계</label>
+											<div class="input-group col-5 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="bimPrjInfo" style="opacity: 1;" disabled="">
+												<span class="input-group-append">
+													<button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+												</span>
+											</div>
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">설명</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<textarea class="form-control" row="3" id="bimDescText"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							  </div>
+							  <div class="flex-column" id="jpgUploadLayerSetting" style="display:none;">
+								<div class="d-flex justify-content-center"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-7 mt-2" id="jpgLayerSetting">
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">레이어명</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="layerJpgName">
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">경도</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="jpgLayerLon">
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">위도</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="jpgLayerLat">
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">설명</label>
+											<div class="input-group col-7 ml-0 pl-0">
+												<textarea class="form-control" row="3" id="jpgLayerDescText"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							  </div>
+							  <div class="flex-column" id="dxfUploadLayerSetting" style="display:none;">
+								<div class="d-flex justify-content-center"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-6 mt-2" id="dxfLayerSetting">
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">레이어명</label>
+											<div class="input-group col-10 ml-0">
+												<input type="text" class="form-control form-control-sm" id="layerDxfName">
+											</div>  
+										</div>
+									
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">*인코딩</label>
+											<div class="input-group col-6 ml-0">
+												<select class="form-control form-control-sm" id="dxfEcndoingSelc">
+													<option value="N/A">선택</option>
+													<option value="cp949">CP949 - 한글</option>
+												</select>
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">*좌표계</label>
+											<div class="input-group col-6 ml-0">
+												<input type="text" class="form-control form-control-sm" id="dxfPrjInfo" style="opacity: 1;" disabled="">
+												<span class="input-group-append">
+													<button class="btn btn-secondary btn-sm" type="button" onclick="dtcFile.global.projSearchModal();"><span class="ion ion-ios-search"></span></button>
+												</span>
+											</div> 
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">공간범위</label>
+											<div class="input-group col-12 ml-0">
+												<p class="ts-10 text-white" id="dxfBoundary"></p>
+											</div>
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<div class="input-group col-9 ml-0">
+												<table class="table table-hover table-sm ts-9">
+													<thead>
+														<tr>
+															<th nowarp>선택</th>
+															<th nowarp>레이어 이름</th>
+															<th nowarp>객체 수</th>
+															<th nowarp>도형 유형</th>
+														</tr>
+													</thead>
+													<tbody id="dxfLayerInfoTbl">
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							  </div>
+							  <div class="flex-column" id="pdfUploadLayerSetting" style="display:none;">
+								<div class="d-flex justify-content-center"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									<div class="card-body col-6 mt-2" id="pdfLayerSetting">
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">레이어명</label>
+											<div class="input-group col-10 ml-0 pl-0">
+												<input type="text" class="form-control form-control-sm" id="layerPdfName">
+											</div>  
+										</div>
+										<div class="form-group pl-4 pr-4">
+											<label class="form-label">설명</label>
+											<div class="input-group col-10 ml-0 pl-0">
+												<textarea class="form-control" row="3" id="pdfLayerDescText"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="card-body col-6 mt-2" id="pdfLayerInfo">
+									</div>
+								</div>
+							  </div>
+						</div>
+					</div>
+					<div id="smartwizard-2-step-3" class="card animated fadeIn">
+					  <div class="card-body noScroll" id="thirdWizardDiv">
+						  <div class="row no-gutters row-bordered row-border-light" id="shpUploadLayerUpload" style="display:none;">
+							  <!--<div class="col-md-6 pt-3 pb-3 pl-3 pr-3" style="height:calc(100vh - 520px);">-->
+							  <div class="col-md-6 pt-3 pb-3 pl-3 pr-3">
+								  <img src="#" id="fileThumNailImg" style="width:100%;height:auto;display: none;" class="bg-white rounded-lg">	
+							  </div>
+							  <!--<div class="col-md-6" style="height:calc(100vh - 520px);">-->
+							  <div class="col-md-6">
+								  <div class="card-body" >
+									<div class="form-group row pl-3 pr-3">
+									  <label class="form-label">레이어명 : </label>
+									  <span class="ts-10 pl-2" id="shpDataUploadName"></span>
+									</div>
+									<div class="form-group row pl-3 pr-3">
+										<label class="form-label">Geometry : </label>
+										<span class="ts-10 pl-2" id="shpGeotypUpload"></span>
+									</div>
+									<div class="form-group row pl-3 pr-3">
+										<label class="form-label">좌표계 : </label>
+										<span class="ts-10 pl-2" id="shpPrjUploadName"></span>
+									</div>
+									<div class="form-group row pl-3 pr-3">
+										<label class="form-label">인코딩 : </label>
+										<span class="ts-10 pl-2" id="dbfEncodingUpload"></span>
+									</div>
+									<div class="form-group row pl-3 pr-3">
+										<label class="form-label">설명</label>
+										<span class="ts-10 pl-2" id="shpUploadDescTxt"></span>
+									</div>
+									<!--<div class="form-group row pl-3 pr-3">
+										<label class="form-label">3D 가시화 여부 : </label>
+										<span class="ts-10 pl-2" id="check3Dshp"></span>
+									</div>-->
+								  </div>
+							  </div>
+							  <div class="no-gutters mt-2" id="shpSampleLists" style="display:none;">
+								<div class="card-header ts-9 pl-0" id="shpSampleFileName"></div>
+								  <table class="table table-bordered ts-9" style="max-width:350vh;">
+										<thead id="shpSampleHeader"></thead>
+										<tbody id="shpSampleBody"></tbody>
+								</table>
+							  </div>
+						  </div>
+						  <div class="flex-column" id="csvUploadFinal" style="display:none;">
+							  <div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+									  <div class="col-md-5 pt-1 pb-1 pl-1 pr-1 text-center" id="csvFilePreview" style="height:35vh;display: table;">
+										  <div class="col-md-12 pt-0 pb-0 pl-0 pr-0 bg-white rounded-lg" style="height:100%;display:none;" id="fileCsvThumNailImg">
+											  <img src="#" style="width:100%;height:auto;">
+										  </div>	
+									  </div>
+									  <div class="card-body col-md-7" style="max-height:60vh;">
+											<div class="form-group row mb-2">
+											  <label class="col-form-label col-sm-3 text-sm-right"><strong>레이어명</strong></label>
+											  <div class="col-sm-8 pt-2">
+												  <span class="ts-10" id="csvLayerName"></span>
+											  </div>
+											</div>
+											<div class="form-group row mb-2" id="columLonLatInfo" style="display:none;">
+												<label class="col-form-label col-3 text-sm-right"><strong>경도</strong></label>
+												<div class="col-1 pt-2">
+													<span class="ts-10" id="csvLonTxtInfo"></span>
+												</div>
+												<label class="col-form-label col-1 text-sm-right"><strong>위도</strong></label>
+												<div class="col-1 pt-2">
+													<span class="ts-10" id="csvLatTxtInfo"></span>
+												</div>
+											</div>
+											<div class="form-group row mb-2" id="columAddrInfo" style="display:none;">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>주소</strong></label>
+												<div class="col-sm-3 mt-2">
+													<span class="ts-10" id="csvAddrTxtInfo"></span>
+												</div>
+											</div>
+											
+											<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>가시화 타입</strong></label>
+												<div class="col-sm-5 pt-2">
+													<span class="ts-10" id="csvLayerType"></span>
+												</div>
+											</div>
+
+											<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>그룹핑 여부</strong></label>
+												<div class="col-sm-5 pt-2">
+													<span class="ts-10" id="csvLayerGroup"></span>
+												</div>
+											</div>
+
+											<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>인코딩</strong></label>
+												<div class="col-sm-5 pt-2">
+													<span class="ts-10" id="csvLayerCharset"></span>
+												</div>
+											</div>
+											<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>마커 텍스트</strong></label>
+												<div class="col-sm-5 pt-2">
+													<span class="ts-10" id="csvMarkerTxtInfo"></span>
+												</div>
+											</div>
+											<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>마커 타입</strong></label>
+												<div class="col-sm-5 pt-2">
+													<span class="ts-10" id="csvMarkerTypeTxt"></span>
+												</div>
+											</div>
+											<div class="form-group row mb-2" id="csvMarkerImgSample" style="display:none;">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>마커 이미지</strong></label>
+												<div class="col-3 pt-2">
+													<img src="#" id="markerImgSrc" style="width:50%;"/>
+												</div>
+											</div>
+											<div class="form-group row mb-2" id="csvMarkerColorPoint" style="display:none;">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>포인트 색상</strong></label>
+												<div class="col-sm-5 pt-2">
+													<input type="color" disabled value="#ffffff" id="csvMarkerPntColor"/>
+												</div>
+											</div>
+											<div class="form-group row mb-2">
+												<label class="col-form-label col-sm-3 text-sm-right"><strong>설명</strong></label>
+												<div class="col-sm-5 pt-2">
+													<span class="text-sm-right" id="csvDataDescTxt"></span>
+												</div>
+											</div>
+									  </div>
+								  
+							  </div>
+							<div class="no-gutters mt-4" id="csvSampleLists" style="display:none;border-top:1px solid gray;">
+								<div class="card-header ts-9 pl-0" id="csvSampleFileName"></div>
+								  <table class="table table-bordered ts-9" style="max-width:350vh;">
+										<thead id="csvSampleHeader"></thead>
+										<tbody id="csvSampleBody"></tbody>
+								</table>
+							  </div>
+						  </div>
+						  <div class="flex-column" id="imgUploadCloud" style="display:none;">
+							<div class="row no-gutters" style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="imgFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 bg-dark rounded-lg" style="display:none;" id="fileImgThumNail">
+										<img src="#" style="width:100%;height:auto;">
+									</div>	
+								</div>
+								<div class="card-body col-md-6" id="imgInputDataset">
+								  <div class="form-group row mb-1">
+									<label class="col-form-label col-sm-3 text-sm-right">레이어명</label>
+									<div class="col-sm-8 pt-2">
+										<span id="imgUploadDataName" class="ts-10"></span>
+									</div>
+								  </div>
+								  <div class="form-group row mb-1">
+									<label class="col-form-label col-sm-3 text-sm-right">좌표계</label>
+									<div class="col-sm-8 pt-2">
+										<span id="imgProjName" class="ts-10"></span>
+									</div>
+								  </div>
+								  <div class="form-group row mb-1">
+									<label class="col-form-label col-sm-3 text-sm-right">가시화 타입</label>
+										<div class="col-sm-8 pt-2">
+										<span id="imgVisibleType" class="ts-10"></span>
+									</div>
+								  </div>
+								  <div class="form-group row mb-1">
+									<label class="col-form-label col-sm-3 text-sm-right">설명</label>
+										<div class="col-sm-8 pt-2">
+										<span id="imgDemTxtDesc" class="ts-10"></span>
+									</div>
+								  </div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="pclUploadLayerUpload" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="pclFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" style="display:none;" id="filepclThumNail">
+										<img src="#" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*해당 이미지는 포인트클라우드 위치입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="pclInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclLayerUploadName"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">좌표계</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclLayerSrs"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINX</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadMinx"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINY</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadMiny"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINZ</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadMinz"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXX</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadMaxx"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXY</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadMaxy"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXZ</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadMaxz"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pclUploadDesc"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="zip3dsUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="zip3dsFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" style="display:none;" id="fileZip3dsThumNail">
+										<img src="#" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*해당 이미지는 3DS 모델 위치입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="zip3dsInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsLayerUploadName"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">좌표계</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsLayerSrs"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINX</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsUploadMinx"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINY</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsUploadMiny"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXX</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsUploadMaxx"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXY</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsUploadMaxy"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zip3dsUploadDesc"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="zipDroneUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="zipDroneFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" style="display:none;" id="fileZipDroneThumNail">
+										<img src="#" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*해당 이미지는 드론 모델 위치입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="zipDroneInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zipDroneLayerUploadName"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">좌표계</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zipDroneLayerSrs"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">CENTER X</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zipDroneUploadCenterX"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">CENTER Y</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zipDroneUploadCenterY"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="zipDroneDescTxt"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="gpxUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="gpxFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" style="display:none;" id="fileGpxThumNail">
+										<img src="#" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*해당 이미지는 GPX 경로입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="zipDroneInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="gpxLayerNameTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">좌표계</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" >EPSG:4326</span>
+										</div>
+									</div>
+									<div class="form-group row mb-1" style="display:none;" id="trkLengthInfo">
+										<label class="col-form-label col-sm-4 text-sm-right">총 거리</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="trkLengthTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1" style="display:none;" id="rteLengthInfo">
+										<label class="col-form-label col-sm-4 text-sm-right">총 거리</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="rteLengthTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="gpxDescTxtInfo"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="bimUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="gpxFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" id="fileGpxThumNail">
+										<img src="./assets/img/default.png" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*썸네일 이미지입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="bimInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="bimLayerNameTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">좌표계</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="bimEpsgCode"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="bimDescTxtInfo"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="jpgUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="gpxFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" id="fileJpgThumNail">
+										<img src="./assets/img/default.png" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*썸네일 이미지입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="jpgInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="jpgLayerNameTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">경도</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="jpgLayerLonTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">위도</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="jpgLayerLatTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="jpgDescTxtInfo"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="dxfUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="gpxFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" id="fileDxfThumNail">
+										<img src="./assets/img/default.png" style="width:100%;height:auto;">
+										<div class="form-group row mb-1 col-md-12">
+											<p>
+												<small id="thumbDescInfo">*해당 이미지는 도면 위치입니다.</small>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="dxfInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfLayerNameTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">좌표계</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfLayerEpsgTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">인코딩</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfCharsetTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINX</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfBoundaryMinx"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MINY</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfBoundaryMiny"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXX</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfBoundaryMaxx"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">MAXY</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="dxfBoundaryMaxy"></span>
+										</div>
+									</div>
+									<!--<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="jpgDescTxtInfo"></span>
+										</div>
+									</div>-->
+								</div>
+							</div>
+						  </div>
+						  <div class="flex-column" id="pdfUploadLayer" style="display:none;">
+							<div class="row no-gutters"  style="border-bottom: 0px solid rgba(24,28,33,0.06);">
+								<div class="col-md-6 pt-1 pb-1 pl-1 pr-1 text-center" id="pdfFilePreview" style="display: table;">
+									<div class="col-md-12 pt-0 pb-0 pl-0 pr-0 rounded-lg" id="filePdfThumNail">
+										<img src="/assets/img/no_image.jpg" style="width: 300px;height:auto;">
+									</div>
+								</div>
+								<div class="card-body col-md-6" style="height:35vh;" id="pdfInputDataset">
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">레이어명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pdfLayerNameTxt"></span>
+										</div>
+									</div>
+									<div class="form-group row mb-1">
+										<label class="col-form-label col-sm-4 text-sm-right">설명</label>
+										<div class="pt-1 col-8 mt-1">
+											<span class="ts-10" id="pdfDescTxtInfo"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						  </div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-sm btn-outline-dark" id="projInfoBtn" style="display:none;position: absolute;left: 20px;" 
+					data-toggle="popover" 
+					data-placement="top" 
+					data-state="dark" 
+					data-content="주사용 좌표계는 EPSG:4326입니다."
+				><i class="fas fa-info"></i></button>
+				<button class="btn btn-sm btn-outline-dark disabled" id="fileDeleteBtn">전체 삭제</button>
+				<button class="btn btn-sm btn-outline-dark" id="csvAttrTblBtn" style="display:none;">CSV 데이터 보기</button>
+				<button class="btn btn-sm btn-outline-dark" id="shpAttrTblBtn" style="display:none;">속성 데이터 보기</button>
+				<div class="btn-group">
+					<button class="btn btn-sm btn-outline-dark disabled" id="prev-sw-btn">이전</button>
+					<button class="btn btn-sm btn-outline-dark disabled" id="next-sw-btn">다음</button>
+				</div>
+				<button class="btn btn-sm btn-outline-dark" id="close-sw-btn">닫기</button>
+			</div>
+		</div>
+	</div>
+</div>

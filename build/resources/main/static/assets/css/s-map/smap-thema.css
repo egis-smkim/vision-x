@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/*------------------------------------------------------------------------------
+ * menu icon
+ *----------------------------------------------------------------------------*/
+.eg-icon-thema {
+	display: block;
+	width: 60px;
+	height: 60px;
+	background: url(/assets/images/s-map/icon/icon-thema.png) no-repeat 50% 50%;
+}
+
+/*------------------------------------------------------------------------------
+ * 주제도
+ *----------------------------------------------------------------------------*/
+#smapThemaArea {
+	position: fixed;
+	top: 48px;
+	left: 60px;
+	padding: 15px 0;
+	width: 305px;
+	height: 100%;
+	/*background-color: rgba(49, 52, 55, 0.9);*/
+	z-index: 100;
+}
+
+#smapThemaArea ul, #smapThemaArea li {
+	margin: 0;
+	list-style: none;
+}
+
+#smapThemaArea .mCustomScrollbar-y {
+	padding: 0 15px;
+	height: calc(100% - 89px);
+	overflow-y: auto;
+}
+
+#smapThemaArea .mCustomScrollbar-y::-webkit-scrollbar {width:3px;}
+#smapThemaArea .mCustomScrollbar-y::-webkit-scrollbar-thumb {background-color:#79818A;}
+
+.eg-Thema-tit {
+	margin-bottom: 25px;
+	padding: 5px 15px 0;
+	font-size: 17px;
+}
+
+.eg-thema-card {
+	margin-bottom: 10px;
+	border: 1px solid #494F5C;
+	border-radius: 5px;
+}
+
+.eg-thema-card .eg-card-header {
+	position: relative;
+	padding: 11px 10px 8px;
+	background-color: #32353B;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.eg-thema-card .eg-card-tit {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.eg-thema-card .eg-card-tit::before {
+	content: '';
+	display: inline-block;
+	margin: -2px 5px 0 0;
+	width: 28px;
+	height: 28px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	vertical-align: middle;
+}
+
+.eg-thema-card .eg-icon-traffic::before {background-image: url(/assets/images/s-map/icon/icon-traffic.png);}
+.eg-thema-card .eg-icon-adm::before {background-image: url(/assets/images/s-map/icon/icon-adm.png);}
+.eg-thema-card .eg-icon-culture::before {background-image: url(/assets/images/s-map/icon/icon-culture.png);}
+.eg-thema-card .eg-icon-environment::before {background-image: url(/assets/images/s-map/icon/icon-environment.png);}
+.eg-thema-card .eg-icon-territory::before {background-image: url(/assets/images/s-map/icon/icon-territory.png);}
+
+.eg-thema-card .eg-collapse-icon {
+	position: absolute;
+	top: 50%;
+	right: 14px;
+	margin-top: -12px;
+	width: 24px;
+	height: 24px;
+	background: url(/assets/images/s-map/icon/collapse-icon.png) no-repeat 50% 50%;
+	transform:rotate(-180deg);
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-thema-card .eg-card-body {
+	display: none;
+	position: relative;
+	padding: 15px;
+	background-color: #26292F;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.eg-thema-card .show .eg-collapse-icon {
+	transform:rotate(0deg);
+}
+
+.eg-thema-card.show .eg-card-body {
+	display: block;
+}
+
+
+/*------------------------------------------------------------------------------
+ * 주제도 > list 
+ *----------------------------------------------------------------------------*/
+.eg-thema-list-group > li {
+	position: relative;
+	padding-left: 23px;
+	background: url(/assets/images/s-map/icon/thema-list-icon.png) no-repeat 0 0;
+}
+
+#smapThemaArea .eg-thema-list-group > li + li {
+	margin-top: 10px;
+}
+
+/*------------------------------------------------------------------------------
+ * switch
+ *----------------------------------------------------------------------------*/
+.eg-form-switch {
+	position: relative;
+}
+
+.eg-form-switch .eg-form-check-input {
+	display: block;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.eg-form-switch .eg-form-check-label {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding-right: 50px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.eg-form-switch .eg-knobs {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -9px;	
+	width: 38px;
+	height: 18px;
+	background-color: #616978;
+	border-radius: 9px;
+}
+
+.eg-form-switch .eg-knobs::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 2px;
+	left: 22px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #B1B6C0;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-form-switch  input[type="checkbox"]:checked + label .eg-knobs {
+	background-color: #1AA9E4;
+}
+
+.eg-form-switch  input[type="checkbox"]:checked + label .eg-knobs::after {
+	left: 2px;
+	background-color: #fff;
+}

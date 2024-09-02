@@ -1,0 +1,333 @@
+@charset "UTF-8";
+.eg-container {
+	display: flex;
+	padding: 30px 60px;
+	border: 1px solid #E6E7E7;
+	border-radius: 2px;
+	background-color: #fff;
+	background-image: url(/assets/img/images/qGis-bg-left.png), url(/assets/img/images/qGis-bg-right.png);
+	background-repeat: no-repeat;
+	background-position: left -108px top -14px, right -52px top -14px;
+	letter-spacing: -0.05em;
+}
+
+.eg-container * {
+	font-size: 14px;
+	line-height: 1.3;	
+}
+
+.eg-container ul, .eg-container ol, .eg-container menu, .eg-container li {
+	padding: 0;
+	list-style: none;
+}
+
+.eg-contTit {
+	margin: 30px 0 10px;
+	color: #4E5155;
+	font-size: 25px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.eg-contTit:first-child {
+	margin-top: 0;
+}
+
+.eg-container .eg-left-item {
+	flex-grow: 1;
+}
+
+.eg-container .eg-right-item {
+	flex-shrink: 0;
+	margin-left: 20px;
+	width: 497px;
+}
+
+.eg-container .eg-box {
+	padding: 25px;
+	min-height: 310px;
+	font-size: 14px;
+	border: 1px solid #A1B2C7;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.7);
+	word-break: keep-all;
+}
+
+.eg-container .eg-key-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 50px;
+	min-height: 310px;
+	border: 1px solid #A1B2C7;
+	border-radius: 8px;
+	background-color: #EFF4FA;
+	text-align: center;
+}
+
+.eg-container .eg-key-box .noData {
+	color: #BDCBDC;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.eg-container .eg-key-box .noData::before {
+	content: '';
+	display: block;
+	margin: 0 auto 10px;
+	width: 85px;
+	height: 70px;
+	background: url(/assets/img/images/icon-key.png) no-repeat 50% 50%;
+}
+
+.eg-container .eg-key-box .key-value {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	padding: 10px 30px;
+	min-height: 50px;
+	font-size: 18px;
+	font-weight: 700;
+	background-color: #fff;
+	text-align: center;
+	word-break: break-all;
+}
+
+.eg-container .eg-key-box .eg-btn {
+	padding: 2px 15px 0;
+	height: 35px;
+	line-height: 33px;
+	font-size: 15px;
+	background-color: transparent;
+}
+
+/*------------------------------------------------------------------------------
+ * Button
+ *----------------------------------------------------------------------------*/
+.eg-btn-wrap {
+	display: flex;
+}
+
+.eg-btn-wrap .eg-btn + .eg-btn {
+	margin-left: 5px;
+}
+
+.eg-btn {
+	position: relative;
+	display: inline-block;
+	padding: 2px 20px 0;
+	height: 42px;
+	line-height: 40px;	
+	font-family: 'Noto Sans KR';
+	font-family: 'Chakra Petch';
+	color: #102F50;
+	font-size: 18px;
+	font-weight: 700;
+	border: 1px solid transparent;
+	background-color: transparent;
+	border-radius: 8px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.eg-btn.basic {
+	border-color: #102F50;
+	background-color: #fff;
+}
+
+.eg-btn.basic:hover {
+	color: #fff;
+	background-color: #102F50;
+}
+
+.eg-btn.type01 {
+	color: #8296AB;
+	border-color: #8296AB;
+	background-color: #fff;
+}
+
+.eg-btn.type01:hover {
+	color: #fff;
+	background-color: #8296AB;
+}
+
+.eg-download {
+	color: #225CA9;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.eg-download::before {
+	content: '';
+	display: inline-block;
+	margin: -3px 15px 0 0;
+	width: 18px;
+	height: 16px;
+	background: url(/assets/img/images/icon-download.png) no-repeat 50% 50%;
+	vertical-align: middle;
+}
+
+/*------------------------------------------------------------------------------
+ * list-group
+ *----------------------------------------------------------------------------*/
+.eg-list-group > li {
+	display: flex;
+	align-items: center;
+	padding: 15px 30px;
+	min-height: 50px;
+	border: 1px solid #A1B2C7;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.eg-list-group > li + li {
+	margin-top: 5px;
+}
+
+.eg-list-group .term {
+	flex-shrink: 0;
+	margin-right: 5px;
+	width: 140px;
+	font-weight: 700;
+}
+
+.eg-list-group .desc {
+	flex-grow: 1;
+	padding-right: 30px;
+}
+
+/*------------------------------------------------------------------------------
+ * list-type1
+ *----------------------------------------------------------------------------*/
+.eg-list-type1 > li {
+	position: relative;
+	padding-left: 7px;
+	word-break: keep-all;
+}
+
+.eg-list-type1 > li + li {
+	margin-top: 5px;
+}
+
+.eg-list-type1 > li::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 0;
+	width: 4px;
+	height: 1px;
+	background-color: #4E5155;
+}
+
+/*------------------------------------------------------------------------------
+ * popup-panel
+ *----------------------------------------------------------------------------*/
+.eg-popup-panel {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: #fff;
+	border-radius: 15px;
+	z-index: 200;
+}
+
+.eg-popup-panel.opened {
+	display: block;
+}
+
+.eg-popup-panel .eg-popup-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 80px;
+	height: 100px;
+}
+
+.eg-popup-panel .eg-popup-tit {
+	margin: 0;
+	font-family: 'Noto Sans KR';
+	color: #102F50;
+	font-size: 28px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.eg-popup-panel .eg-popup-body {
+	padding: 0 80px;
+	height: calc(100% - 100px);
+	font-family: 'Noto Sans KR';
+	font-size: 13px;
+}
+
+.eg-popup-panel .eg-popup-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #454545;
+	border-radius: 7px;
+	background: #fff url(/assets/img/images/icon-popup-close.png) no-repeat 50% 50%;
+}
+
+.eg-popup-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+
+.qGisKey-Regi-popup {
+	width: 538px;
+	/* height: 315px;기 존*/
+	height: 490px;
+} 
+
+
+
+.eg-popup-panel .eg-popup-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 50px;
+	height: 50px;
+	border: 1px solid #454545;
+	border-radius: 7px;
+	background: #fff url(/assets/img/images/icon-popup-close.png) no-repeat 50% 50%;
+}
+
+/*------------------------------------------------------------------------------
+ * text
+ *----------------------------------------------------------------------------*/
+.eg-text-underline {
+	text-decoration: underline;
+}
+
+
+/*------------------------------------------------------------------------------
+ * media
+ *----------------------------------------------------------------------------*/
+@media screen and (max-width: 1400px){
+	.eg-container {
+		flex-direction: column;
+		background-position: left -108px bottom 0, right -52px top -14px;
+	}
+
+	.eg-container .eg-right-item {
+		margin-left: 0;
+	}
+
+	.eg-container .eg-right-item .eg-contTit {
+		margin-top: 30px;
+	}
+
+}

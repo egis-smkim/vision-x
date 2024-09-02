@@ -1,0 +1,44 @@
+<div class="modal noScroll" id="dtcFileUploadModal"> 
+	<div class="modal-dialog modal-dialog-centered modal-xl noScroll">
+		<div class="modal-content noScroll bg-dark">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalCenterTitle" data-i18n="file_upload.title">
+				파일업로드
+				<span style="font-size: 11px; margin-left: 5px;color: #ffeb00;">* 업로드한 파일은 [ <span class="ion ion-md-person mr-1"></span>업로드 ]에서 확인할 수 있습니다.</span>
+				</h5>
+				<button type="button" class="btn icon-btn btn-outline-close close-sw-btn" style="position: absolute; top: 11px; right: 9px; z-index: 101;">
+					<span class="lnr lnr-cross"></span>
+				</button>
+			</div>
+			<div class="modal-body noScroll">
+				<div id="smartwizard-2">
+					<div class="mb-2 mt-3">
+						<div id="dtcFileUploadStep" class="card animated fadeIn"
+							style="border: 1px dashed; max-height: 375px;">
+							<div class="card-body noScroll">
+								<form class="dropzone needsclick" id="dropzone-file"
+									enctype="multipart/form-data">
+									<div class="dz-message needsclick">
+										Drop files here or click to upload
+										<span class="note needsclick" data-i18n="file_upload.file_info">(클릭 또는 드래그&드랍으로 <strong>업로드</strong>할 수 있으며 <strong>3DS 단일, 3DS+Texture 파일(JPG)</strong>을 업로드할 수 있습니다.)</span>
+									</div>
+									<div class="fallback">
+										<input id="dtcUploadFile" name="fileLists" type="file"
+											multiple>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer text-right">
+				<div class="btn-group">
+					<button class="btn btn-sm btn-outline-dark btn-primary"
+						id="next-sw-btn" data-i18n="file_upload.upload">업로드</button>
+				</div>
+				<button class="btn btn-sm btn-outline-dark close-sw-btn" data-i18n="file_upload.close">닫기</button>
+			</div>
+		</div>
+	</div>
+</div>

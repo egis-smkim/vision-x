@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+ul.moduleEditBuildingLibrayListWrap {
+	list-style:none;
+	padding:0px;
+	max-height:140px;
+	overflow-y:scroll;
+}
+ul.moduleEditBuildingLibrayListWrap.hide{
+	display:none;
+}
+ul.moduleEditBuildingLibrayListWrap li {
+	display:block;
+	padding:10px;
+	float:left;
+	white-space: nowrap;
+}
+
+.btn_library.select {
+	background-color: #ecf9ff;
+}
+
+ul.moduleEditBuildingLibrayListWrap li:first-child {
+
+}
+
+ul.moduleEditBuildingLibrayListWrap::-webkit-scrollbar {
+	display:none;
+}
+
+img.moduleEditBuildingLibraryListImage {
+	border:1px solid rgba(72, 76, 83, 0.5);
+	width:120px;
+}
+
+#editModelInterface {
+	position: fixed;
+    z-index: 173;
+    width: 114px;
+    height: 114px;
+    opacity: 1;
+    display: none;
+}
+
+#tileObjectOptionInterface {
+	position: fixed;
+    z-index: 173;
+    width: 58px;
+    opacity: 1;
+    display: none;
+}
+
+#editModelDirection {
+	display: block;
+    width: 100%;
+    top: calc(80%);
+    left: 0px;
+    position: absolute
+}
+
+.editModelChangeValueOutput {
+	top: calc(80% - 3px);
+    left: -58px;
+    position: absolute;
+    text-align: right;
+    font-weight: 900;
+    color: white;
+    display: inline-block;
+    width: 50px;
+}
+
+.editModelControlButton {	
+	display: block;
+	margin: 0px;
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.tileObjectOptionButton {	
+	display: block;
+	margin: 0px;
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    float: left;
+    margin-right: 5px;
+}
+
+#editModelMove {	
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);    
+}
+
+#editScaleHeightUp {
+	top: calc(100% - 69px);
+    left: calc(105%);
+}
+
+#editScaleHeightDown {
+	top: calc(100% + 15px);
+    left: calc(105%);
+}
+
+#editScaleHeightDetailUp {
+	top: calc(100% - 41px);
+    left: calc(105%);
+}
+
+#editScaleHeightDetailDown {
+	top: calc(100% - 13px);
+    left: calc(105%);
+}
+
+#editScaleWidthUp {
+	top: calc(100% - 41px);
+    left: calc(130%);
+}
+#editScaleWidthDown {
+	top: calc(100% - 13px);
+    left: calc(130%);
+}
+
+ul.moduleEditBuildingProjectListWrap {
+	position:absolute;
+	list-style:none;
+	padding:0px;
+	max-height:140px;
+	display:block;
+	overflow:auto;
+	width: 88%;
+}
+ul.moduleEditBuildingProjectListWrap li {
+	display:block;
+	padding:10px;
+	float:left;
+	white-space: nowrap;
+	width: 100%;
+}
+#projectSaveInterface {
+	position: fixed;
+    display: none;
+    width: 400px;
+    margin-left: 13px;
+    background-color: white;
+    top: calc(50% - 50px);
+    left: calc(50% - 200px);
+    padding: 18px 10px 10px 16px;
+    border-radius: 5px;
+}
+.editbuilding_save_type_body{
+	margin-bottom: 16px;
+	margin-left: 19px;
+	margin-top: 5px;
+}
+#editbuilding_save_project_cloud {
+	position: absolute;
+    top: 40px;
+    right: 18px;
+    width: 73px;
+    height: 38px;
+}
+#editbuilding_save_project_file {
+	position: absolute;
+    top: 120px;
+    right: 18px;
+    width: 73px;
+    height: 38px;
+}
+#editbuilding_save_project_cancel {
+	width: 25px;
+    height: 25px;
+    margin: 7px;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}

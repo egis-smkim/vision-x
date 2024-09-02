@@ -1,0 +1,6 @@
+{
+	"alert":{
+		"save_after_moving": "지점 이동 후 저장할 수 있습니다.",
+		"content_saved": "CCTV 편집 내용이 저장되었습니다."
+	}
+}
