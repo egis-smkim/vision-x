@@ -4,81 +4,289 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="js/member.js"></script>
-	<script src="js/common.js"></script>
-	<script src="js/dtc-translation-i18n.js"></script>
-	<script src="assets/vendor/libs/sha512/sha512.min.js"></script>
+	<script src="/js/member.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="/js/dtc-translation-i18n.js"></script>
+	<script src="/assets/vendor/libs/sha512/sha512.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18n/1.1.1/jquery.i18n.min.js"></script>
 	<!-- <script src="../js/popup.js"></script> -->
-	/home/hadoop/vision-x/vision-x/src/main/resources/static/
 	<script>
 		$(function() {
 			const parentId = "#signIn_popup"
 			const openButtonClass = '.sign-in-btn'
 			initPopup(parentId, openButtonClass)
 		})
+		// 로그인 함수
+		function executeLogin(event) {
+			event.preventDefault(); // 폼 기본 제출 방지
+
+			const memId = document.getElementById("memId").value;
+			const memPwd = document.getElementById("memPwd").value;
+
+
+			console.log("memId:", memId);  // 디버그용 로그
+			console.log("memPwd:", memPwd);
+
+			// 비밀번호 해시화
+			const hashedPwd = hex_sha512(memPwd);
+			localStorage.setItem("memId", memId);
+			localStorage.setItem("hashedPwd", hashedPwd);
+
+			console.log("hashedPwd:", hashedPwd);  // 해시된 값 확인
+
+			// 로그인 폼 데이터 전송
+			const form = document.createElement('form');
+			form.method = "POST";
+			form.action = "/login";
+
+			const memIdInput = document.createElement('input');
+			memIdInput.type = 'hidden';
+			memIdInput.name = 'memId';
+			memIdInput.value = memId;
+			form.appendChild(memIdInput);
+
+			const memPwdInput = document.createElement('input');
+			memPwdInput.type = 'hidden';
+			memPwdInput.name = 'memPassword';
+			memPwdInput.value = hashedPwd;
+			form.appendChild(memPwdInput);
+
+			document.body.appendChild(form);
+			form.submit();
+		}
+		// 로그인 함수
+		function loginAndRedirect(event) {
+			//event.preventDefault(); // 폼 기본 제출 방지
+
+			// 로그인 폼의 데이터를 가져옵니다
+			//const memId = document.getElementById("memId").value;
+			//const memPwd = document.getElementById("memPwd").value;
+			const memId = localStorage.getItem("memId");
+			const hashedPwd = localStorage.getItem("hashedPwd");
+
+			// 유효성 검사: 아이디와 비밀번호 입력 확인
+			if (memId === "") {
+				alert("아이디를 입력하세요.");
+				document.getElementById("memId").focus();
+				return;
+			}
+			if (memPwd === "") {
+				alert("비밀번호를 입력하세요.");
+				document.getElementById("memPwd").focus();
+				return;
+			}
+
+			// 비밀번호를 SHA-512 해시화합니다
+			//const hashedPwd = hex_sha512(memPwd);
+
+			// 로그인 정보를 포함한 폼 데이터를 생성합니다.
+			const formData = new FormData();
+			formData.append("memId", memId);
+			formData.append("memPwd", hashedPwd);
+
+			// test.vision-x.kr의 로그인 엔드포인트로 POST 요청을 보냅니다.
+			fetch("https://test.vision-x.kr/member/checkLogin.do", {
+				method: "POST",
+				body: formData,
+				credentials: "include" // 쿠키를 포함해서 요청 (세션 유지)
+			})
+					.then(response => response.json())
+					.then(data => {
+						if (data.MEM_INFO && data.MEM_INFO !== "NONE") {
+							if (data.MEM_INFO.LOGIN_COUNT >= 5) {
+								// 로그인 5회 실패 시 경고 처리
+								alert("로그인 5회 실패로 인한 비밀번호 초기화가 필요합니다.");
+								$("#errorPwdPopup").addClass("active");
+								// 비밀번호 초기화 팝업을 표시하는 로직 추가 가능
+								return;
+							} else if (data.MEM_INFO.MEM_LEVEL === 0) {
+								// 비허가 사용자 처리
+								alert("비허가 사용자입니다.");
+								return;
+							} else if (data.MEM_INFO.MEM_LEVEL === -1) {
+								// 이메일 미인증 사용자 처리
+								alert("이메일 미인증 사용자입니다. 이메일을 인증해 주세요.");
+								return;
+							} else {
+								// 로그인 성공 시 쿠키 설정 및 페이지 이동 처리
+								if (data.key != null && data.key !== "{}") {
+									setCookie("keyCookie", data.key, 1);
+								}
+								checkCookie(); // 아이디 저장 여부에 따른 쿠키 설정
+
+								// OTP 사용 여부 확인 후 처리
+								if (data.otp_flag === "1") {
+									// OTP 인증이 필요한 경우
+									$('#otp-modal').modal('show');
+									$('#otpCreate').click();
+								} else {
+									// OTP 없이 로그인 성공
+									loginSession();
+								}
+							}
+						} else {
+							// 로그인 실패 처리
+							alert("로그인 실패: 아이디나 비밀번호가 잘못되었습니다.");
+						}
+					})
+					.catch(error => {
+						console.error("Error during login:", error);
+					});
+		}
+
+		function loginSession() {
+			//const memId = document.getElementById("memId").value;
+			//const memPwd = hex_sha512(document.getElementById("memPwd").value);
+			const memId = localStorage.getItem("memId");
+			const memPwd = localStorage.getItem("hashedPwd");
+			const formData = new FormData();
+			formData.append("memId", memId);
+			formData.append("memPwd", memPwd);
+			formData.append("lang", "ko");
+
+			fetch("https://test.vision-x.kr/member/loginSession.do", {
+				method: "POST",
+				body: formData,
+				credentials: "include"
+			})
+					.then(response => response.json())
+					.then(result => {
+						if (result.MEM_INFO === "fail") {
+							alert("OTP 인증에 실패하였습니다. 다시 시도해 주세요.");
+							$('#optNum').focus();
+							return;
+						}
+
+						const loginResult = result.MEM_INFO.MEM_LEVEL;
+						if (loginResult === 10) {
+							// 관리자 로그인 성공 시 관리자 페이지로 리다이렉트
+							location.href = "../ide.do";
+						} else if ([1, 5, 10].includes(loginResult)) {
+							// 일반 회원 로그인 성공 시
+							const timediff = result.timediff;
+							const tempPwd = result.MEM_INFO.TEMP_PWD_FLAG;
+							if (parseInt(timediff) >= 3 || parseInt(tempPwd) > 0) {
+								location.href = "//" + window.location.host + "/desk/moveChgPWD.do";
+							} else {
+								if (location.href.indexOf("main.do") > -1) {
+									location.reload();
+								} else {
+									location.href = "//" + window.location.host + "";
+								}
+							}
+						}
+
+						// loginResult 값에 상관없이 로그인 성공 시 ide.do로 리다이렉트
+						location.href = "../ide.do";
+
+					})
+					.catch(error => {
+						console.error("Error during login session:", error);
+					});
+		}
+
+		// 쿠키 설정 함수
+		function setCookie(cookieName, value, exdays) {
+			const exdate = new Date();
+			exdate.setDate(exdate.getDate() + exdays);
+			const cookieValue = escape(value) + ((exdays == null) ? "" : "; path=/; expires=" + exdate.toGMTString());
+			document.cookie = cookieName + "=" + cookieValue;
+		}
+
+		// 아이디 저장 체크박스 처리 함수
+		function checkCookie() {
+			if ($("#idSetCookie").is(":checked")) {
+				const memId = $("#memId").val();
+				setCookie("memId", memId, 60);
+				setCookie("checkCookie", "Y", 60);
+			} else {
+				deleteCookie("memId");
+				deleteCookie("checkCookie");
+			}
+		}
+
+		function deleteCookie(cookieName) {
+			const expireDate = new Date();
+			expireDate.setDate(expireDate.getDate() - 1);
+			document.cookie = cookieName + "=; expires=" + expireDate.toGMTString() + "; path=/";
+		}
+
+		// 이벤트 바인딩
+		$(document).ready(function () {
+			// Sign in 버튼 클릭 시 로그인 처리
+			$('.sign-in-submit').on('click', function (event) {
+				executeLogin(event);
+			});
+
+			// Enter 키 입력 시 로그인 처리
+			$("#memId, #memPwd").on("keyup", function (e) {
+				if (e.key === "Enter") {
+					executeLogin(e);
+				}
+			});
+		});
 	</script>
 
-  <title>Vision-X</title>
+	<title>Vision-X</title>
 </head>
 
 <body>
 
-  <!-- //sign in 팝업 -->
-	<div class="popup-bg sign-in-open popup">
-		<div class="sign-in-pop pop-contents">
-			<div class=" ma-b30">
-				<h2>Sign in</h2>
-			</div>
-			<form class="contact-form">
-				<div class="form-group">
-					<label for="memId">ID</label>
-					<input type="text" class="contact-input" name="memId" id="memId" required placeholder="USER ID.">
-				</div>
-				<div class="form-group">
-					<label for="memPwd">password</label>
-					<input type="text" class="contact-input" name="memPwd" id="memPwd" required placeholder="USER PASSWORD.">
-				</div>
-				<div class="form-check fl-btw">
-					<div class="sign-re">
-						<label><input type="checkbox">Remember me</label>
-					</div>
-					<div><a href="#" class="sign-forgot">Forgot your password?</a></div>
-				</div>
-				<div class="d-fl fl-c al-cen">
-					<a class="contact-submit sign-in-submit" onclick="JavaScript:D_MEMBER.LOGIN.executeLogin();">SIGN IN</a>
-				</div>
-			</form>			
+<!-- //sign in 팝업 -->
+<div class="popup-bg sign-in-open popup" id="signIn_popup">
+	<div class="sign-in-pop pop-contents">
+		<div class="ma-b30">
+			<h2>Sign in</h2>
 		</div>
-
-		<div class="sign-in-pop pop-contents reset-pop hide">
-			<div class="ma-b30">
-				<h2>Reset Password</h2>
+		<form class="contact-form" onsubmit="return false;">
+			<div class="form-group">
+				<label for="memId">ID</label>
+				<input type="text" class="contact-input" name="memId" id="memId" required="" placeholder="USER ID.">
 			</div>
-			<form class="contact-form">
-				<div class="form-group">
-					<label for="name">ID</label>
-					<input type="text" class="contact-input" name="name" required placeholder="Please, Enter ID.">
+			<div class="form-group">
+				<label for="memPwd">Password</label>
+				<input type="password" class="contact-input" name="memPwd" id="memPwd" required="" placeholder="USER PASSWORD.">
+			</div>
+			<div class="form-check fl-btw">
+				<div class="sign-re">
+					<label><input type="checkbox">Remember me</label>
 				</div>
-				<div class="form-group">
-					<label for="address">Name</label>
-					<input type="text" class="contact-input" name="address" required placeholder="Please, Enter Name.">
-				</div>
-				<div class="form-group">
-					<label for="address">E-mail</label>
-					<input type="text" class="contact-input" name="address" required placeholder="Please, Enter E-mail.">
-					<p class="password-text">Please contact us at <span>Khaia@egiskorea.com</span> if your are having
-						trouble finding your password.</p>
-				</div>
-				<div class="d-fl fl-c al-cen">
-					<button class="contact-submit reset-submit">CONTINUE</button>
-				</div>
-			</form>
-		</div>
-		<div class="popup-close">X</div>
+				<div><a href="#" class="sign-forgot">Forgot your password?</a></div>
+			</div>
+			<div class="d-fl fl-c al-cen">
+				<button type="submit" class="contact-submit sign-in-submit">SIGN IN</button>
+			</div>
+		</form>
 	</div>
+
+	<div class="sign-in-pop pop-contents reset-pop hide">
+		<div class="ma-b30">
+			<h2>Reset Password</h2>
+		</div>
+		<form class="contact-form">
+			<div class="form-group">
+				<label for="memId">ID</label>
+				<input type="text" class="contact-input" name="name" required placeholder="Please, Enter ID.">
+			</div>
+			<div class="form-group">
+				<label for="address">Name</label>
+				<input type="text" class="contact-input" name="address" required placeholder="Please, Enter Name.">
+			</div>
+			<div class="form-group">
+				<label for="address">E-mail</label>
+				<input type="text" class="contact-input" name="address" required placeholder="Please, Enter E-mail.">
+				<p class="password-text">Please contact us at <span>Khaia@egiskorea.com</span> if your are having
+					trouble finding your password.</p>
+			</div>
+			<div class="d-fl fl-c al-cen">
+				<button class="contact-submit reset-submit">CONTINUE</button>
+			</div>
+		</form>
+	</div>
+	<div class="popup-close">X</div>
+</div>
 </body>
 
 </html>

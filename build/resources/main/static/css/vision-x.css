@@ -99,7 +99,31 @@ input::placeholder {color: rgba(143, 143 , 143, 0.5);}
   padding-bottom: 3px;
   border-bottom: 2px solid #fff;
 }
+.logout-btn {
+	background: none;
+	border: none;
+	color: var(--c-t1); /* 텍스트 색상을 Sign in과 동일하게 */
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	margin-left: 10px;
+	padding: 0;
+}
 
+.redirect-btn {
+	background: none;
+	border: none;
+	color: var(--c-t1); /* 텍스트 색상을 Sign in과 동일하게 */
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 400;
+	margin-left: 10px;
+	padding: 0;
+}
+
+.logout-btn:hover {
+	color: var(--mc-t3); /* hover 시의 색상을 mc-t3로 설정 */
+}
 .sign-up-btn, .sign-in-btn {cursor: pointer;}
 .wrap-top{
 	width: 100%;

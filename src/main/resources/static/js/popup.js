@@ -126,6 +126,7 @@ $(document).ready(function () {
 	}
 
 
+
 	window.initSignUpPopup = initSignUpPopup;
 	window.initSignInPopup = initSignInPopup;
 	window.initContactPopup = initContactPopup;

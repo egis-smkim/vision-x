@@ -1,25 +1,20 @@
 plugins {
 	id 'java'
 	id 'war'
-	id 'org.springframework.boot' version '3.3.1'
+	id 'org.springframework.boot' version '2.7.8'
 	id 'io.spring.dependency-management' version '1.1.5'
 }
 
-sourceSets {
-	main {
-		java {
-			srcDirs = ['src/main/java']
-		}
-	}
-}
+
 
 bootWar {
-	archiveFileName = 'ui.war'
+	enabled = false
 }
 
-tasks.war {
+war {
+	enabled = true
 	archiveBaseName = 'visionX'
-	archiveVersion = '1.0.0'
+	archiveFileName = 'visionX.war'
 }
 
 group = 'com.vision-x'
@@ -29,7 +24,7 @@ war.enabled = true
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(11)
 	}
 }
 
@@ -67,7 +62,32 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	implementation 'javax.validation:validation-api:2.0.1.Final'
+	implementation 'org.hibernate.validator:hibernate-validator:6.1.7.Final'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	// Lombok(필요한 경우)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	implementation 'com.amazonaws:aws-java-sdk-s3:1.11.238'
+
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.session:spring-session-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+
+	/*
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.0'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
@@ -79,6 +99,12 @@ dependencies {
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'xalan:xalan:2.7.2'
 	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+
+
+
+	// Lombok(필요한 경우)
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
@@ -124,13 +150,15 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 	implementation 'org.hsqldb:hsqldb:2.6.1' // 최신 버전으로 업데이트할 수 있습니다
 	//implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
-
+*/
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+war{
 
+}
 test {
 	enabled = false
 }
