@@ -2,7 +2,14 @@ FROM openjdk:11-jdk-slim AS build
 
 WORKDIR /app
 
-# 소스 코드를 복사
+# 1. 의존성 관리 파일만 먼저 복사
+COPY build.gradle settings.gradle /app/
+WORKDIR /app
+
+# 2. Gradle 의존성 캐싱
+RUN ./gradlew dependencies
+
+# 3. 나머지 소스 코드 복사
 COPY . /app
 
 # Gradle Wrapper 실행 권한 추가
