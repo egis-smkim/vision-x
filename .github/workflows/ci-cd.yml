@@ -40,18 +40,15 @@ jobs:
       - name: Deploy to Development Server
         uses: appleboy/ssh-action@v0.1.5
         with:
-          host: "49.247.26.9"
-          username: "hadoop"
-          password: "!@egiskorea2024!!"
+          host: ${{ secrets.DEV_SERVER_HOST }}
+          username: ${{ secrets.DEV_SERVER_USER }}
+          password: ${{ secrets.DEV_SERVER_PASSWORD }}
+          port: 443
           script: |
-            cd /home/hadoop/vision-x
+            cd /path/to/project
             git pull origin dev
             docker-compose -f docker-compose-dev.yml down
             docker-compose -f docker-compose-dev.yml up --build -d
-          sync: false
-          use_insecure_cipher: false
-          timeout: 30s
-          command_timeout: 10m
 
   deploy-prod:
     if: github.ref == 'refs/heads/main'
