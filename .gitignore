@@ -5,9 +5,6 @@ build/libs/
 build/tmp/
 build/bootWarMainClassName
 
-# Docker Compose 파일 (옵션)
-docker-compose-*.yml
-
 # IDE 설정 파일
 .vscode/
 
@@ -17,9 +14,6 @@ docker-compose-*.yml
 # OS 생성 파일
 .DS_Store
 Thumbs.db
-
-# 민감한 설정 파일 (필요 시 추가)
-src/main/resources/application-*.yml
 
 # 환경 변수 파일 (예: .env)
 .env

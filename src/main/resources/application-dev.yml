@@ -1,0 +1,11 @@
+server:
+  port: 8081 # 개발 서버 포트
+spring:
+  profiles: dev
+  jpa:
+    hibernate:
+      ddl-auto: update # 개발용으로 테이블 자동 갱신
+    show-sql: true # SQL 로그 출력
+logging:
+  level:
+    root: DEBUG # 디버깅 로그 레벨
