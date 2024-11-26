@@ -44,10 +44,14 @@ jobs:
           username: "hadoop"
           password: "!@egiskorea2024!!"
           script: |
-            cd /path/to/project
+            cd /home/hadoop/vision-x
             git pull origin dev
             docker-compose -f docker-compose-dev.yml down
             docker-compose -f docker-compose-dev.yml up --build -d
+          sync: false
+          use_insecure_cipher: false
+          timeout: 30s
+          command_timeout: 10m
 
   deploy-prod:
     if: github.ref == 'refs/heads/main'
