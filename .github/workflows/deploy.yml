@@ -3,18 +3,23 @@ name: Deploy Workflow
 on:
   push:
     branches:
-      - dev    # 개발 서버 자동 배포
-      - main   # 상용 서버 자동 배포
+      - dev
+      - main
 
 jobs:
   deploy-dev:
-    # dev 브랜치에 푸시될 때 실행
     if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out repository
       uses: actions/checkout@v3
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: temurin
 
     - name: Deploy to Development Server
       uses: appleboy/ssh-action@v0.1.5
@@ -30,13 +35,18 @@ jobs:
           docker-compose -f docker-compose-dev.yml up --build -d
 
   deploy-prod:
-    # main 브랜치에 푸시될 때 실행
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
     - name: Check out repository
       uses: actions/checkout@v3
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: temurin
 
     - name: Deploy to Production Server
       uses: appleboy/ssh-action@v0.1.5
