@@ -1,13 +1,27 @@
+<<<<<<< HEAD
 name: Deployment Workflow
+=======
+name: Deploy Workflow
+>>>>>>> dev
 
 on:
   push:
     branches:
+<<<<<<< HEAD
       - dev   # 개발 서버 자동 반영
       - main  # 상용 서버 푸시 후 수동 반영
 
 jobs:
   deploy:
+=======
+      - dev    # 개발 서버 자동 배포
+      - main   # 상용 서버 자동 배포
+
+jobs:
+  deploy-dev:
+    # dev 브랜치에 푸시될 때 실행
+    if: github.ref == 'refs/heads/dev'
+>>>>>>> dev
     runs-on: ubuntu-latest
 
     steps:
@@ -15,12 +29,16 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Deploy to Development Server
+<<<<<<< HEAD
       if: github.ref == 'refs/heads/dev'
+=======
+>>>>>>> dev
       uses: appleboy/ssh-action@v0.1.5
       with:
         host: ${{ secrets.DEV_SERVER_HOST }}
         username: ${{ secrets.DEV_SERVER_USER }}
         password: ${{ secrets.DEV_SERVER_PASSWORD }}
+<<<<<<< HEAD
         script: |
           cd /path/to/project
           docker-compose -f docker-compose-dev.yml down
@@ -29,3 +47,33 @@ jobs:
     - name: Notify Manual Deployment for Production Server
       if: github.ref == 'refs/heads/main'
       run: echo "Code pushed to main branch. Please manually deploy to production."
+=======
+        port: 22
+        script: |
+          cd /path/to/project/on/dev
+          git pull origin dev
+          docker-compose -f docker-compose-dev.yml down
+          docker-compose -f docker-compose-dev.yml up --build -d
+
+  deploy-prod:
+    # main 브랜치에 푸시될 때 실행
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Deploy to Production Server
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.PROD_SERVER_HOST }}
+        username: ${{ secrets.PROD_SERVER_USER }}
+        password: ${{ secrets.PROD_SERVER_PASSWORD }}
+        port: 22
+        script: |
+          cd /path/to/project/on/prod
+          git pull origin main
+          docker-compose -f docker-compose-prod.yml down
+          docker-compose -f docker-compose-prod.yml up --build -d
+>>>>>>> dev
