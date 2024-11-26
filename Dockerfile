@@ -1,33 +1,20 @@
-# 1. Gradle 빌드에 필요한 JDK를 기반 이미지로 설정
-FROM openjdk:11-jdk-slim AS build
-
+# 1. Gradle 환경 준비
+FROM openjdk:17-jdk-slim as build
 WORKDIR /app
+COPY gradle gradle
+COPY gradlew .
+COPY settings.gradle .
+COPY build.gradle .
 
-# 2. Gradle Wrapper 및 설정 파일 복사 (gradlew 포함)
-COPY gradlew /app/gradlew
-COPY gradle /app/gradle
-COPY settings.gradle /app/settings.gradle
-COPY build.gradle /app/build.gradle
+# Gradle 의존성 캐싱
+RUN ./gradlew dependencies --no-daemon
 
-# 3. Gradle Wrapper 실행 권한 부여
-RUN chmod +x ./gradlew
-
-# 4. Gradle 의존성 캐시 활용
-RUN ./gradlew dependencies
-
-# 5. 전체 소스 코드 복사
-COPY . /app
-
-# 6. Gradle 빌드 실행 (테스트 제외)
+# 2. 소스 복사 및 빌드
+COPY . .
 RUN ./gradlew clean build -x test
 
-# 7. 런타임 이미지를 기반으로 실행 환경 설정
-FROM openjdk:11-jdk-slim
-
+# 3. 실행 단계
+FROM openjdk:17-jdk-slim
 WORKDIR /app
-
-# 빌드된 JAR 파일 복사
 COPY --from=build /app/build/libs/*.jar app.jar
-
-# 애플리케이션 실행
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]

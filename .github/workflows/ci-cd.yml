@@ -40,9 +40,9 @@ jobs:
       - name: Deploy to Development Server
         uses: appleboy/ssh-action@v0.1.5
         with:
-          host: ${{ secrets.DEV_SERVER_HOST }}
-          username: ${{ secrets.DEV_SERVER_USER }}
-          password: ${{ secrets.DEV_SERVER_PASSWORD }}
+          host: "49.247.26.9"
+          username: "hadoop"
+          password: "!@egiskorea2024!!"
           script: |
             cd /path/to/project
             git pull origin dev
