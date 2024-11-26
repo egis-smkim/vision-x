@@ -1,0 +1,31 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches:
+      - dev   # 개발 서버 자동 반영
+      - main  # 상용 서버 푸시 후 수동 반영
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Deploy to Development Server
+      if: github.ref == 'refs/heads/dev'
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.DEV_SERVER_HOST }}
+        username: ${{ secrets.DEV_SERVER_USER }}
+        password: ${{ secrets.DEV_SERVER_PASSWORD }}
+        script: |
+          cd /path/to/project
+          docker-compose -f docker-compose-dev.yml down
+          docker-compose -f docker-compose-dev.yml up --build -d
+
+    - name: Notify Manual Deployment for Production Server
+      if: github.ref == 'refs/heads/main'
+      run: echo "Code pushed to main branch. Please manually deploy to production."
