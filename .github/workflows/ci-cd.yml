@@ -47,7 +47,6 @@ jobs:
           script: |
             cd /home/hadoop/vision-x
             git pull origin dev
-            docker-compose -f docker-compose-dev.yml down
             docker-compose -f docker-compose-dev.yml up --build -d
 
   deploy-prod:
