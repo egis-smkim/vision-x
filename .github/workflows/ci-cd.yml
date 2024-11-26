@@ -45,7 +45,7 @@ jobs:
           password: ${{ secrets.DEV_SERVER_PASSWORD }}
           port: 443
           script: |
-            cd /path/to/project
+            cd /home/hadoop/vision-x
             git pull origin dev
             docker-compose -f docker-compose-dev.yml down
             docker-compose -f docker-compose-dev.yml up --build -d
