@@ -7,6 +7,11 @@ on:
       - main  # 상용 브랜치
 
 jobs:
+  check-ip:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check IP Address
+          run: curl ifconfig.me
   build:
     runs-on: ubuntu-latest
 
