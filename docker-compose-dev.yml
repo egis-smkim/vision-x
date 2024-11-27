@@ -2,12 +2,11 @@ version: '3.8'
 
 services:
   app:
-    image: openjdk:11-jdk-slim
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./src:/app/src  # 소스 코드 실시간 반영
+      - ./src:/app/src
       - ./build:/app/build
     ports:
       - "8081:8081"
