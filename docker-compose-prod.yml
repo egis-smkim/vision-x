@@ -14,4 +14,4 @@ services:
 
 networks:
   vision-x-dev-network:
-    name: vision-x-prod-network
+    name: vision-x-prod-network 
