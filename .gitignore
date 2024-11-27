@@ -1,7 +1,5 @@
 # Gradle 관련 파일 및 디렉토리
 .gradle/
-build/
-build/libs/
 build/tmp/
 build/bootWarMainClassName
 
