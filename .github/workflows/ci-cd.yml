@@ -48,7 +48,7 @@ jobs:
           port: 2222
           script: |
             cd /home/hadoop/vision-x
-            git pull https://egis-smkim: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@github.com/egis-smkim/vision-x.git
+            git pull https://egis-smkim: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@github.com/egis-smkim/vision-x.git
             docker-compose -f docker-compose-dev.yml down
             docker-compose -f docker-compose-dev.yml up --build -d 
 
