@@ -1,12 +1,16 @@
-# 1. Gradle 환경 준비
-FROM openjdk:17-jdk-slim as build
+# Dockerfile
+FROM openjdk:11-jdk-slim
+
+# Set working directory
 WORKDIR /app
+
+# Copy Gradle files
 COPY gradle gradle
 COPY gradlew .
-COPY settings.gradle .
 COPY build.gradle .
+COPY settings.gradle .
 
-# Gradle 의존성 캐싱
+# Install dependencies
 RUN ./gradlew dependencies --no-daemon
 
 # 2. 소스 복사 및 빌드

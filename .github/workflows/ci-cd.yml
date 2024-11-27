@@ -19,6 +19,8 @@ jobs:
       # 1. 저장소 클론
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.DEV_SERVER_SSH_KEY }}
 
       # 2. JDK 설정
       - name: Set up JDK 17
