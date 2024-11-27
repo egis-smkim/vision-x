@@ -42,7 +42,7 @@ jobs:
         with:
           host: ${{ secrets.DEV_SERVER_HOST }}
           username: ${{ secrets.DEV_SERVER_USER }} 
-          key: ${{ secrets.DEV_SERVER_SSH_KEY }}
+          password: ${{ secrets.DEV_SERVER_PASSWORD }}
           port: 2222
           script: |
             cd /home/hadoop/vision-x
