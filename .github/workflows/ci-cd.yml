@@ -29,9 +29,9 @@ jobs:
           java-version: 17
           distribution: temurin
 
-      # # 3. Gradle 빌드
-      # - name: Build with Gradle
-      #   run: ./gradlew clean build -x test
+      # 3. Gradle 빌드
+      - name: Build with Gradle
+        run: ./gradlew clean build -x test
 
   deploy-dev:
     if: github.ref == 'refs/heads/dev'

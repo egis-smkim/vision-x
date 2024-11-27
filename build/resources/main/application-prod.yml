@@ -1,0 +1,11 @@
+server:
+  port: 8080 # 상용 서버 포트
+spring:
+  profiles: prod
+  jpa:
+    hibernate:
+      ddl-auto: validate # 테이블 변경 불가
+    show-sql: false # SQL 로그 출력 안 함
+logging:
+  level:
+    root: INFO # 상용 로그 레벨
