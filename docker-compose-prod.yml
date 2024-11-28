@@ -12,7 +12,9 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     restart: always
+    networks:
+      - vision-x-prod-network
 
 networks:
-  vision-x-dev-network:
+  vision-x-prod-network:
     name: vision-x-prod-network 
