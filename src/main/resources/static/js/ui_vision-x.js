@@ -1,4 +1,4 @@
-const onePageMenuss = ['home', 'about-us']
+let onePageMenus = ['home', 'about-us']
 let ignoreScrollEvents = false;
 let lastScrollTop = 0; // 이전 스크롤 위치 
 
@@ -48,7 +48,7 @@ function debounce(func, wait) {
 const debouncedHandleScroll = debounce(function() {
   const isLoadedHome = $('#content-area div.home-area')
   const activatedMenu = $('div.navigation a.active')
-  const isHomePage = onePageMenuss.some(menuName => activatedMenu.hasClass(menuName))
+  const isHomePage = onePageMenus.some(menuName => activatedMenu.hasClass(menuName))
   const isMobileVersion = checkMobileVersion()
   if (!isHomePage || ignoreScrollEvents || isMobileVersion || !isLoadedHome) {
     return 
